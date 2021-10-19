@@ -1,19 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rate My Record</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+<section>
+    <h1 class="center-align">Reviews</h1>
     {% for review in reviews %}
-        {{ review.album_name }}
-        {{ review.artist_name }}
-        {{ review.desc }}
-        {{ review.label }}
-        {{ created_by }}
+        <div class="row" id="reviews">
+            <div class="col s-5 push s-7">
+                <img src="{{ review.img }}" height="250px" width="250px"
+                    alt="album-cover">
+            </div>
+            <div class="col s7 push s-5">
+                <h5 class="center-align">{{ review.album_name }}</h5>
+                <p><strong>Artist name: </strong>{{ review.artsit_name }}</p>
+                <p><strong>Description: </strong>{{ review.desc }}</p>
+                <p><strong>Label: </strong>{{ review.label }}</p>
+                <p><strong>Created by: </strong>{{ review.created_by }}</p>
+                {% if session.user %}
+                <div class="row">
+                    <a class="#"><i class="material-icons">Add to wishlist</i></a>
+                    {% if session.user == "admin" or "created_by" %}
+                        <a href=""class="waves-effect waves-light btn-large blue"><i class="material-icons">Edit</i></a>
+                        <a href="#" class="waves-effect waves-light btn-large red"><i class="material-icons">Delete</i></a>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
     {% endfor %}
-    
-</body>
-</html>
+</section>
+{% endblock %}
