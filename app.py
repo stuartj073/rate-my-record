@@ -19,7 +19,9 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-def hello_world():
+def landing_page():
+    reviews = mongo.db.reviews.find()
+    return render_template("landing_page.html", reviews=reviews)
 
 
 if __name__ == "__main__":
