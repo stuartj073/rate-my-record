@@ -60,3 +60,39 @@ nav a {
 .sidenav {
     background-color: #e0e0e0 ;
 }
+
+/************************************ Reviews **/
+
+#reviews {
+    background-color:lightgrey;
+    min-height:300px;
+    letter-spacing: 3px;    
+}
+
+.album-img {
+    height:100%;
+    background-color: black;
+}
+
+#reviews img {
+    border-radius: 10px;
+    border:1px solid grey;
+    display:flex;
+    margin:20px;
+}
+
+#reviews h5 {
+    font-weight:2000;
+}
+
+#reviews p {
+    padding-top:15px;
+}
+
+.btn-large i {
+    font-size: 0.8rem;
+}
+
+.btn-large {
+    margin: 10px 3px 2px;
+}
