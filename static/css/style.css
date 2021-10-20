@@ -54,6 +54,31 @@ nav .sidenav-trigger {
     padding-left: 20px;
 }
 
+/************************************ HEADER LINKS **/
+
+.login {
+    background-color: #ef5350;
+    color:white;
+    min-width:50%;
+    position:absolute;
+    top:40%;
+    left:25%;
+    padding:5px;
+    border-radius: 2px;
+}
+
+.login h5 a:hover {
+    text-decoration: underline;
+}
+
+.landing-page-img {
+    position:relative;
+    width:100%;
+}
+
+.landing-page-img h1 {
+    font-family: 'Gabriela', serif;
+}
 
 /************************************ PHONE MENU **/
 

@@ -113,7 +113,7 @@ def add_review():
             "created_by": session["user"]
         }
         mongo.db.reviews.insert_one(review)
-        flash("Task successfully added")
+        flash("Review added")
         return redirect(url_for('add_review'))
     
     return render_template("add_review.html")
