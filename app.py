@@ -100,6 +100,25 @@ def logout():
     return redirect(url_for('login'))
 
 
+@app.route("/add_review", methods=["GET", "POST"])
+def add_review():
+    if request.method == "POST":
+        review = {
+            "album_name": request.form.get("album"),
+            "artist_name": request.form.get("artist"),
+            "desc": request.form.get("desc"),
+            "label": request.form.get("label"),
+            "location": request.form.get("location"),
+            "img": request.form.get("image"),
+            "created_by": session["user"]
+        }
+        mongo.db.reviews.insert_one(review)
+        flash("Task successfully added")
+        return redirect(url_for('add_review'))
+    
+    return render_template("add_review.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
