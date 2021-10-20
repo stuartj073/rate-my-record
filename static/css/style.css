@@ -32,8 +32,18 @@ nav {
     height:100px;
 }
 
+nav .brand-logo {
+    line-height: 100px;
+    padding-left: 10px;
+}
+
 nav a {
     margin:0 auto;
+    line-height:100px;
+}
+
+nav .sidenav-trigger {
+    line-height:100px;
 }
 
 .menu {
