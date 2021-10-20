@@ -24,6 +24,34 @@ def landing_page():
     return render_template("landing_page.html", reviews=reviews)
 
 
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "register":
+        # check if the user is already
+        # in the database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("User already exists")
+            return redirect(url_for('register'))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+
+        # insert new user into database
+        mongo.db.users.insert_one(register)
+
+        # put the new user into session cookie
+        session["user"]= request.form.get("username").lower()
+        flash("Registration successful")
+        return redirect(url_for('landing'), username=session["user"])
+
+    return render_template('register.html')
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
