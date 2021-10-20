@@ -4,6 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
@@ -26,7 +27,7 @@ def landing_page():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    if request.method == "register":
+    if request.method == "POST":
         # check if the user is already
         # in the database
         existing_user = mongo.db.users.find_one(
