@@ -46,7 +46,7 @@ def register():
         mongo.db.users.insert_one(register)
 
         # put the new user into session cookie
-        session["user"]= request.form.get("username").lower()
+        session["user"] = request.form.get("username").lower()
         flash("Registration successful")
         return redirect(url_for('landing'), username=session["user"])
 
@@ -104,6 +104,8 @@ def logout():
 
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
+    # allow user to input values to
+    # keys in form
     if request.method == "POST":
         review = {
             "album_name": request.form.get("album"),
@@ -114,6 +116,8 @@ def add_review():
             "img": request.form.get("image"),
             "created_by": session["user"]
         }
+        # post the session user's
+        # review to the mongo db
         mongo.db.reviews.insert_one(review)
         flash("Review added")
         return redirect(url_for('add_review'))

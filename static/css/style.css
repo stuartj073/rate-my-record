@@ -13,7 +13,7 @@ body {
     color:#212121;
     font-family: 'Zilla Slab', serif;
     font-weight: 700;
-    background-color: #eeeeee;
+    background-color: #8d6e63
 }
 
 a {
@@ -30,16 +30,25 @@ nav {
     font-family: 'Gabriela', serif;
     letter-spacing: 1px;
     height:100px;
+    background-color:#eeeeee;
+    color:#424242;
 }
 
 nav .brand-logo {
     line-height: 100px;
     padding-left: 10px;
+    color:#424242;
 }
 
 nav a {
     margin:0 auto;
+    color:#424242;
     line-height:100px;
+}
+
+nav ul a {
+    color:#424242;
+    font-size:2rem;
 }
 
 nav .sidenav-trigger {
@@ -130,4 +139,10 @@ nav .sidenav-trigger {
 
 .btn-large {
     margin: 10px 3px 2px;
+}
+
+/********************************* PROFILE **/
+
+.profile-review {
+    cont;
 }

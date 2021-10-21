@@ -25,10 +25,11 @@
             <p><strong>Created by: </strong>{{ review.created_by }}</p>
             {% if session.user %}
             <div class="row">
-                <a class="#"><i class="waves-effect waves-light btn-large grey">Add to wishlist</i></a>
                 {% if session.user == review.created_by %}
                 <a href="" class="waves-effect waves-light btn-large blue"><i class="material-icons">Edit</i></a>
                 <a href="#" class="waves-effect waves-light btn-large red"><i class="material-icons">Delete</i></a>
+                {% else %}
+                <a class="#"><i class="waves-effect waves-light btn-large grey">Add to wishlist</i></a>
                 {% endif %}
             </div>
             {% endif %}
