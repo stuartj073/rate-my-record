@@ -146,3 +146,27 @@ nav .sidenav-trigger {
 .profile-review {
     cont;
 }
+
+/************************************ HEADER LINKS **/
+
+.form{
+    margin:30px;
+}
+
+.form label {
+    font-size:2rem;
+    line-height:1px;
+    color:#eeeeee;
+}
+
+.btn {
+    background-color:#bdbdbd;
+    letter-spacing: 3px;
+    font-weight:500;
+}
+
+.form p {
+    color:#eeeeee;
+    letter-spacing: 1px;
+    padding-top:20px;
+}
