@@ -86,9 +86,11 @@ def profile(username):
     # profile page as soon as they register
     username = mongo.db.users.find_one(
         {"username":session["user"]})["username"]
+    
+    reviews = mongo.db.reviews.find({"created_by": session["user"]})
 
     if session["user"]:
-        return render_template('profile.html', username=username)
+        return render_template('profile.html', username=username, reviews=reviews)
 
 
 @app.route("/logout")
