@@ -5,6 +5,7 @@
         <img src="static/images/mick-haupt--EoUIP5q2q8-unsplash.jpg" height="600" width="100%">
         <div class="login">
             <h1 class="center-align"><a href="url_for('register')">Rate My Record</a></h1>
+            <h5 class="center-align"><i>A place for like-minded music lovers to contribute</i></h5>
             {% if not session["user"] %}
             <h5 class="center-align"><a href="{{ url_for('register') }}">Register </a></h5>
             <h5 class="center-align"><a href="{{ url_for('login') }}">Log in</a></h5>
@@ -29,7 +30,7 @@
                 <a href="" class="waves-effect waves-light btn-large blue"><i class="material-icons">Edit</i></a>
                 <a href="#" class="waves-effect waves-light btn-large red"><i class="material-icons">Delete</i></a>
                 {% else %}
-                <a class="#"><i class="waves-effect waves-light btn-large grey">Add to wishlist</i></a>
+                <a class="{{ url_for('add_to_wishlist') }}"><i class="waves-effect waves-light btn-large grey">Add to wishlist</i></a>
                 {% endif %}
             </div>
             {% endif %}
