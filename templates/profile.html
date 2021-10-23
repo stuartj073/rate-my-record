@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+
 <h3 class="center-align">{{ username }}'s Profile</h3>
 <div class="row">
     <div class="col s12 m6">
@@ -21,11 +22,29 @@
             </div>
         </div>
     </div>
+    {% endif %}
+    {% endfor %}
     <div class="col s12 m6">
+        <!-- Display the reviews a user has added to their profile for wishlist -->
         <h3 class="center-align">Your wishlist</h3>
+        {% for review in reviews %}
+        <div class="row" id="reviews">
+            <div class="profile-review">
+                <div class="col s-5 push s-7">
+                    <img src="{{ review.img }}" height="250px" width="300px" alt="album-cover">
+                </div>
+                <div class="col s7 push s-5">
+                    <h5 class="center-align">{{ review.album_name }}</h5>
+                    <p><strong>Artist name: </strong>{{ review.artist_name }}</p>
+                    <p><strong>Description: </strong>{{ review.desc }}</p>
+                    <p><strong>Label: </strong>{{ review.label }}</p>
+                    <p><strong>Created by: </strong>{{ review.created_by }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 </div>
-{% endif %}
-{% endfor %}
+
 
 {% endblock %}

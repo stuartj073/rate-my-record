@@ -48,7 +48,7 @@ nav a {
 
 nav ul a {
     color:#424242;
-    font-size:2rem;
+    font-size:1rem;
 }
 
 nav .sidenav-trigger {
@@ -147,13 +147,21 @@ nav .sidenav-trigger {
     cont;
 }
 
-/************************************ HEADER LINKS **/
+/************************************ FORM LINKS **/
 
-.form{
+select {
+    display:block;
+}
+
+#store, #record {
+    display: none;
+}
+
+form{
     margin:30px;
 }
 
-.form label {
+form label {
     font-size:2rem;
     line-height:1px;
     color:#eeeeee;
