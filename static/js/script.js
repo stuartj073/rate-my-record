@@ -27,9 +27,7 @@ $(document).ready(function () {
 //   })
 // }
 
-function changeQ(){
-  
-}
-
-
+$("select").change(function(){
+  $("#" + $(this).val()).show().siblings().hide();
+});
 
