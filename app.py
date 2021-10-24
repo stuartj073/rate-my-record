@@ -23,7 +23,8 @@ mongo = PyMongo(app)
 def landing():
     reviews = mongo.db.reviews.find()
     store_reviews = mongo.db.store_reviews.find()
-    return render_template("landing_page.html", reviews=reviews, store_reviews=store_reviews)
+    return render_template("landing_page.html", 
+    reviews=reviews, store_reviews=store_reviews)
 
 
 @app.route("/register", methods=["GET", "POST"])

@@ -37,5 +37,28 @@
         </div>
     </div>
     {% endfor %}
+    {% for store_review in store_reviews %}
+    <div class="row" id="reviews">
+        <div class="col s-5 push s-7">
+            <img src="{{ store_review.store_img }}" height="250px" width="300px" alt="album-cover">
+        </div>
+        <div class="col s7 push s-5">
+            <h5 class="center-align">{{ store_review.store_name }}</h5>
+            <p><strong>Description: </strong>{{ store_review.store_desc }}</p>
+            <p><strong>Genre's: </strong>{{ store_review.store_genre}}</p>
+            <p><strong>Created by: </strong>{{ store_review.created_by }}</p>
+            {% if session.user %}
+            <div class="row">
+                {% if session.user == store_review.created_by %}
+                <a href="" class="waves-effect waves-light btn-large blue"><i class="material-icons">Edit</i></a>
+                <a href="#" class="waves-effect waves-light btn-large red"><i class="material-icons">Delete</i></a>
+                {% else %}
+                <a href="#"><i class="waves-effect waves-light btn-large grey">Add to wishlist</i></a>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
 </section>
 {% endblock %}
