@@ -14,10 +14,10 @@ $(document).ready(function () {
 // })
 
 
-$("#myselect").on("change", function() {
-  $("#" + $(this).val()).show().siblings().change();
-  console.log("HELLO")
-})
+// $("#myselect").on("change", function() {
+//   $("#" + $(this).val()).show().siblings().hide();
+//   this.removeEventListener(this, );
+// })
 
 // function changeForm(){
 //   let form = document.getElementsByTagName('form')
@@ -26,6 +26,10 @@ $("#myselect").on("change", function() {
 //     form.classList.remove("record")
 //   })
 // }
+
+function changeQ(){
+  
+}
 
 
 
