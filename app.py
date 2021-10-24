@@ -22,7 +22,8 @@ mongo = PyMongo(app)
 @app.route("/")
 def landing():
     reviews = mongo.db.reviews.find()
-    return render_template("landing_page.html", reviews=reviews)
+    store_reviews = mongo.db.store_reviews.find()
+    return render_template("landing_page.html", reviews=reviews, store_reviews=store_reviews)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -123,6 +124,28 @@ def add_review():
         return redirect(url_for('add_review'))
     
     return render_template("add_review.html")
+
+
+@app.route("/add_store_review", methods=["GET", "POST"])
+def add_store_review():
+    # allow user to input values to
+    # keys in form
+    if request.method == "POST":
+        store_review = {
+            "store_name": request.form.get("store-name"),
+            "location": request.form.get("location"),
+            "store_desc": request.form.get("store-desc"),
+            "store_genre": request.form.get("genre-store"),
+            "store_img": request.form.get("image-store"),
+            "created_by": session["user"]
+        }
+        # post the session user's
+        # review to the mongo db
+        mongo.db.store_reviews.insert_one(store_review)
+        flash("Review added")
+        return redirect(url_for('add_store_review'))
+    
+    return render_template("add_store_review.html")
 
 
 if __name__ == "__main__":

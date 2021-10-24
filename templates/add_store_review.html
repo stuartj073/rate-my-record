@@ -7,7 +7,7 @@
         <label for="music">Record or Store:</label>
         <select id="myselect">
             <option value="">--Please choose an option--</option>
-            <option value="record">Record</option>
+            <option value="record"><a href="{{ url_for('add_review') }}"Record</option>
             <option value="store"><a href="{{ url_for('add_store_review') }}">Store</a></option>
         </select>
     </div>
