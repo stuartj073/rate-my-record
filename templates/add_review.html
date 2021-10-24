@@ -3,7 +3,7 @@
 
 <h2 class="center-align">Add a Review !</h2>
 <div class="row">
-    <div class="col s-12">
+    <div class="col s-12 dropdown">
         <label for="music">Record or Store:</label>
         <select id="myselect">
             <option value="">--Please choose an option--</option>
@@ -81,44 +81,32 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="album" name="album" type="text" class="validate" required>
-                <label class="center-align" for="album">Store Name</label>
+                <input id="store-name" name="store-name" type="text" class="validate" required>
+                <label class="center-align" for="store-name">Store Name</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="artist" name="artist" type="text" class="validate" required>
-                <label class="center-align" for="artist">Artist</label>
+                <input id="location" name="location" type="text" class="validate" required>
+                <label class="center-align" for="location">Location</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="desc" name="desc" class="materialize-textarea"></textarea>
-                <label for="desc">Description</label>
+                <textarea id="store-desc" name="store-desc" class="materialize-textarea"></textarea>
+                <label for="store-desc">Description</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="genre" name="genre" type="text" class="validate">
-                <label for="genre">Genre</label>
+                <input id="genre-store" name="genre-store" type="text" class="validate">
+                <label for="genre-store">Genre's</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="label" name="label" type="text" class="validate">
-                <label for="label">Label</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="date" name="date" type="text" class="validate">
-                <label for="date">Date</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="image" name="image" type="text" class="validate" placeholder="optional">
-                <label for="name">Image source</label>
+                <input id="image-store" name="image-store" type="text" class="validate" placeholder="optional">
+                <label for="image-store">Image source</label>
             </div>
         </div>
         <div class="row">
