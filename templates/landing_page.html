@@ -4,7 +4,7 @@
     <div class="landing-page-img">
         <img src="static/images/mick-haupt--EoUIP5q2q8-unsplash.jpg" height="600" width="100%">
         <div class="login">
-            <h1 class="center-align"><a href="url_for('register')">Rate My Record</a></h1>
+            <h1 class="center-align"><a href="url_for('landing')">Rate My Record</a></h1>
             <h5 class="center-align"><i>A place for like-minded music lovers to contribute</i></h5>
             {% if not session["user"] %}
             <h5 class="center-align"><a href="{{ url_for('register') }}">Register </a></h5>
@@ -15,7 +15,7 @@
     <h1 class="center-align">Reviews</h1>
     {% for review in reviews %}
     <div class="row" id="reviews">
-        <div class="col s-5 push s-7">
+        <div class="col s5 push s-7">
             <img src="{{ review.img }}" height="250px" width="300px" alt="album-cover">
         </div>
         <div class="col s7 push s-5">
@@ -40,7 +40,7 @@
     {% endfor %}
     {% for store_review in store_reviews %}
     <div class="row" id="reviews">
-        <div class="col s-5 push s-7">
+        <div class="col s5 push s-7">
             <img src="{{ store_review.store_img }}" height="250px" width="300px" alt="album-cover">
         </div>
         <div class="col s7 push s-5">
