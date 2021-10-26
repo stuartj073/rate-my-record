@@ -50,7 +50,7 @@ def register():
         # put the new user into session cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration successful")
-        return redirect(url_for('landing'), username=session["user"])
+        return redirect(url_for('landing'), user=session["user"])
 
     return render_template('register.html')
 
@@ -147,6 +147,24 @@ def add_store_review():
         return redirect(url_for('add_store_review'))
     
     return render_template("add_store_review.html")
+
+
+@app.route("/add_to_profile", methods=["GET", "POST"])
+def add_to_profile():
+    # allow user to add different user's
+    # reviews to their own 'wishlist'
+    if request.method == "POST":
+        wishlist = {
+            "album_name": request.form.get("album"),
+            "artist_name": request.form.get("artist"),
+            "desc": request.form.get("desc"),
+            "label": request.form.get("label"),
+            "location": request.form.get("location"),
+            "img": request.form.get("image"),
+            "created_by": session["user"]
+        }
+    return render_template('profile.html', wishlist=wishlist)
+
 
 
 if __name__ == "__main__":

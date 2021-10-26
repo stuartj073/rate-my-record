@@ -24,6 +24,10 @@ hr {
     border: 1px solid black;
 }
 
+.container {
+    padding:0 10px;
+}
+
 /************************************ HEADER LINKS **/
 
 nav {

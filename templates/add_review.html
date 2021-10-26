@@ -8,7 +8,7 @@
         <select id="myselect">
             <option value="">--Please choose an option--</option>
             <option value="record">Record</option>
-            <option value="store"><a href="{{ url_for('add_store_review') }}">Store</a></option>
+            <option value="store">Store</option>
         </select>
     </div>
     <form id="record" name="record" method="POST" action="{{ url_for('add_review') }}">
@@ -16,7 +16,7 @@
             <label for="music">Record or Store:</label>
             <select id="myselect">
                 <option value="">--Please choose an option--</option>
-                <option value="record" selected="">Record</option>
+                <option value="record" selected>Record</option>
                 <option value="store">Store</option>
             </select>
         </div>
@@ -76,7 +76,7 @@
             <select id="myselect">
                 <option value="">--Please choose an option--</option>
                 <option value="record">Record</option>
-                <option value="store" selected="">Store</option>
+                <option value="store" selected>Store</option>
             </select>
         </div>
         <div class="row">
