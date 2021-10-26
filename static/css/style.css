@@ -71,7 +71,7 @@ nav .sidenav-trigger {
     min-width:50%;
     position:absolute;
     top:30%;
-    left:15%;
+    left:20%;
     padding:20px;
     border-radius: 10px;
 }
@@ -179,4 +179,17 @@ form label {
 
 .dropdown {
     margin:0 auto;
+}
+
+/************************************ FOOTER **/
+
+.social-links {
+    height:180px;
+    background-color:#757575;
+    border-top:2px solid #e0e0e0;
+    margin-top:50px;
+}
+
+.social-links h4 {
+    color:white;
 }
