@@ -6,10 +6,10 @@
         <div class="login">
             <h1 class="center-align"><a href="url_for('landing')">Rate My Record</a></h1>
             <p class="center-align"><i>A place for like-minded music lovers to contribute</i></hp>
-            {% if not session["user"] %}
-            <h5 class="center-align"><a href="{{ url_for('register') }}">Register </a></h5>
-            <h5 class="center-align"><a href="{{ url_for('login') }}">Log in</a></h5>
-            {% endif %}
+                {% if not session["user"] %}
+                <h5 class="center-align"><a href="{{ url_for('register') }}">Register </a></h5>
+                <h5 class="center-align"><a href="{{ url_for('login') }}">Log in</a></h5>
+                {% endif %}
         </div>
     </div>
     <h1 class="center-align">Reviews</h1>
@@ -26,8 +26,11 @@
             <p><strong>Created by: </strong>{{ review.created_by }}</p>
             {% if session.user %}
             <div class="row">
-                {% if session.user == review.created_by or "admin" %}
-                <a href="{{ url_for('edit_review', review_id=review._id) }}" class="waves-effect waves-light btn-large blue"><i class="material-icons">Edit</i></a>
+                {% if session.user == review.created_by%}
+                <a href="#" class="waves-effect waves-light btn-large blue"><i class="material-icons">Edit</i></a>
+                <a href="#" class="waves-effect waves-light btn-large red"><i class="material-icons">Delete</i></a>
+                {% elif session.user == "admin" %}
+                <a href="#" class="waves-effect waves-light btn-large blue"><i class="material-icons">Edit</i></a>
                 <a href="#" class="waves-effect waves-light btn-large red"><i class="material-icons">Delete</i></a>
                 {% else %}
                 <a href="#"><i class="waves-effect waves-light btn-large grey">Add to wishlist</i></a>
@@ -49,8 +52,11 @@
             <p><strong>Created by: </strong>{{ store_review.created_by }}</p>
             {% if session.user %}
             <div class="row">
-                {% if session.user == store_review.created_by or "admin" %}
-                
+                {% if session.user == store_review.created_by%}
+                <a href="#" class="waves-effect waves-light btn-large blue"><i class="material-icons">Edit</i></a>
+                <a href="#" class="waves-effect waves-light btn-large red"><i class="material-icons">Delete</i></a>
+                {% elif session.user == "admin" %}
+                <a href="#" class="waves-effect waves-light btn-large blue"><i class="material-icons">Edit</i></a>
                 <a href="#" class="waves-effect waves-light btn-large red"><i class="material-icons">Delete</i></a>
                 {% else %}
                 <a href="#"><i class="waves-effect waves-light btn-large grey">Add to wishlist</i></a>
