@@ -29,9 +29,8 @@
                 {% if session.user == review.created_by or "admin" %}
                 <a href="" class="waves-effect waves-light btn-large blue"><i class="material-icons">Edit</i></a>
                 <a href="#" class="waves-effect waves-light btn-large red"><i class="material-icons">Delete</i></a>
-                <a href="#"><i class="waves-effect waves-light btn-large grey">Add to wishlist</i></a>
                 {% else %}
-                <a href="{{ url_for('add_to_profile', review_id=review._id) }}"><i class="waves-effect waves-light btn-large grey">Add to wishlist</i></a>
+                <a href="#"><i class="waves-effect waves-light btn-large grey">Add to wishlist</i></a>
                 {% endif %}
             </div>
             {% endif %}
@@ -53,7 +52,6 @@
                 {% if session.user == store_review.created_by or "admin" %}
                 <a href="" class="waves-effect waves-light btn-large blue"><i class="material-icons">Edit</i></a>
                 <a href="#" class="waves-effect waves-light btn-large red"><i class="material-icons">Delete</i></a>
-                <a href="#"><i class="waves-effect waves-light btn-large grey">Add to wishlist</i></a>
                 {% else %}
                 <a href="#"><i class="waves-effect waves-light btn-large grey">Add to wishlist</i></a>
                 {% endif %}

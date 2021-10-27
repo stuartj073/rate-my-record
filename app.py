@@ -21,8 +21,11 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def landing():
-    reviews = mongo.db.reviews.find()
-    store_reviews = mongo.db.store_reviews.find()
+    # generate list to allow iteration over
+    # the reviews collection more than once
+    # on each page
+    reviews = list(mongo.db.reviews.find())
+    store_reviews = list(mongo.db.store_reviews.find())
     return render_template("landing_page.html", 
     reviews=reviews, store_reviews=store_reviews)
 
@@ -50,7 +53,7 @@ def register():
         # put the new user into session cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration successful")
-        return redirect(url_for('landing'), user=session["user"])
+        return redirect(url_for('landing'), username=session["user"])
 
     return render_template('register.html')
 
@@ -90,9 +93,11 @@ def profile(username):
         {"username":session["user"]})["username"]
     
     reviews = mongo.db.reviews.find({"created_by": session["user"]})
+    store_reviews = mongo.db.store_reviews.find({"created_by": session["user"]})
 
     if session["user"]:
-        return render_template('profile.html', username=username, reviews=reviews)
+        return render_template('profile.html', username=username,
+        reviews=reviews, store_reviews=store_reviews)
 
 
 @app.route("/logout")
@@ -127,43 +132,11 @@ def add_review():
     return render_template("add_review.html")
 
 
-@app.route("/add_store_review", methods=["GET", "POST"])
-def add_store_review():
-    # allow user to input values to
-    # keys in form
-    if request.method == "POST":
-        store_review = {
-            "store_name": request.form.get("store-name"),
-            "location": request.form.get("location"),
-            "store_desc": request.form.get("store-desc"),
-            "store_genre": request.form.get("genre-store"),
-            "store_img": request.form.get("image-store"),
-            "created_by": session["user"]
-        }
-        # post the session user's
-        # review to the mongo db
-        mongo.db.store_reviews.insert_one(store_review)
-        flash("Review added")
-        return redirect(url_for('add_store_review'))
-    
-    return render_template("add_store_review.html")
-
-
-@app.route("/add_to_profile", methods=["GET", "POST"])
-def add_to_profile():
-    # allow user to add different user's
-    # reviews to their own 'wishlist'
-    if request.method == "POST":
-        wishlist = {
-            "album_name": request.form.get("album"),
-            "artist_name": request.form.get("artist"),
-            "desc": request.form.get("desc"),
-            "label": request.form.get("label"),
-            "location": request.form.get("location"),
-            "img": request.form.get("image"),
-            "created_by": session["user"]
-        }
-    return render_template('profile.html', wishlist=wishlist)
+@app.route("/delete_review/<review_id>")
+def delete_review(review_id):
+    review = mongo.db.reviews.find()
+    mongo.db.reviews.remove({"_id":ObjectId(review_id)})
+    return redirect(url_for('landing'), review=review)
 
 
 
