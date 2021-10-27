@@ -7,42 +7,41 @@
         <h3 class="center-align">Your Reviews</h3>
         {% for review in reviews %}
         {% if review.created_by == session["user"] %}
-        <div class="row card-panel hoverable" id="reviews">
-            <div class="profile-review">
-                <div class="col s-5 push s-7">
-                    <img src="{{ review.img }}" height="250px" width="300px" alt="album-cover">
-                </div>
-                <div class="col s7 push s-5">
-                    <h5 class="center-align">{{ review.album_name }}</h5>
-                    <p><strong>Artist name: </strong>{{ review.artist_name }}</p>
-                    <p><strong>Description: </strong>{{ review.desc }}</p>
-                    <p><strong>Label: </strong>{{ review.label }}</p>
-                    <p><strong>Created by: </strong>{{ review.created_by }}</p>
+        <div class="row">
+            <div class="col s12 m7">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ review.img }}" height="200" width="200">
+                        <span class="card-title">{{ review.album_name }}</span>
+                    </div>
+                    <div class="card-content">
+                        <p>{{ review.desc }}</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    {% endif %}
-    {% endfor %}
+        {% endif %}
+        {% endfor %}
 
-    {% for store_review in store_reviews %}
-    {% if store_review.created_by == session["user"] %}
-    <div class="row card-panel hoverable" id="reviews">
-        <div class="profile-review">
-            <div class="col s-5 push s-7">
-                <img src="{{ store_review.store_img }}" height="250px" width="300px" alt="album-cover">
-            </div>
-            <div class="col s7 push s-5">
-                <h5 class="center-align">{{ store_review.store_name }}</h5>
-                <p><strong>Description: </strong>{{ store_review.store_desc }}</p>
-                <p><strong>Genre's: </strong>{{ store_review.store_genre}}</p>
-                <p><strong>Created by: </strong>{{ store_review.created_by }}</p>
+        {% for store_review in store_reviews %}
+        {% if store_review.created_by == session["user"] %}
+        <div class="row">
+            <div class="col s12 m7">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ store_review.store_img }}" height="200" width="200">
+                        <span class="card-title">{{ store_review.store_name }}</span>
+                    </div>
+                    <div class="card-content">
+                        <p>{{ store_review.store_desc }}</p>
+                    </div>
+                </div>
             </div>
         </div>
+        {% endif %}
+        {% endfor %}
     </div>
 </div>
-{% endif %}
-{% endfor %}
 <div class="col s12 m6">
     <!-- Display the reviews a user has added to their profile for wishlist -->
     <h3 class="center-align">Your wishlist</h3>
