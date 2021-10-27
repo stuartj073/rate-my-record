@@ -3,20 +3,18 @@
 
 <h3 class="center-align">{{ username }}'s Profile</h3>
 <div class="row">
-    <div class="col s12 m6">
+    <div class="col s12 m6 profile-reviews">
         <h3 class="center-align">Your Reviews</h3>
         {% for review in reviews %}
         {% if review.created_by == session["user"] %}
-        <div class="row">
-            <div class="col s12 m7">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="{{ review.img }}" height="200" width="200">
-                        <span class="card-title">{{ review.album_name }}</span>
-                    </div>
-                    <div class="card-content">
-                        <p>{{ review.desc }}</p>
-                    </div>
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{ review.img }}" height="200" width="200">
+                    <h5 class="card-title center-align">{{ review.album_name }}</h5>
+                </div>
+                <div class="card-content">
+                    <p>{{ review.desc }}</p>
                 </div>
             </div>
         </div>

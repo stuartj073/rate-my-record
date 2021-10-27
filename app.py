@@ -139,6 +139,12 @@ def delete_review(review_id):
     return redirect(url_for('landing'), review=review)
 
 
+@app.route("/edit_review/<review_id>", methods=["GET", "POST"])
+def edit_review(review_id):
+    # locate the reviews in the database
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    return render_template("edit_review.html", review=review)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
