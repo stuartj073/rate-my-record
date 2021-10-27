@@ -28,7 +28,7 @@
         <li><a href="{{ url_for('add_review') }}">Add a Review</a></li>
         {% if session.user == "admin" %}
         <li><a href="{{ url_for('manage_reviews') }}">Manage Reviews</a></li>
-        <li><a href="#">Manage Users</a></li>
+        <li><a href="{{ url_for('manage_users') }}">Manage Users</a></li>
         {% endif %}
         <li><a href="{{ url_for('logout') }}">Logout</a></li>
         {% else %}
@@ -47,7 +47,7 @@
     <li><a href="{{ url_for('add_review') }}">Add a Review</a></li>
     {% if session.user == "admin" %}
     <li><a href="{{ url_for('manage_reviews') }}">Manage Reviews</a></li>
-    <li><a href="#">Manage Users</a></li>
+    <li><a href="{{ url_for('manage_users') }}">Manage Users</a></li>
     {% endif %}
     <li><a href="{{ url_for('logout') }}">Logout</a></li>
     {% else %}

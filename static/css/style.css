@@ -206,6 +206,23 @@ form label {
     color:white;
 }
 
+/************************************ MANAGE USERS **/
+
+.users {
+    width:40%;
+    left:30%;
+    height:80px;
+    background-color: grey;
+}
+
+.users h4 {
+    padding-left:10px;
+}
+
+.users a {
+    right:0;
+}
+
 
 /* @media only screen and (min-width: 993px) {
     .container {

@@ -140,6 +140,11 @@ def manage_reviews():
     store_reviews=store_reviews)
 
 
+@app.route("/manage_users")
+def manage_users():
+    users = mongo.db.users.find()
+    return render_template("manage_users.html", users=users)
+
 
 @app.route("/delete_review/<review_id>")
 def delete_review(review_id):
