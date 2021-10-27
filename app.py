@@ -132,6 +132,14 @@ def add_review():
     return render_template("add_review.html")
 
 
+@app.route("/manage_reviews")
+def manage_reviews():
+    reviews = mongo.db.reviews.find()
+    store_reviews = mongo.db.store_reviews.find()
+    return render_template("manage_reviews.html", reviews=reviews,
+    store_reviews=store_reviews)
+
+
 @app.route("/delete_review/<review_id>")
 def delete_review(review_id):
     review = mongo.db.reviews.find()
