@@ -140,6 +140,7 @@ def manage_reviews():
     store_reviews=store_reviews)
 
 
+
 @app.route("/delete_review/<review_id>")
 def delete_review(review_id):
     review = mongo.db.reviews.find()
