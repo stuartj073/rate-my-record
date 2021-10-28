@@ -178,6 +178,12 @@ def review_page(review_id):
     return render_template("review_page.html", review=review)
 
 
+@app.route("/store_review_page/<store_review_id>")
+def store_review_page(store_review_id):
+    store_review = mongo.db.store_reviews.find_one({"_id":ObjectId(store_review_id)})
+    return render_template("store_review_page.html", store_review=store_review)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
