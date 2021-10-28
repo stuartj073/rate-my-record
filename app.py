@@ -132,6 +132,11 @@ def add_review():
     return render_template("add_review.html")
 
 
+@app.route("/add_review_review", methods=["GET", "POST"])
+def add_store_review():
+    return render_template("/add_store_review.html")
+
+
 @app.route("/manage_reviews")
 def manage_reviews():
     reviews = mongo.db.reviews.find()
@@ -158,6 +163,19 @@ def edit_review(review_id):
     # locate the reviews in the database
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     return render_template("edit_review.html", review=review)
+
+
+@app.route("/edit_store_review/<store_review_id>", methods=["GET", "POST"])
+def edit_store_review(store_review_id):
+    # locate the reviews in the database
+    store_review = mongo.db.store_reviews.find_one({"_id": ObjectId(store_review_id)})
+    return render_template("edit_store_review.html", store_review=store_review)
+
+
+@app.route("/review_page/<review_id>")
+def review_page():
+    review = mongo.db.reviews.find_one("_id":ObjectId(review_id))
+    return render_template("review_page.html", review=review)
 
 
 if __name__ == "__main__":

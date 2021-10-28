@@ -1,14 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2 class="center-align">Edit Review !</h2>
-<p></p>
+<h2 class="center-align">Edit Store Review !</h2>
 <div class="row">
     <form id="record" method="POST" action="{{ url_for(
-        'edit_review', review_id = review._id) }}">
+        'edit_store_review', store_review_id = store_review._id) }}">
         <div class="row">
             <div class="input-field col s12">
-                <input id="album" name="album" type="text" class="validate" value="{{ review.album_name }}" required>
+                <input id="album" name="album" type="text" class="validate" value="{{ album_name }}" required>
                 <label class="center-align" for="album">Album Title</label>
             </div>
         </div>
@@ -20,7 +19,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="desc" name="desc" class="materialize-textarea">{{ review.desc }}</textarea>
+                <textarea id="desc" name="desc" value="{{ review.desc }}" class="materialize-textarea"></textarea>
                 <label for="desc">Description</label>
             </div>
         </div>

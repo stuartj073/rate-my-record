@@ -163,10 +163,6 @@ select {
     display:block;
 }
 
-#store, #record {
-    display: none;
-}
-
 form{
     margin:30px;
 }
