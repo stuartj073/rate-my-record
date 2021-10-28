@@ -16,6 +16,11 @@
 </head>
 
 <body>
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="{{ url_for('add_review') }}">Add Record Review</a></li>
+    <li class="divider"></li>
+    <li><a href="{{ url_for('add_store_review') }}">Add Store Review</a></li>
+  </ul>
   <nav>
     <div class="nav-wrapper">
       <a href="{{ url_for('landing') }}" class="brand-logo">Rate My Record</a>
@@ -25,7 +30,7 @@
         <li><a href="#">About</a></li>
         {% if session.user %}
         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-        <li><a href="{{ url_for('add_review') }}">Add a Review</a></li>
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Add a Review<i class="material-icons right"></i></a></li>
         {% if session.user == "admin" %}
         <li><a href="{{ url_for('manage_reviews') }}">Manage Reviews</a></li>
         <li><a href="{{ url_for('manage_users') }}">Manage Users</a></li>
