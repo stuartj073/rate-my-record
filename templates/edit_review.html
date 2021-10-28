@@ -14,7 +14,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="artist" name="artist" type="text" class="validate" required>
+                <input id="artist" name="artist" type="text" class="validate" value="{{ review.artist_name }}" required>
                 <label class="center-align" for="artist">Artist</label>
             </div>
         </div>
@@ -26,13 +26,13 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="genre" name="genre" type="text" class="validate">
+                <input id="genre" name="genre" type="text" class="validate" value="{{ review.genre }}">
                 <label for="genre">Genre</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="label" name="label" type="text" class="validate">
+                <input id="label" name="label" type="text" class="validate" value="{{ review.label }}">
                 <label for="label">Label</label>
             </div>
         </div>
@@ -44,7 +44,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="image" name="image" type="text" class="validate" placeholder="optional">
+                <input id="image" name="image" type="text" class="validate" value="{{ review.img }}" placeholder="optional">
                 <label for="name">Image source</label>
             </div>
         </div>

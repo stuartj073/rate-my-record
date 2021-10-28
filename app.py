@@ -138,7 +138,7 @@ def add_store_review():
     # request method is POST
     if request.method == "POST":
         store_review = {
-            "store_name": reuqest.form.get("store-name"),
+            "store_name": request.form.get("store-name"),
             "location": request.form.get("location"),
             "store_desc": request.form.get("store-desc"),
             "store_genre": request.form.get("genre-store"),
@@ -185,7 +185,19 @@ def edit_review(review_id):
 @app.route("/edit_store_review/<store_review_id>", methods=["GET", "POST"])
 def edit_store_review(store_review_id):
     # locate the reviews in the database
-    store_review = mongo.db.store_reviews.find_one({"_id": ObjectId(store_review_id)})
+    if request.method == "POST":
+        submit = {
+            "store_name": request.form.get("store-name"),
+            "location": request.form.get("location"),
+            "store_desc": request.form.get("store-desc"),
+            "store_genre": request.form.get("genre-store"),
+            "store_img": request.form.get("image-store"),
+            "created_by": session["user"]
+        }
+        mongo.db.store_reviews.update({"_id":ObjectId(store_review_id)}, submit)
+        flash("Review updated")
+
+    store_review = mongo.db.store_reviews.find_one({"_id":ObjectId(store_review_id)})
     return render_template("edit_store_review.html", store_review=store_review)
 
 
