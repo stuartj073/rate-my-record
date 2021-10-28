@@ -43,7 +43,8 @@
 <div class="col s12 m6">
     <!-- Display the reviews a user has added to their profile for wishlist -->
     <h3 class="center-align">Your wishlist</h3>
-    {% for wishlist in reviews %}
+    {% for review in reviews %}
+    {% if  review.wishlist == session[user] %}
     <div class="row" id="reviews">
         <div class="profile-review">
             <div class="col s-5 push s-7">
@@ -62,6 +63,7 @@
             </div>
         </div>
     </div>
+    {% endif %}
     {% endfor %}
 </div>
 </div>
