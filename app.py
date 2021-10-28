@@ -132,8 +132,25 @@ def add_review():
     return render_template("add_review.html")
 
 
-@app.route("/add_review_review", methods=["GET", "POST"])
+@app.route("/add_store_review", methods=["GET", "POST"])
 def add_store_review():
+    # add store review to db if 
+    # request method is POST
+    if request.method == "POST":
+        store_review = {
+            "store_name": reuqest.form.get("store-name"),
+            "location": request.form.get("location"),
+            "store_desc": request.form.get("store-desc"),
+            "store_genre": request.form.get("genre-store"),
+            "store_img": request.form.get("image-store"),
+            "created_by":session["user"]
+        }
+        # insert new store review to
+        # mongo db
+        mongo.db.store_reviews.insert_one(store_review)
+        flash("Review added!")
+        return redirect(url_for("add_store_review"))
+
     return render_template("/add_store_review.html")
 
 
