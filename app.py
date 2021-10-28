@@ -177,6 +177,19 @@ def delete_review(review_id):
 
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
+    if request.method == "POST":
+        review = {
+            "album_name": request.form.get("album"),
+            "artist_name": request.form.get("artist"),
+            "desc": request.form.get("desc"),
+            "label": request.form.get("label"),
+            "location": request.form.get("location"),
+            "img": request.form.get("image"),
+            "created_by": session["user"]
+        }
+        mongo.db.reviews.update({"_id":ObjectId(review_id)}, review)
+        flash("Review updated")
+    
     # locate the reviews in the database
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     return render_template("edit_review.html", review=review)
@@ -186,7 +199,7 @@ def edit_review(review_id):
 def edit_store_review(store_review_id):
     # locate the reviews in the database
     if request.method == "POST":
-        submit = {
+        store_review = {
             "store_name": request.form.get("store-name"),
             "location": request.form.get("location"),
             "store_desc": request.form.get("store-desc"),
@@ -194,7 +207,7 @@ def edit_store_review(store_review_id):
             "store_img": request.form.get("image-store"),
             "created_by": session["user"]
         }
-        mongo.db.store_reviews.update({"_id":ObjectId(store_review_id)}, submit)
+        mongo.db.store_reviews.update({"_id":ObjectId(store_review_id)}, store_review)
         flash("Review updated")
 
     store_review = mongo.db.store_reviews.find_one({"_id":ObjectId(store_review_id)})
