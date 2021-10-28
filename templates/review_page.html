@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- A page that allows a user to look at each review -->
+
+<div>
+    <div class="row" id="reviews">
+        <div class="col s5 push s-7">
+            <img src="{{ review.img }}" height="250px" width="300px" alt="album-cover">
+        </div>
+        <div class="col s7 push s-5">
+            <h5 class="center-align">{{ review.album_name }}</h5>
+            <p><strong>Artist name: </strong>{{ review.artist_name }}</p>
+            <p><strong>Description: </strong>{{ review.desc }}</p>
+            <p><strong>Label: </strong>{{ review.label }}</p>
+            <p><strong>Created by: </strong>{{ review.created_by }}</p>
+            {% if session.user %}
+            <div class="row">
+                {% if session.user == review.created_by%}
+                <a href="{{ url_for('edit_review', review_id=review._id) }}"
+                    class="waves-effect waves-light btn-large blue"><i class="material-icons">Edit</i></a>
+                <a href="#" class="waves-effect waves-light btn-large red"><i class="material-icons">Delete</i></a>
+                {% elif session.user == "admin" %}
+                <a href="{{ url_for('edit_review', review_id=review._id) }}"
+                    class="waves-effect waves-light btn-large blue"><i class="material-icons">Edit</i></a>
+                <a href="#" class="waves-effect waves-light btn-large red"><i class="material-icons">Delete</i></a>
+                {% else %}
+                <a href="#"><i class="waves-effect waves-light btn-large grey">Add to wishlist</i></a>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -173,8 +173,8 @@ def edit_store_review(store_review_id):
 
 
 @app.route("/review_page/<review_id>")
-def review_page():
-    review = mongo.db.reviews.find_one("_id":ObjectId(review_id))
+def review_page(review_id):
+    review = mongo.db.reviews.find_one({"_id":ObjectId(review_id)})
     return render_template("review_page.html", review=review)
 
 

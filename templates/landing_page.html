@@ -19,7 +19,7 @@
             <img src="{{ review.img }}" height="250px" width="300px" alt="album-cover">
         </div>
         <div class="col s7 push s-5">
-            <h5 class="center-align">{{ review.album_name }}</h5>
+            <h5 class="center-align"><a href="{{ url_for('review_page', review_id=review._id) }}">{{ review.album_name }}</a></h5>
             <p><strong>Artist name: </strong>{{ review.artist_name }}</p>
             <p><strong>Description: </strong>{{ review.desc }}</p>
             <p><strong>Label: </strong>{{ review.label }}</p>
