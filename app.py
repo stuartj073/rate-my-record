@@ -226,6 +226,14 @@ def store_review_page(store_review_id):
     return render_template("store_review_page.html", store_review=store_review)
 
 
+@app.route("/add_to_wishlist/<review_id>")
+def add_to_wishlist():
+    review = mongo.db.reviews.find_one({"_id":ObjectId(review_id)})
+
+    review.insert({"wishlist": session[user]})
+    return render_template("landing", review=review)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

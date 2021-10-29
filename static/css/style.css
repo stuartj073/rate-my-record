@@ -202,6 +202,17 @@ form label {
     color:white;
 }
 
+.social-media li a {
+    margin:0 auto;
+    font-size:3rem;
+    color:white;
+    padding:10px 10px;
+}
+
+ul:not(.browser-default) {
+    text-align:center;
+}
+
 /************************************ MANAGE USERS **/
 
 .users {
