@@ -227,15 +227,14 @@ def store_review_page(store_review_id):
 
 
 @app.route("/add_to_wishlist/<review_id>")
-def add_to_wishlist():
-    review = mongo.db.reviews.find_one({"_id":ObjectId(review_id)})
+def add_to_wishlist(review_id):
+    mongo.db.reviews.find_one_and_update(
+        {"_id":ObjectId(review_id)}, {"$addToSet":{"wishlist":session['user']}})
+    
+    
 
-    review.insert({"wishlist": session[user]})
-    return render_template("landing", review=review)
-
-
-@app.route("/contact")
-def contact():
+@app.route("/contact/<user_id>")
+def contact(user_id):
     user = mongo.db.users.find_one({"_id":ObjectId(user_id)})
     return render_template("contact.html", user=user)
 
