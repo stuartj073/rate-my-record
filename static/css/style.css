@@ -29,6 +29,11 @@ hr {
     margin:0 auto;
 }
 
+footer {
+    bottom:0;
+    width:100%;
+}
+
 /************************************ HEADER LINKS **/
 
 nav {
@@ -206,11 +211,20 @@ form label {
     margin:0 auto;
     font-size:3rem;
     color:white;
-    padding:10px 10px;
+    padding:10px;
 }
 
 ul:not(.browser-default) {
     text-align:center;
+}
+
+.social-links h5 {
+    color:white;
+}
+
+.social-links h5 a:hover {
+    color:#424242;
+    text-decoration: underline;
 }
 
 /************************************ MANAGE USERS **/

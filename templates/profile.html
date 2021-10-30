@@ -11,7 +11,8 @@
             <div class="card">
                 <div class="card-image">
                     <img src="{{ review.img }}" height="200" width="200">
-                    <h5 class="card-title center-align" href="{{ url_for('review_page', review_id=review._id) }}">{{ review.album_name }}</h5>
+                    <h5 class="card-title center-align" href="{{ url_for('review_page', review_id=review._id) }}">
+                        {{ review.album_name }}</h5>
                 </div>
                 <div class="card-content">
                     <p>{{ review.desc }}</p>
@@ -66,7 +67,4 @@
     {% endif %}
     {% endfor %}
 </div>
-</div>
-
-
 {% endblock %}
