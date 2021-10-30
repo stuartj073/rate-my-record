@@ -103,6 +103,16 @@ nav .sidenav-trigger {
     font-family: 'Gabriela', serif;
 }
 
+.flashes h4 {
+    height:50px;
+    width:30%;
+    margin:10px auto;
+    font-weight:599;
+    border:1px solid #424242;
+    border-radius: 5px;
+    line-height:130%;
+}
+
 /************************************ PHONE MENU **/
 
 .sidenav li a {
