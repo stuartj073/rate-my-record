@@ -170,13 +170,6 @@ def manage_users():
     return render_template("manage_users.html", users=users)
 
 
-@app.route("/delete_review/<review_id>")
-def delete_review(review_id):
-    review = mongo.db.reviews.find()
-    mongo.db.reviews.remove({"_id":ObjectId(review_id)})
-    return redirect(url_for('landing'), review=review)
-
-
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
     if request.method == "POST":
@@ -244,6 +237,20 @@ def add_to_stores_wishlist(store_review_id):
     mongo.db.store_reviews.find_one_and_update(
         {"_id":ObjectId(store_review_id)}, {"$addToSet":{"wishlist":session['user']}})
     return render_template("landing_page.html")
+
+
+@app.route("/delete_review/<review_id>")
+def delete_review(review_id):
+    mongo.db.reviews.remove({"_id":ObjectId(review_id)})
+    flash("Review removed")
+    return redirect(url_for('landing'))
+
+
+@app.route("/delete_store_review/<store_review_id>")
+def delete_store_review(store_review_id):
+    mongo.db.store_reviews.remove({"_id":ObjectId(store_review_id)})
+    flash("Review removed")
+    return redirect(url_for('landing'))
     
     
 @app.route("/contact", methods=["GET", "POST"])
