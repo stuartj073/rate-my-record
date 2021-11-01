@@ -123,6 +123,7 @@ def add_review():
             "label": request.form.get("label"),
             "location": request.form.get("location"),
             "img": request.form.get("image"),
+            "genre": request.form.get("genre"),
             "created_by": session["user"]
         }
         # post the session user's
@@ -180,6 +181,7 @@ def edit_review(review_id):
             "label": request.form.get("label"),
             "location": request.form.get("location"),
             "img": request.form.get("image"),
+            "genre": request.form.get("genre"),
             "created_by": session["user"]
         }
         mongo.db.reviews.update({"_id":ObjectId(review_id)}, review)
