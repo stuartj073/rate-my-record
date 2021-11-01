@@ -33,14 +33,14 @@
         {% for store_review in store_reviews %}
         {% if store_review.created_by == session["user"] %}
         <div class="row">
-            <div class="col s12 m7">
+            <div class="col s12 m6">
                 <div class="card">
                     <div class="card-image">
-                        <img src="{{ store_review.store_img }}" height="200" width="200">
-                        <span class="card-title">{{ store_review.store_name }}</span>
+                        <a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}"><img src="{{ store_review.img }}" height="200" width="200">
+                        </a>
                     </div>
                     <div class="card-content">
-                        <p>{{ store_review.store_desc }}</p>
+                        <p class="center-align">{{ store_review.store_name }}</p>
                     </div>
                 </div>
             </div>
