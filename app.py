@@ -26,8 +26,10 @@ def landing():
     # on each page
     reviews = list(mongo.db.reviews.find())
     store_reviews = list(mongo.db.store_reviews.find())
+    user = list(mongo.db.users.find())
+    
     return render_template("landing_page.html", 
-    reviews=reviews, store_reviews=store_reviews)
+    reviews=reviews, store_reviews=store_reviews, user=user)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -151,7 +153,7 @@ def add_store_review():
         flash("Review added!")
         return redirect(url_for("add_store_review"))
 
-    return render_template("/add_store_review.html")
+    return render_template("add_store_review.html")
 
 
 @app.route("/manage_reviews")
@@ -244,10 +246,22 @@ def add_to_stores_wishlist(store_review_id):
     return render_template("landing_page.html")
     
     
-@app.route("/contact/<user_id>")
-def contact(user_id):
-    user = mongo.db.users.find_one({"_id":ObjectId(user_id)})
-    return render_template("contact.html", user=user)
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    # allow user to send message to 
+    # admin through mongodb collections
+
+    if request.method == "POST":
+        message = {
+            "username": session["user"],
+            "issue": request.form.get("issue")
+        }
+        # post issue to 'issues' collections
+        mongo.db.issues.insert_one(message)
+        flash("Message sent")
+        return redirect(url_for('contact'))
+    
+    return render_template("contact.html")
 
 
 if __name__ == "__main__":
