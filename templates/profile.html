@@ -5,6 +5,14 @@
 <div class="row">
     <div class="col s12 m6 profile-reviews">
         <h3 class="center-align">Your Reviews</h3>
+        <!-- if the user has no reviews -->
+        {% if reviews|length == 0  %}
+        <div>
+            <h5 class="center-align">No reviews yet.</h5><br>
+            <p class="center-align">Add record review<a href="{{ url_for('add_review') }}"> here.</a></p>
+            <p class="center-align">Add store review<a href="{{ url_for('add_store_review') }}"> here.</a></p>
+        </div>
+        {% else %}
         {% for review in reviews %}
         {% if review.created_by == session["user"] %}
         <div class="col s12 m6">
@@ -21,6 +29,7 @@
         </div>
         {% endif %}
         {% endfor %}
+        {% endif %}
 
         {% for store_review in store_reviews %}
         {% if store_review.created_by == session["user"] %}

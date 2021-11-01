@@ -214,6 +214,16 @@ nav .sidenav-trigger {
 
 .profile-reviews {
     background-color: #bdbdbd;
+    padding:10px;
+}
+
+.profile-reviews p {
+    font-size:1.5rem;
+    padding-top:10px;
+}
+
+.profile-reviews p a:hover {
+    text-decoration:underline;
 }
 
 
