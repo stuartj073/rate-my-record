@@ -181,8 +181,7 @@ def edit_review(review_id):
             "label": request.form.get("label"),
             "location": request.form.get("location"),
             "img": request.form.get("image"),
-            "genre": request.form.get("genre"),
-            "created_by": session["user"]
+            "genre": request.form.get("genre")
         }
         mongo.db.reviews.update({"_id":ObjectId(review_id)}, review)
         flash("Review updated")
@@ -201,8 +200,7 @@ def edit_store_review(store_review_id):
             "location": request.form.get("location"),
             "store_desc": request.form.get("store-desc"),
             "store_genre": request.form.get("genre-store"),
-            "store_img": request.form.get("image-store"),
-            "created_by": session["user"]
+            "store_img": request.form.get("image-store")
         }
         mongo.db.store_reviews.update({"_id":ObjectId(store_review_id)}, store_review)
         flash("Review updated")
@@ -252,6 +250,15 @@ def delete_review(review_id):
 def delete_store_review(store_review_id):
     mongo.db.store_reviews.remove({"_id":ObjectId(store_review_id)})
     flash("Review removed")
+    return redirect(url_for('landing'))
+
+
+@app.route("/delete_user/<user_id>")
+def delete_user(user_id):
+    # find the user in question on
+    # the mongodb
+    mongo.db.users.remove({"_id":ObjectId(user_id)})
+    flash("User removed")
     return redirect(url_for('landing'))
     
     
