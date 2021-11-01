@@ -92,8 +92,8 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username":session["user"]})["username"]
     
-    reviews = mongo.db.reviews.find({"created_by": session["user"]})
-    store_reviews = mongo.db.store_reviews.find({"created_by": session["user"]})
+    reviews = list(mongo.db.reviews.find({"created_by": session["user"]}))
+    store_reviews = list(mongo.db.store_reviews.find({"created_by": session["user"]}))
 
     if session["user"]:
         return render_template('profile.html', username=username,
@@ -232,6 +232,7 @@ def add_to_wishlist(review_id):
     # review with the current session username
     mongo.db.reviews.find_one_and_update(
         {"_id":ObjectId(review_id)}, {"$addToSet":{"wishlist":session['user']}})
+    return render_template("landing_page.html")
 
 
 @app.route("/add_to_stores_wishlist/<store_review_id>")
@@ -240,9 +241,9 @@ def add_to_stores_wishlist(store_review_id):
     # review with the current session username
     mongo.db.store_reviews.find_one_and_update(
         {"_id":ObjectId(store_review_id)}, {"$addToSet":{"wishlist":session['user']}})
+    return render_template("landing_page.html")
     
     
-
 @app.route("/contact/<user_id>")
 def contact(user_id):
     user = mongo.db.users.find_one({"_id":ObjectId(user_id)})

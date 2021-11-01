@@ -45,7 +45,8 @@
     <!-- Display the reviews a user has added to their profile for wishlist -->
     <h3 class="center-align">Your wishlist</h3>
     {% for review in reviews %}
-    {% if  review.wishlist == session["user"] %}
+    {% if session["user"] in review.artist_name %}
+    <h1>Hello</h1>
     <div href="" class="row" id="reviews">
         <div class="profile-review">
             <div class="col s-5 push s-7">
