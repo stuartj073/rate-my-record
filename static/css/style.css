@@ -190,7 +190,8 @@ nav .sidenav-trigger {
 #reviews {
     background-color:white;
     min-height:300px;
-    letter-spacing: 3px;    
+    letter-spacing: 3px;  
+    border-radius:10px;  
 }
 
 .album-img {
@@ -207,10 +208,13 @@ nav .sidenav-trigger {
 
 #reviews h5 {
     font-weight:2000;
+    margin:15px;
 }
 
 #reviews p {
-    padding-top:15px;
+    margin:15px;
+    font-size: 1.3rem;
+    text-align: left;
 }
 
 .btn-large i {
@@ -219,6 +223,10 @@ nav .sidenav-trigger {
 
 .btn-large {
     margin: 10px 3px 2px;
+}
+
+.row .col.s7 {
+    line-height:50px;
 }
 
 /********************************* PROFILE **/

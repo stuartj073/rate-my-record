@@ -19,7 +19,7 @@
             <img src="{{ review.img }}" height="250px" width="300px" alt="album-cover">
         </div>
         <div class="col s7 push s-5">
-            <h5 class="center-align"><a href="{{ url_for('review_page', review_id=review._id) }}">{{ review.album_name }}</a></h5>
+            <h5 class="align-left"><a href="{{ url_for('review_page', review_id=review._id) }}">{{ review.album_name }}</a></h5>
             <p><strong>Artist name: </strong>{{ review.artist_name }}</p>
             <p><strong>Label: </strong>{{ review.label }}</p>
             <p><strong>Created by: </strong>{{ review.created_by }}</p>
@@ -62,7 +62,7 @@
             <img src="{{ store_review.store_img }}" height="250px" width="300px" alt="album-cover">
         </div>
         <div class="col s7 push s-5">
-            <h5 class="center-align"><a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">{{ store_review.store_name }}</a></h5>
+            <h5 class="align-left"><strong><a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">{{ store_review.store_name }}</a></strong></h5>
             <p><strong>Genre's: </strong>{{ store_review.store_genre}}</p>
             <p><strong>Created by: </strong>{{ store_review.created_by }}</p>
             {% if session.user %}
