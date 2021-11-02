@@ -2,7 +2,8 @@
 {% block content %}
 <!-- A page that allows a user to look at each review -->
 
-<div>
+<section class="review-page">
+    <h1 class="center-align"></h1>
     <div class="row" id="reviews">
         <div class="col s5 push s-7">
             <img src="{{ review.img }}" height="250px" width="300px" alt="album-cover">
@@ -30,6 +31,6 @@
             {% endif %}
         </div>
     </div>
-</div>
+</section>
 
 {% endblock %}

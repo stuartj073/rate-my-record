@@ -26,7 +26,7 @@ hr {
 
 .container {
     padding:0 10px;
-    margin:0 auto;
+    margin:10px auto;
 }
 
 footer {
@@ -226,6 +226,13 @@ nav .sidenav-trigger {
     text-decoration:underline;
 }
 
+/************************************ REVIEWS  **/
+
+.rewview-page {
+    margin:20px;
+}
+
+
 
 /************************************ FORM LINKS **/
 
@@ -262,11 +269,14 @@ form label {
 /************************************ FOOTER **/
 
 .social-links {
-    height:180px;
     background-color:#757575;
+    position:relative;
+    bottom:0;
+    width:100%;
     border-top:2px solid #e0e0e0;
     margin-top:50px;
 }
+
 
 .social-links h4 {
     color:white;
