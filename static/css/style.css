@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Junge&display=swap');
 
 /********************************* CORE STYLES **/
 
@@ -32,6 +33,16 @@ hr {
 footer {
     bottom:0;
     width:100%;
+}
+
+.headings {
+    background-color:#a1887f;
+    font-family: 'Junge', serif;
+    border:2px solid #e0e0e0;
+    width:50%;
+    text-align: center;
+    margin:20px auto;
+    padding:10px;
 }
 
 /************************************ HEADER LINKS **/
@@ -78,10 +89,10 @@ nav .sidenav-trigger {
 .login {
     background-color: white;
     color:black;
-    min-width:50%;
+    width:50%;
     position:absolute;
-    top:30%;
-    left:20%;
+    top:20%;
+    left:25%;
     padding:20px;
     border-radius: 10px;
 }
