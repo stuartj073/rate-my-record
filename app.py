@@ -32,6 +32,14 @@ def landing():
     reviews=reviews, store_reviews=store_reviews, user=user)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    search = request.form.get("search")
+    reviews = list(mongo.db.reviews.find({"$text": {"$search": search}}))
+    store_reviews = list(mongo.db.store_reviews.find({"$text": {"$search": search}}))
+    return render_template("landing_page.html", reviews=reviews, store_reviews=store_reviews)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
