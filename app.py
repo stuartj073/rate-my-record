@@ -104,10 +104,13 @@ def profile(username):
     
     reviews = list(mongo.db.reviews.find({"created_by": session["user"]}))
     store_reviews = list(mongo.db.store_reviews.find({"created_by": session["user"]}))
+    in_wishlist = mongo.db.reviews.find(
+        {"wishlist": session["user"]})
 
     if session["user"]:
         return render_template('profile.html', username=username,
-        reviews=reviews, store_reviews=store_reviews)
+        reviews=reviews, store_reviews=store_reviews, 
+        in_wishlist=in_wishlist)
 
 
 @app.route("/logout")
