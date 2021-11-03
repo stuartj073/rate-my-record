@@ -88,6 +88,25 @@ nav .sidenav-trigger {
     line-height:100px;
 }
 
+/************************************ SEARCH BAR **/
+
+#search {
+    height:0;
+}
+
+#search-bar form {
+    margin:0;
+}
+
+.card-panel {
+    height:80px;
+}
+
+.card-panel button {
+    display: inline-block;
+}
+
+
 /************************************ HEADER LINKS **/
 
 .login {
@@ -192,22 +211,18 @@ nav .sidenav-trigger {
 /************************************ Reviews **/
 
 #reviews {
-    background-color:white;
+    background-color:#eeeeee;
     min-height:300px;
-    letter-spacing: 3px;  
+    letter-spacing: 2px;  
     border-radius:10px;  
-}
-
-.album-img {
-    height:100%;
-    background-color: black;
+    margin:3px;
 }
 
 #reviews img {
     border-radius: 10px;
     border:1px solid grey;
     display:flex;
-    margin:20px;
+    margin:0 auto;
 }
 
 #reviews h5 {
@@ -217,8 +232,12 @@ nav .sidenav-trigger {
 
 #reviews p {
     margin:15px;
-    font-size: 1.3rem;
-    text-align: left;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.buttons {
+    text-align: center;
 }
 
 .btn-large i {
