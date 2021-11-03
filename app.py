@@ -63,7 +63,7 @@ def register():
         # put the new user into session cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration successful")
-        return redirect(url_for('landing'), username=session["user"])
+        return render_template(url_for('landing'), username=session["user"])
 
     return render_template('register.html')
 
@@ -233,9 +233,18 @@ def store_review_page(store_review_id):
 def add_to_wishlist(review_id):
     # update 'wishlist' key of each record
     # review with the current session username
-    mongo.db.reviews.find_one_and_update(
+    in_wishlist = mongo.db.reviews.find_one(
+        {"wishlist": session["user"]})
+    
+    if not in_wishlist:
+        mongo.db.reviews.find_one_and_update(
         {"_id":ObjectId(review_id)}, {"$addToSet":{"wishlist":session['user']}})
-    return render_template("landing_page.html")
+        flash("Added to wishlist")
+    
+    else: 
+        flash("Review already in wishlist")
+
+    return redirect(url_for("landing"))
 
 
 @app.route("/add_to_stores_wishlist/<store_review_id>")
