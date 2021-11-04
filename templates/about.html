@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h2 class="center-align headings">What is Rate my Record?
+    </h2>
+    <div class="row about">
+        <div class="col s12 m6">
+            <h4 class="center-align">What it is</h4>
+            <p>
+                Rate my Record aims to bring together music lovers through providing an online platform in which user's
+                can contribute with their own personal review's of all things music. A user can choose to either rate a Record
+                or a store of their own choosing, provide some basic information such as Album name or store name, and then give
+                their own take on the record or store in question through their description of it. The aim of the site is to marry
+                those looking at gaining new musical knowledge, be it in the form of some online digging or just acquiring the music
+                in it's physical form through buying a record online or even visiting a record store itself.
+            </p>
+        </div>
+        <div class="col s12 m6">
+            <h4 class="center-align">
+                What it isn't
+            </h4>
+            <p>
+                This isn't a platform to blatantly slate an artist, album or record store. It is just to voice your
+                own opinion on whatever you decide to make a review about. Constructive feedback is encouraged but there
+                is a certain threshold that is crossed where an opinion can verge into downright criticism. That is not what This
+                website is about. It is to inform and educate those wishing to learn and acquire knowledge on whatever it might be 
+                that they're looking for. Any posts deemed un-friendly, too critical or that contain inappropriate language
+                will be removed as will the user's associated with these posts. If you come across such a post please don't hesitate
+                to contact us <a href="{{ url_for('contact') }}">here</a> and we shall look to rectify the issue promptly and swiftly.
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

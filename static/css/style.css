@@ -109,7 +109,7 @@ nav .sidenav-trigger {
 
 .card-panel {
     height:80px;
-    width:50%;
+    width:60%;
     margin:0 auto;
 }
 
@@ -156,6 +156,25 @@ nav .sidenav-trigger {
     border:1px solid #424242;
     border-radius: 5px;
     line-height:130%;
+}
+
+/************************************ ABOUT **/
+
+.about p {
+    font-size:1.5rem;
+}
+
+.about h4 {
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.about a {
+    color:red;
+}
+
+.about a:hover {
+    text-decoration: underline;
 }
 
 /********************************* RULES MODAL ***/

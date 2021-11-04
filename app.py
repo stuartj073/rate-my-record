@@ -40,6 +40,11 @@ def search():
     return render_template("landing_page.html", reviews=reviews, store_reviews=store_reviews)
 
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
