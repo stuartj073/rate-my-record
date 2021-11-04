@@ -160,6 +160,10 @@ nav .sidenav-trigger {
 
 /************************************ ABOUT **/
 
+.about {
+    margin-top:50px;
+}
+
 .about p {
     font-size:1.5rem;
 }
