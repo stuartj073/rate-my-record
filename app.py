@@ -109,8 +109,7 @@ def profile(username):
     
     reviews = list(mongo.db.reviews.find({"created_by": session["user"]}))
     store_reviews = list(mongo.db.store_reviews.find({"created_by": session["user"]}))
-    in_wishlist = mongo.db.reviews.find(
-        {"wishlist": session["user"]})
+    in_wishlist = list(mongo.db.reviews.find_one({"wishlist":session["user"]}))
 
     if session["user"]:
         return render_template('profile.html', username=username,
@@ -140,6 +139,7 @@ def add_review():
             "location": request.form.get("location"),
             "img": request.form.get("image"),
             "genre": request.form.get("genre"),
+            "date": request.form.get("date"),
             "created_by": session["user"]
         }
         # post the session user's
@@ -197,7 +197,9 @@ def edit_review(review_id):
             "label": request.form.get("label"),
             "location": request.form.get("location"),
             "img": request.form.get("image"),
-            "genre": request.form.get("genre")
+            "date": request.form.get("date"),
+            "genre": request.form.get("genre"),
+            "created_by": session["user"]
         }
         mongo.db.reviews.update({"_id":ObjectId(review_id)}, review)
         flash("Review updated")
@@ -244,6 +246,7 @@ def add_to_wishlist(review_id):
     in_wishlist = mongo.db.reviews.find_one(
         {"wishlist": session["user"]})
     
+    # if user is not in review wishlist
     if not in_wishlist:
         mongo.db.reviews.find_one_and_update(
         {"_id":ObjectId(review_id)}, {"$addToSet":{"wishlist":session['user']}})
@@ -259,9 +262,17 @@ def add_to_wishlist(review_id):
 def add_to_stores_wishlist(store_review_id):
     # update 'wishlist' key of each record
     # review with the current session username
-    mongo.db.store_reviews.find_one_and_update(
+    in_wishlist = mongo.db.reviews.find_one(
+    {"wishlist": session["user"]})
+
+    if not in_wishlist:
+        mongo.db.store_reviews.find_one_and_update(
         {"_id":ObjectId(store_review_id)}, {"$addToSet":{"wishlist":session['user']}})
-    return render_template("landing_page.html")
+        flash("Added to wishlist")
+
+    else:
+        flash("Review already in wishlist")
+    return redirect(url_for("landing"))
 
 
 @app.route("/delete_review/<review_id>")

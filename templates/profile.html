@@ -14,6 +14,8 @@
             <p class="center-align">Add store review<a href="{{ url_for('add_store_review') }}"> here.</a></p>
         </div>
         {% else %}
+        
+        <!-- Show user's reviews -->
         {% for review in reviews %}
         {% if review.created_by == session["user"] %}
         <div class="col s12 m6">
@@ -50,7 +52,6 @@
         {% endif %}
         {% endfor %}
     </div>
-</div>
 
 <!-- Display the reviews a user has added to their profile for wishlist -->
 <div class="row">
@@ -91,5 +92,6 @@
         {% endif %}
         {% endfor %}
     </div>
+</div>
 </div>
 {% endblock %}
