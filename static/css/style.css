@@ -99,14 +99,6 @@ nav .sidenav-trigger {
 
 /************************************ SEARCH BAR **/
 
-#search {
-    height:0;
-}
-
-#search-bar form {
-    margin:0;
-}
-
 .card-panel {
     height:80px;
     width:60%;
@@ -117,6 +109,18 @@ nav .sidenav-trigger {
     display: inline-block;
 }
 
+#search-bar input[type=text]:not(.browser-default), label {
+    width:66%;
+    margin-left:35%;
+}
+
+#search-bar button {
+    line-height:0;
+}
+
+.input-field>label {
+    font-size:1.5rem;
+}
 
 /************************************ HEADER LINKS **/
 

@@ -5,7 +5,7 @@
         <img src="static/images/mick-haupt--EoUIP5q2q8-unsplash.jpg" height="600" width="100%">
         <div class="login">
             <h1 class="center-align"><a href="url_for('landing')">Rate My Record</a></h1>
-            <p class="center-align"><i>A place for like-minded music lovers to contribute</i></hp>
+            <p class="center-align hide-on-small-only"><i>A place for like-minded music lovers to contribute</i></hp>
                 {% if not session["user"] %}
                 <h5 class="center-align"><a href="{{ url_for('register') }}">Register </a></h5>
                 <h5 class="center-align"><a href="{{ url_for('login') }}">Log in</a></h5>
@@ -13,24 +13,19 @@
         </div>
     </div>
     <h1 class="center-align headings">Reviews</h1>
-
-    <div class="row card-panel light-grey" id="search-bar">
-        <form action="{{ url_for('search') }}" method="POST" class="col s12">
-            <div class="row">
-                <div class="input-field col s12 m8">
-                    <i class="fas fa-search"></i>
-                    <input type="text" name="search" id="search" minlength="3" class="validate" required>
-                    <label for="search">Search Reviews</label>
-                </div>
-                <div class="col s12 m4">
-                    <a href="{{ url_for('landing') }}" class="waves-effect waves-light btn-large red">Reset</a>
-                    <button class="light-blue darken-1 btn">
-                        <i class="fas fa-search left"></i>Search
-                    </button>
-                </div>
+    <form action="{{ url_for('search') }}" method="POST" id="search-bar">
+        <div class="row">
+            <div class="input-field col s12 m8">
+                <input type="text" name="search" id="search" minlength="3" class="validate" required>
+                <label for="search">Search Reviews</label>
             </div>
-        </form>
-    </div>
+            <div class="col s12 m4">
+                <button class="light-blue darken-1 btn">
+                    <i class="fas fa-search left"></i>
+                </button>
+            </div>
+        </div>
+    </form>
     <div class="row">
         {% for review in reviews %}
         <div class="col s12 m6" id="reviews">
