@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<section>
+<section class="landing-container">
     <div class="landing-page-img">
         <img src="static/images/mick-haupt--EoUIP5q2q8-unsplash.jpg" height="600" width="100%">
         <div class="login">
@@ -26,15 +26,23 @@
             </div>
         </div>
     </form>
+    <!-- Show all record reviews from reviews collection -->
     <div class="row">
         {% for review in reviews %}
         <div class="col s12 m6" id="reviews">
             <h5 class="center-align">
                 <a href="{{ url_for('review_page', review_id=review._id) }}">{{ review.album_name }}</a>
             </h5>
+            {% if img in review %}
             <div class="col s12">
                 <img src="{{ review.img }}" height="250px" width="250px" alt="album-cover">
             </div>
+            {% else %}
+            <div class="col s12">
+                <img src="static/images/brett-jordan-hrUhyFq6u-A-unsplash.jpg" height="250px" width="250px"
+                    alt="album-cover">
+            </div>
+            {% endif %}
             <div class="col s12">
                 <p><strong>Artist name: </strong>{{ review.artist_name }}</p>
                 <p><strong>Label: </strong>{{ review.label }}</p>
@@ -78,6 +86,7 @@
         {% endfor %}
     </div>
 
+    <!-- Show all reviews from store reviews collection -->
     <div class="row">
         {% for store_review in store_reviews %}
         <div id="reviews">

@@ -37,6 +37,7 @@ def search():
     search = request.form.get("search")
     reviews = list(mongo.db.reviews.find({"$text": {"$search": search}}))
     store_reviews = list(mongo.db.store_reviews.find({"$text": {"$search": search}}))
+    
     return render_template("landing_page.html", reviews=reviews, store_reviews=store_reviews)
 
 
@@ -107,14 +108,14 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username":session["user"]})["username"]
     
-    reviews = list(mongo.db.reviews.find({"created_by": session["user"]}))
+    reviews = list(mongo.db.reviews.find())
     store_reviews = list(mongo.db.store_reviews.find({"created_by": session["user"]}))
-    in_wishlist = list(mongo.db.reviews.find_one({"wishlist":session["user"]}))
-
+    wishlist = list(mongo.db.reviews.find({"wishlist"}))
+    print(wishlist)
+      
     if session["user"]:
         return render_template('profile.html', username=username,
-        reviews=reviews, store_reviews=store_reviews, 
-        in_wishlist=in_wishlist)
+        reviews=reviews, store_reviews=store_reviews)
 
 
 @app.route("/logout")

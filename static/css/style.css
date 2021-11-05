@@ -34,11 +34,6 @@ hr {
     border: 1px solid black;
 }
 
-.container {
-    padding:0 10px;
-    margin:10px auto;
-}
-
 footer {
     bottom:0;
     width:100%;
@@ -53,6 +48,18 @@ footer {
     margin:20px auto;
     padding:10px;
 }
+
+/************************************ CONTAINER **/
+
+.container {
+    padding:0 10px;
+    margin:10px auto;
+}
+
+.landing-container {
+    padding:10px;
+}
+
 
 /************************************ HEADER LINKS **/
 
