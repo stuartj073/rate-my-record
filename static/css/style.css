@@ -161,7 +161,7 @@ label {
 }
 
 .flashes h4 {
-    height: 50px;
+    min-height: 50px;
     width: 30%;
     margin: 10px auto;
     font-weight: 599;
@@ -405,9 +405,28 @@ ul:not(.browser-default) {
     }
 } */
 
-
 @media only screen and (min-width: 601px) {
     .row .col.m6 {
         width: 49%;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .login {
+        left:0;
+        width:100%;
+    }
+
+    .login h1 {
+        font-size:2.5rem;
+    }
+
+    .headings {
+        width:100%;
+        font-size: 3rem;
+    }
+
+    .brand a {
+        font-size:2rem;
     }
 }
