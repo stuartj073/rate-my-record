@@ -56,7 +56,7 @@
     <!-- Display the reviews a user has added to their profile for wishlist -->
     <h3 class="center-align">Your wishlist</h3>
     {% for review in reviews %}
-    {% if review.user == "session['user]" %}
+    {% if session["user"] in review.wishlist %}
     <h1>Hello</h1>
     <div class="row" id="reviews">
         <div class="profile-review">
@@ -66,9 +66,6 @@
             <div class="col s7 push s-5">
                 <h5 class="center-align">{{ review.album_name }}</h5>
                 <p><strong>Artist name: </strong>{{ review.artist_name }}</p>
-                <p><strong>Description: </strong>{{ review.desc }}</p>
-                <p><strong>Label: </strong>{{ review.label }}</p>
-                <p><strong>Created by: </strong>{{ review.created_by }}</p>
                 <div class="row">
                     <a href="" class="waves-effect waves-light btn-large blue"><i class="material-icons">Edit</i></a>
                     <a href="#" class="waves-effect waves-light btn-large red"><i class="material-icons">Delete</i></a>

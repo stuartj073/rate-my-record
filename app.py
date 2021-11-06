@@ -69,7 +69,7 @@ def register():
         # put the new user into session cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration successful")
-        return render_template(url_for('landing'), username=session["user"])
+        return render_template(url_for('landing',username=session["user"]))
 
     return render_template('register.html')
 
@@ -110,12 +110,10 @@ def profile(username):
     
     reviews = list(mongo.db.reviews.find())
     store_reviews = list(mongo.db.store_reviews.find({"created_by": session["user"]}))
-    wishlist = mongo.db.reviews.find({"wishlist": session["user"]})
-    print(wishlist)
-
+    
     if session["user"]:
         return render_template('profile.html', username=username,
-        reviews=reviews, store_reviews=store_reviews, wishlist=wishlist)
+        reviews=reviews, store_reviews=store_reviews)
 
 
 @app.route("/logout")
@@ -141,7 +139,8 @@ def add_review():
             "img": request.form.get("image"),
             "genre": request.form.get("genre"),
             "date": request.form.get("date"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "wishlist": []
         }
         # post the session user's
         # review to the mongo db
@@ -245,8 +244,9 @@ def add_to_wishlist(review_id):
     # update 'wishlist' key of each record
     # review with the current session username
     in_wishlist = mongo.db.reviews.find_one(
-        {"wishlist": session["user"]})
-    
+        {"_id": ObjectId(review_id), "wishlist": session["user"]})
+    # literally just changed this line above so it also checks the review id
+
     # if user is not in review wishlist
     if not in_wishlist:
         mongo.db.reviews.find_one_and_update(
