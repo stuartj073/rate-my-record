@@ -49,6 +49,10 @@ footer {
     padding: 10px;
 }
 
+h5 {
+    margin:0;
+}
+
 /************************************ CONTAINER **/
 
 .container {
