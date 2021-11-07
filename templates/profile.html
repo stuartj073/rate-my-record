@@ -17,18 +17,17 @@
         {% if review.created_by == session["user"] %}
         <div class="col s12 m6">
             <div class="card">
-                <!-- If img is provided by user -->
-                {% if review.img is defined %}
-                <div class="col s12">
-                    <img src="{{ review.img }}" height="200px" width="200px" alt="album-cover">
+                <div class="card-image">
+                    <!-- If img provided by user -->
+                    {% if review.img is defined %}
+                    <img src="{{ review.img }}" height="200" width="200">
+                    <!-- If not -->
+                    {% else %}
+                    <img src="static/images/brett-jordan-hrUhyFq6u-A-unsplash.jpg" height="200" width="200">
+                    {% endif %}
+                    <h5 class="card-title center-align" href="{{ url_for('review_page', review_id=review._id) }}">
+                        {{ review.artist_name }}</h5>
                 </div>
-                <!-- Default image if no img provided -->
-                {% else %}
-                <div class="col s12">
-                    <img src="static/images/brett-jordan-hrUhyFq6u-A-unsplash.jpg" height="200px" width="200px"
-                        alt="album-cover">
-                </div>
-                {% endif %}
                 <div class="card-content">
                     <p class="center-align">{{ review.album_name }}</p>
                 </div>
@@ -43,11 +42,18 @@
         {% for store_review in store_reviews %}
         {% if store_review.created_by == session["user"] %}
         <div class="row">
-            <div class="col s12 m7">
+            <div class="col s12 m6">
                 <div class="card">
                     <div class="card-image">
+                        <!-- If img provided by user -->
+                        {% if store_review.store_img is defined %}
                         <img src="{{ store_review.store_img }}" height="200" width="200">
-                        <span class="card-title">{{ store_review.store_name }}</span>
+                        <!-- If not -->
+                        {% else %}
+                        <img src="static/images/record-g1ebaaace1_640.jpg" height="200" width="200">
+                        {% endif %}
+                        <h5 class="card-title center-align" href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
+                            {{ store_review.store__name }}</h5>
                     </div>
                     <div class="card-content">
                         <p>{{ store_review.store_desc }}</p>
@@ -69,17 +75,17 @@
             <div class="col s12 m6">
                 <div class="card">
                     <!-- If img is provided by user -->
-                    {% if review.img is defined %}
-                    <div class="col s12">
-                        <img src="{{ review.img }}" height="200px" width="200px" alt="album-cover">
+                    <div class="card-image">
+                        <!-- If img provided by user -->
+                        {% if review.img is defined %}
+                        <img src="{{ review.img }}" height="200" width="200">
+                        <!-- If not -->
+                        {% else %}
+                        <img src="static/images/brett-jordan-hrUhyFq6u-A-unsplash.jpg" height="200" width="200">
+                        {% endif %}
+                        <h5 class="card-title center-align" href="{{ url_for('review_page', review_id=review._id) }}">
+                            {{ review.artist_name }}</h5>
                     </div>
-                    <!-- Default image if no img provided -->
-                    {% else %}
-                    <div class="col s12">
-                        <img src="static/images/brett-jordan-hrUhyFq6u-A-unsplash.jpg" height="200px" width="200px"
-                            alt="album-cover">
-                    </div>
-                    {% endif %}
                     <div class="card-content">
                         <p class="center-align">{{ review.album_name }}</p>
                     </div>
@@ -97,10 +103,15 @@
             <div class="col s12 m6">
                 <div class="card">
                     <div class="card-image">
-                        <img src="{{ store_review.img }}" height="200" width="200">
-                        <h5 class="card-title center-align"
-                            href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
-                            {{ store_review.store_name }}</h5>
+                        <!-- If img provided by user -->
+                        {% if store_review.store_img is defined %}
+                        <img src="{{ store_review.store_img }}" height="200" width="200">
+                        <!-- If not -->
+                        {% else %}
+                        <img src="static/images/record-g1ebaaace1_640.jpg" height="200" width="200">
+                        {% endif %}
+                        <h5 class="card-title center-align" href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
+                            {{ store_review.store__name }}</h5>
                     </div>
                     <div class="card-content">
                         <p class="center-align">{{ store_review.location }}</p>
