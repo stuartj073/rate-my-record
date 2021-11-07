@@ -273,6 +273,7 @@ def add_to_stores_wishlist(store_review_id):
 
     else:
         flash("Review already in wishlist")
+    
     return redirect(url_for("landing"))
 
 
@@ -281,6 +282,15 @@ def delete_review(review_id):
     mongo.db.reviews.remove({"_id":ObjectId(review_id)})
     flash("Review removed")
     return redirect(url_for('landing'))
+
+
+@app.route("/delete_wishlist/<review_id>")
+def delete_wishlist(review_id):
+    mongo.db.reviews.update({"_id":ObjectId(review_id)},
+    { "$pull": {"wishlist":session["user"]}})
+    flash("Removed from wishlist")
+    
+    return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/delete_store_review/<store_review_id>")
