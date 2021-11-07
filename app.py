@@ -28,15 +28,16 @@ def landing():
     store_reviews = list(mongo.db.store_reviews.find())
     user = list(mongo.db.users.find())
     
-    return render_template("landing_page.html", 
-    reviews=reviews, store_reviews=store_reviews, user=user)
+    return render_template("landing_page.html", reviews=reviews, 
+                        store_reviews=store_reviews, user=user)
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
     search = request.form.get("search")
     reviews = list(mongo.db.reviews.find({"$text": {"$search": search}}))
-    store_reviews = list(mongo.db.store_reviews.find({"$text": {"$search": search}}))
+    store_reviews = list(mongo.db.store_reviews.find(
+        {"$text": {"$search": search}}))
     
     return render_template("landing_page.html", reviews=reviews, store_reviews=store_reviews)
 
@@ -69,7 +70,7 @@ def register():
         # put the new user into session cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration successful")
-        return render_template(url_for('landing',username=session["user"]))
+        return render_template(url_for('landing', username=session["user"]))
 
     return render_template('register.html')
 
@@ -83,18 +84,18 @@ def login():
 
         if existing_user:
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+            existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
             else:
                 flash("Incorrect password")
                 return redirect(url_for('login'))
         
         else:
-            #username doesn't exist
+            # username doesn't exist
             flash("username doesn't exist")
             return redirect(url_for('login'))
 
@@ -245,8 +246,7 @@ def add_to_wishlist(review_id):
     # review with the current session username
     in_wishlist = mongo.db.reviews.find_one(
         {"_id": ObjectId(review_id), "wishlist": session["user"]})
-    # literally just changed this line above so it also checks the review id
-
+    
     # if user is not in review wishlist
     if not in_wishlist:
         mongo.db.reviews.find_one_and_update(
@@ -264,7 +264,7 @@ def add_to_stores_wishlist(store_review_id):
     # update 'wishlist' key of each record
     # review with the current session username
     in_wishlist = mongo.db.reviews.find_one(
-    {"wishlist": session["user"]})
+    {"_id": ObjectId(store_review_id), "wishlist": session["user"]})
 
     if not in_wishlist:
         mongo.db.store_reviews.find_one_and_update(

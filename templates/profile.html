@@ -51,29 +51,57 @@
         {% endif %}
         {% endfor %}
     </div>
-</div>
-<div class="col s12 m6">
-    <!-- Display the reviews a user has added to their profile for wishlist -->
-    <h3 class="center-align">Your wishlist</h3>
-    {% for review in reviews %}
-    {% if session["user"] in review.wishlist %}
-    <h1>Hello</h1>
-    <div class="row" id="reviews">
-        <div class="profile-review">
-            <div class="col s-5 push s-7">
-                <img src="{{ review.img }}" height="250px" width="300px" alt="album-cover">
-            </div>
-            <div class="col s7 push s-5">
-                <h5 class="center-align">{{ review.album_name }}</h5>
-                <p><strong>Artist name: </strong>{{ review.artist_name }}</p>
-                <div class="row">
-                    <a href="" class="waves-effect waves-light btn-large blue"><i class="material-icons">Edit</i></a>
-                    <a href="#" class="waves-effect waves-light btn-large red"><i class="material-icons">Delete</i></a>
+
+    <!-- Wishlist -->
+    <div class="row">
+        <div class="col s12 m6">
+            <!-- Display the reviews a user has added to their profile for wishlist -->
+            <h3 class="center-align">Your wishlist</h3>
+            {% for review in reviews %}
+            {% if session["user"] in review.wishlist %}
+            <div class="col s12 m6">
+                <div class="card">
+                    <!-- If img is provided by user -->
+                    {% if review.img is defined %}
+                    <div class="col s12">
+                        <img src="{{ review.img }}" height="250px" width="250px" alt="album-cover">
+                    </div>
+                    <!-- Default image if no img provided -->
+                    {% else %}
+                    <div class="col s12">
+                        <img src="static/images/brett-jordan-hrUhyFq6u-A-unsplash.jpg" height="250px" width="250px"
+                            alt="album-cover">
+                    </div>
+                    <div class="card-content">
+                        <p class="center-align">{{ review.album_name }}</p>
+                    </div>
                 </div>
             </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <!-- Display the store reviews a user has added to their profile for wishlist -->
+        <div class="col s12 m6">
+            <h3 class="center-align">Your wishlist</h3>
+            {% for store_review in store_reviews %}
+            {% if session["user"] in store_review.wishlist %}
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ store_review.img }}" height="200" width="200">
+                        <h5 class="card-title center-align"
+                            href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
+                            {{ store_review.store_name }}</h5>
+                    </div>
+                    <div class="card-content">
+                        <p class="center-align">{{ store_review.location }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
-    {% endif %}
-    {% endfor %}
 </div>
 {% endblock %}
