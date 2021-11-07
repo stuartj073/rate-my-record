@@ -17,11 +17,18 @@
         {% if review.created_by == session["user"] %}
         <div class="col s12 m6">
             <div class="card">
-                <div class="card-image">
-                    <img src="{{ review.img }}" height="200" width="200">
-                    <h5 class="card-title center-align" href="{{ url_for('review_page', review_id=review._id) }}">
-                        {{ review.artist_name }}</h5>
+                <!-- If img is provided by user -->
+                {% if review.img is defined %}
+                <div class="col s12">
+                    <img src="{{ review.img }}" height="200px" width="200px" alt="album-cover">
                 </div>
+                <!-- Default image if no img provided -->
+                {% else %}
+                <div class="col s12">
+                    <img src="static/images/brett-jordan-hrUhyFq6u-A-unsplash.jpg" height="200px" width="200px"
+                        alt="album-cover">
+                </div>
+                {% endif %}
                 <div class="card-content">
                     <p class="center-align">{{ review.album_name }}</p>
                 </div>
@@ -64,14 +71,15 @@
                     <!-- If img is provided by user -->
                     {% if review.img is defined %}
                     <div class="col s12">
-                        <img src="{{ review.img }}" height="250px" width="250px" alt="album-cover">
+                        <img src="{{ review.img }}" height="200px" width="200px" alt="album-cover">
                     </div>
                     <!-- Default image if no img provided -->
                     {% else %}
                     <div class="col s12">
-                        <img src="static/images/brett-jordan-hrUhyFq6u-A-unsplash.jpg" height="250px" width="250px"
+                        <img src="static/images/brett-jordan-hrUhyFq6u-A-unsplash.jpg" height="200px" width="200px"
                             alt="album-cover">
                     </div>
+                    {% endif %}
                     <div class="card-content">
                         <p class="center-align">{{ review.album_name }}</p>
                     </div>
