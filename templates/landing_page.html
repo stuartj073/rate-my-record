@@ -79,8 +79,10 @@
                         </div>Delete
                     </div>
                     {% else %}
-                    <a href="{{ url_for('add_to_wishlist', review_id=review._id) }}"><i
-                            class="waves-effect waves-light btn-large grey">Add to wishlist</i></a>
+                    <button>
+                        <a href="{{ url_for('add_to_wishlist', review_id=review._id) }}"
+                            class="waves-effect waves-light btn-large grey">Add to wishlist</a>
+                    </button>
                     {% endif %}
                 </div>
                 {% endif %}
@@ -145,8 +147,10 @@
                         </div>Delete
                     </div>
                     {% else %}
-                    <a href="{{ url_for('add_to_stores_wishlist', store_review_id=store_review._id) }}"><i
-                            class="waves-effect waves-light btn-large grey">Add to wishlist</i></a>
+                    <button>
+                        <a href="{{ url_for('add_to_stores_wishlist', store_review_id=store_review._id) }}"
+                            class="waves-effect waves-light btn-large grey">Add to wishlist</a>
+                    </button>
                     {% endif %}
                 </div>
                 {% endif %}
