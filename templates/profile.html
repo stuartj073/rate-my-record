@@ -43,7 +43,6 @@
         {% endif %}
 
         <!-- display store reviews -->
-
         {% for store_review in store_reviews %}
         {% if store_review.created_by == session["user"] %}
         <div class="row">
@@ -51,7 +50,7 @@
                 <div class="card">
                     <div class="card-image">
                         <!-- If img provided by user -->
-                        {% if store_review.img is defined %}
+                        {% if store_review.img|length %}
                         <img src="{{ store_review.img }}" height="200" width="200">
                         <!-- If not -->
                         {% else %}
@@ -83,17 +82,19 @@
                     <!-- If img is provided by user -->
                     <div class="card-image">
                         <!-- If img provided by user -->
-                        {% if review.img is defined %}
+                        {% if review.img|length %}
                         <img src="{{ review.img }}" height="200" width="200">
                         <!-- If not -->
                         {% else %}
-                        <img src="static/images/brett-jordan-hrUhyFq6u-A-unsplash.jpg" height="200" width="200">
+                        <img src="{{ url_for('static', filename='images/brett-jordan-hrUhyFq6u-A-unsplash.jpg') }}" height="200" width="200">
                         {% endif %}
-                        <h5 class="card-title center-align" href="{{ url_for('review_page', review_id=review._id) }}">
-                            {{ review.artist_name }}</h5>
                     </div>
                     <div class="card-content">
-                        <p class="center-align">{{ review.album_name }}</p>
+                        <h5 class="center-align">
+                            <a  href="{{ url_for('review_page', review_id=review._id) }}">
+                                {{ review.album_name }}
+                            </a>
+                        </h5>
                     </div>
                     <div class="row buttons">
                         <a href="{{ url_for('delete_wishlist', review_id=review._id) }}"
@@ -113,11 +114,11 @@
                 <div class="card">
                     <div class="card-image">
                         <!-- If img provided by user -->
-                        {% if store_review.store_img is defined %}
+                        {% if store_review.store_img|length %}
                         <img src="{{ store_review.store_img }}" height="200" width="200">
                         <!-- If not -->
                         {% else %}
-                        <img src="static/images/record-g1ebaaace1_640.jpg" height="200" width="200">
+                        <img src="{{ url_for('static', filename='images/record-g1ebaaace1_640.jpg') }}" height="200" width="200">
                         {% endif %}
                         <h5 class="card-title center-align"
                             href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
