@@ -292,6 +292,7 @@ label {
 
 .buttons {
     text-align: center;
+    padding-bottom:10px;
 }
 
 .btn-large i {
@@ -310,6 +311,16 @@ label {
 
 .profile-reviews p a:hover {
     text-decoration: underline;
+}
+
+.card {
+    position:relative;
+    margin:0 auto;
+    min-width:70%;
+}
+
+.card .card-content {
+    padding:10px;
 }
 
 /************************************ REVIEWS  **/
