@@ -363,6 +363,15 @@ form label {
     margin: 0 auto;
 }
 
+input[type=text]:not(.browser-default) {
+    width:80%;
+    margin:0 auto;
+}
+
+label {
+    padding-right:10px;
+}
+
 /************************************ FOOTER **/
 
 .social-links {
