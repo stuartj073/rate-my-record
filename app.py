@@ -70,7 +70,7 @@ def register():
         # put the new user into session cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration successful")
-        return render_template(url_for('landing', username=session["user"]))
+        return render_template(url_for('landing', user=session["user"]))
 
     return render_template('register.html')
 
@@ -200,9 +200,11 @@ def edit_review(review_id):
             "img": request.form.get("image"),
             "date": request.form.get("date"),
             "genre": request.form.get("genre"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "wishlist": mongo.db.reviews.find(
+            {"_id": ObjectId(review_id)}, "wishlist")
         }
-        mongo.db.reviews.update({"_id":ObjectId(review_id)}, review)
+        mongo.db.reviews.update({"_id": ObjectId(review_id)}, review)
         flash("Review updated")
     
     # locate the reviews in the database
@@ -219,7 +221,8 @@ def edit_store_review(store_review_id):
             "location": request.form.get("location"),
             "store_desc": request.form.get("store-desc"),
             "store_genre": request.form.get("genre-store"),
-            "store_img": request.form.get("image-store")
+            "store_img": request.form.get("image-store"),
+            "created_by": session["user"]
         }
         mongo.db.store_reviews.update({"_id":ObjectId(store_review_id)}, store_review)
         flash("Review updated")

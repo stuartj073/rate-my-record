@@ -102,7 +102,6 @@
 
         <!-- Display the store reviews a user has added to their profile for wishlist -->
         <div class="col s12 m6">
-            <h3 class="center-align">Your wishlist</h3>
             {% for store_review in store_reviews %}
             {% if session["user"] in store_review.wishlist %}
             <div class="col s12 m6">
