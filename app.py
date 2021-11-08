@@ -200,9 +200,7 @@ def edit_review(review_id):
             "img": request.form.get("image"),
             "date": request.form.get("date"),
             "genre": request.form.get("genre"),
-            "created_by": session["user"],
-            "wishlist": mongo.db.reviews.find(
-            {"_id": ObjectId(review_id)}, "wishlist")
+            "created_by": session["user"]
         }
         mongo.db.reviews.update({"_id": ObjectId(review_id)}, review)
         flash("Review updated")
