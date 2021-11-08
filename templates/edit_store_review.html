@@ -5,33 +5,43 @@
 <div class="row">
     <form id="store" name="store" method="POST" action="{{ url_for('edit_store_review', store_review_id=store_review._id) }}">
         <div class="row">
-            <div class="input-field col s12">
-                <input id="store-name" name="store-name" type="text" class="validate" value="{{ store_review.store_name }}" required>
+            <div class="input-field col s12 m2">
                 <label class="center-align" for="store-name">Store Name</label>
             </div>
+            <div class="col s12 m10">
+                <input id="store-name" name="store-name" type="text" class="validate" value="{{ store_review.store_name }}" required>
+            </div>
         </div>
         <div class="row">
-            <div class="input-field col s12">
-                <input id="location" name="location" type="text" class="validate" value="{{ store_review.location }}" required>
+            <div class="input-field col s12 m2">
                 <label class="center-align" for="location">Location</label>
             </div>
+            <div class="col s12 m10">
+                <input id="location" name="location" type="text" class="validate" value="{{ store_review.location }}" required>
+            </div>
         </div>
         <div class="row">
-            <div class="input-field col s12">
-                <textarea id="store-desc" name="store-desc" class="materialize-textarea">{{ store_review.store_desc }}</textarea>
+            <div class="input-field col s12 m2">
                 <label for="store-desc">Description</label>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="genre-store" name="genre-store" type="text" class="validate" value="{{ store_review.store_genre }}">
-                <label for="genre-store">Genre's</label>
+            <div class="col s12 m10">
+                <textarea id="store-desc" name="store-desc" class="materialize-textarea">{{ store_review.store_desc }}</textarea>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s12">
-                <input id="image-store" name="image-store" type="text" class="validate" placeholder="optional" value="{{ store_review.store_img }}">
+            <div class="input-field col s12 m2">
+                <label for="genre-store">Genre's</label>
+            </div>
+            <div class="col s12 m10">
+                <input id="genre-store" name="genre-store" type="text" class="validate" value="{{ store_review.store_genre }}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 m2">
                 <label for="image-store">Image source</label>
+            </div>
+            <div class="col s12 m10">
+                <input id="image-store" name="image-store" type="text" class="validate" placeholder="optional" value="{{ store_review.store_img }}">
             </div>
         </div>
         <div class="row">
