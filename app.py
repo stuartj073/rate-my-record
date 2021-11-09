@@ -196,16 +196,17 @@ def manage_users():
 def edit_review(review_id):
     if request.method == "POST":
         review = {
-            "album_name": request.form.get("album"),
-            "artist_name": request.form.get("artist"),
-            "desc": request.form.get("desc"),
-            "label": request.form.get("label"),
-            "location": request.form.get("location"),
-            "img": request.form.get("image"),
-            "date": request.form.get("date"),
-            "genre": request.form.get("genre"),
-            "created_by": session["user"],
-            "wishlist": request.form.get("wishlist")
+            "$set": {
+                "album_name": request.form.get("album"),
+                "artist_name": request.form.get("artist"),
+                "desc": request.form.get("desc"),
+                "label": request.form.get("label"),
+                "location": request.form.get("location"),
+                "img": request.form.get("image"),
+                "date": request.form.get("date"),
+                "genre": request.form.get("genre"),
+                "created_by": session["user"]
+            }
         }
         mongo.db.reviews.update({"_id": ObjectId(review_id)}, review)
         flash("Review updated")
