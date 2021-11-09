@@ -21,19 +21,22 @@
                     <!-- If img provided by user -->
                     {% if review.img|length %}
                     <div class="col s12">
-                        <img src="{{ review.img }}" height="200" width="200">
+                        <a href="{{ url_for('review_page', review_id=review._id) }}">
+                            <img src="{{ review.img }}" height="200" width="200">
+                        </a>
                     </div>
                     <!-- If not -->
                     {% else %}
                     <div class="col s12">
-                        <img src="{{ url_for('static', filename='images/brett-jordan-hrUhyFq6u-A-unsplash.jpg') }}" height="200" width="200">
+                        <a href="{{ url_for('review_page', review_id=review._id) }}">
+                            <img src="{{ url_for('static', filename='images/brett-jordan-hrUhyFq6u-A-unsplash.jpg') }}" height="200" width="200">
+                        </a>
                     </div>
                     {% endif %}
                 </div>
                 <div class="card-content">
                     <h5 class="center-align">
-                        <a href="{{ url_for('review_page', review_id=review._id) }}" >
-                        {{ review.album_name }}</a>
+                        {{ review.album_name }}
                     </h5>
                 </div>
             </div>
