@@ -163,7 +163,8 @@ def add_store_review():
             "store_desc": request.form.get("store-desc"),
             "store_genre": request.form.get("genre-store"),
             "store_img": request.form.get("image-store"),
-            "created_by":session["user"]
+            "created_by":session["user"],
+            "wishlist": []
         }
         # insert new store review to
         # mongo db

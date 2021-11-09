@@ -18,7 +18,7 @@
             <!-- Default image if no img provided -->
             {% else %}
             <div class="col s12">
-                <img src="static/images/brett-jordan-hrUhyFq6u-A-unsplash.jpg" height="250px" width="250px"
+                <img src="{{ url_for('static', filename='images/brett-jordan-hrUhyFq6u-A-unsplash.jpg') }}" height="250px" width="250px"
                     alt="album-cover">
             </div>
             {% endif %}
@@ -59,7 +59,7 @@
             <!-- Default image if no img provided -->
             {% else %}
             <div class="col s12">
-                <img src="static/images/brett-jordan-hrUhyFq6u-A-unsplash.jpg" height="250px" width="250px"
+                <img src="{{ url_for('static', filename='images/record-g1ebaaace1_640.jpg') }}" height="250px" width="250px"
                     alt="album-cover">
             </div>
             {% endif %}

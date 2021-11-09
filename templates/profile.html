@@ -77,6 +77,7 @@
             <h3 class="center-align">Your wishlist</h3>
             {% for review in reviews %}
             {% if session["user"] in review.wishlist %}
+            {% if review.wishlist|length %}
             <div class="col s12 m6">
                 <div class="card">
                     <!-- If img is provided by user -->
@@ -102,6 +103,9 @@
                     </div>
                 </div>
             </div>
+            {% else %}
+            <h3 class="center-align">Nothing to show</h3>
+            {% endif %}
             {% endif %}
             {% endfor %}
         </div>
@@ -110,6 +114,7 @@
         <div class="col s12 m6">
             {% for store_review in store_reviews %}
             {% if session["user"] in store_review.wishlist %}
+            {% if store_review.wishlist|length %}
             <div class="col s12 m6">
                 <div class="card">
                     <div class="card-image">
@@ -129,6 +134,9 @@
                     </div>
                 </div>
             </div>
+            {% else %}
+            <h3 class="center-align">Nothing to show</h3>
+            {% endif %}
             {% endif %}
             {% endfor %}
         </div>
