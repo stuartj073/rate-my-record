@@ -54,15 +54,19 @@
                     <div class="card-image">
                         <!-- If img provided by user -->
                         {% if store_review.img|length %}
-                        <img src="{{ store_review.img }}" height="200" width="200">
+                        <a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
+                            <img src="{{ store_review.img }}" height="200" width="200">
+                        </a>
                         <!-- If not -->
                         {% else %}
-                        <img src="{{ url_for('static', filename='images/record-g1ebaaace1_640.jpg') }}" height="200" width="200">
+                        <a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
+                            <img src="{{ url_for('static', filename='images/record-g1ebaaace1_640.jpg') }}" height="200" width="200">
+                        </a>
                         {% endif %}
                     </div>
                     <div class="card-content">
                         <h5 class="center-align">
-                            <a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}" >
+                            
                             {{ store_review.store_name }}</a>
                         </h5>
                     </div>
