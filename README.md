@@ -20,3 +20,14 @@ Going forward with this project, I would ideally like to allow user’s to inter
 - As admin I would like to be able to communicate with user's and have their issues and improvement suggestions listened and seen to.
 - As admin I want to ensure that user's are enjoying their experience as much as possible and ensure the website is as responsive to a mobile user as it is to a desktop user.
 - As admin I want to ensure that all information supplied by the users is fair and just.
+
+
+## UX/UI
+
+### Landing Page
+
+As stated in the above user stories, I want the main message of the site to become known to the user upon entering the website. When a user clicks on to the site, they will be greeted by a large cover photo with a backgdrop image of vinyl records. The banner presiding over the image reads: "Rate My Record.. A place for like-minded music lovers to contribute". Below it are two options allowing a first time visitor the option to register or a current user the chance to log back in. Below this (if a user is logged in) section is a search bar allowing user's to look for anything they are interested in. Following underneath the search bar are the various record and record store reviews left by user's registered on the website. Each part is accompanied with headings and each review is given it's own 'review-card'.
+
+As to ensure the banner is as clear as possible over the site cover image I decided to make it right in the middle of the image, with a white background in order to facilitate an easy to read black color for the content of the page banner. The headings for the page are exactly 50% in width and have a '#a1887f'/brownish sort color along with a '#e0e0e0' border. Review cards are shown in rows of two on large screens and one by one on smaller devices. Again, the coloring is quite straightforward as to not produce color overload to the user(s) with a white background and black color for the content. Images for the reviews are shown as either the image provided by the user or else the default image as seen in the if statement for the image section in profile.html.
+
+The background color to the website was chosen as '#d7ccc8'. I chose it as I felt that it allowed all corresponding elements and their colors to mix well with one another and it proved to project the main message of the website easily, accessibly and neatly.
