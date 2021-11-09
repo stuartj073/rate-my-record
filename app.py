@@ -221,12 +221,14 @@ def edit_store_review(store_review_id):
     # locate the reviews in the database
     if request.method == "POST":
         store_review = {
-            "store_name": request.form.get("store-name"),
-            "location": request.form.get("location"),
-            "store_desc": request.form.get("store-desc"),
-            "store_genre": request.form.get("genre-store"),
-            "store_img": request.form.get("image-store"),
-            "created_by": session["user"]
+            "$set": {
+                "store_name": request.form.get("store-name"),
+                "location": request.form.get("location"),
+                "store_desc": request.form.get("store-desc"),
+                "store_genre": request.form.get("genre-store"),
+                "store_img": request.form.get("image-store"),
+                "created_by": session["user"]
+            }
         }
         mongo.db.store_reviews.update({"_id":ObjectId(store_review_id)}, store_review)
         flash("Review updated")
