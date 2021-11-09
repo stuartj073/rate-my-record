@@ -31,3 +31,10 @@ As stated in the above user stories, I want the main message of the site to beco
 As to ensure the banner is as clear as possible over the site cover image I decided to make it right in the middle of the image, with a white background in order to facilitate an easy to read black color for the content of the page banner. The headings for the page are exactly 50% in width and have a '#a1887f'/brownish sort color along with a '#e0e0e0' border. Review cards are shown in rows of two on large screens and one by one on smaller devices. Again, the coloring is quite straightforward as to not produce color overload to the user(s) with a white background and black color for the content. Images for the reviews are shown as either the image provided by the user or else the default image as seen in the if statement for the image section in profile.html.
 
 The background color to the website was chosen as '#d7ccc8'. I chose it as I felt that it allowed all corresponding elements and their colors to mix well with one another and it proved to project the main message of the website easily, accessibly and neatly.
+
+### Profile
+
+The profile page is split into two halves. On the left side are all the reviews the user has left on the website and on the right are the reviews that have been added to the user's wishlist. 
+
+The reviews here are styled similiarly to the reviews as seen on the landing page but with a slight difference. The image element has no padding around it and instead takes up the top half of the review. On the bottom half of the review we are left with the review name which is either the album name or the record store name. Clicking on the review will lead the user to each individual review page which in turn provides full information on the review in question. 
+

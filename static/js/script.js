@@ -26,6 +26,11 @@ var myFunction = function() {
   modal.style.display = "block";
 };
 
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
 Array.from(elements).forEach(function(element) {
   element.addEventListener('click', myFunction);
 });

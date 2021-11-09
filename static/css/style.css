@@ -200,9 +200,9 @@ label {
     text-decoration: underline;
 }
 
-/********************************* RULES MODAL ***/
+/******************************** RULES MODAL ***/
 
-/* .modal {
+ .modal {
     display: none; 
     position: fixed; 
     z-index: 1; 
@@ -212,9 +212,9 @@ label {
     height: 100%; 
     overflow: auto; 
     background-color: rgba(0,0,0,0.3); 
-} */
+} 
 
-/* .modal-content {
+.modal-content {
     background-color: #fefefe;
     margin: 15% auto; 
     color:black;
@@ -222,7 +222,7 @@ label {
     border: 1px solid #888;
     width: 30%;
     font-size: 2rem;
-} */
+}
 
 .modal-content a:hover {
     text-decoration: underline;
