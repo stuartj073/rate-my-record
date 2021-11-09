@@ -70,7 +70,7 @@ def register():
         # put the new user into session cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration successful")
-        return render_template(url_for('landing', user=session["user"]))
+        return redirect(url_for('landing', username=session["user"]))
 
     return render_template('register.html')
 
@@ -79,6 +79,7 @@ def register():
 def login():
     if request.method == "POST":
         # check if username exists
+        # (taken from Tim Nelson's tutorial)
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -115,6 +116,8 @@ def profile(username):
     if session["user"]:
         return render_template('profile.html', username=username,
         reviews=reviews, store_reviews=store_reviews)
+
+    return redirect(url_for('login'))
 
 
 @app.route("/logout")
