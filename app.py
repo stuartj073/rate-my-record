@@ -297,7 +297,7 @@ def delete_wishlist(review_id):
     return redirect(url_for("profile", username=session["user"]))
 
 
-@app.route("/delete_wishlist/<store_review_id>")
+@app.route("/delete_store_wishlist/<store_review_id>")
 def delete_store_wishlist(store_review_id):
     # find review and remove user
     # from the wishlist array

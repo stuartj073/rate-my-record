@@ -29,7 +29,8 @@
                     {% else %}
                     <div class="col s12">
                         <a href="{{ url_for('review_page', review_id=review._id) }}">
-                            <img src="{{ url_for('static', filename='images/brett-jordan-hrUhyFq6u-A-unsplash.jpg') }}" height="200" width="200">
+                            <img src="{{ url_for('static', filename='images/brett-jordan-hrUhyFq6u-A-unsplash.jpg') }}"
+                                height="200" width="200">
                         </a>
                     </div>
                     {% endif %}
@@ -60,7 +61,8 @@
                         <!-- If not -->
                         {% else %}
                         <a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
-                            <img src="{{ url_for('static', filename='images/record-g1ebaaace1_640.jpg') }}" height="200" width="200">
+                            <img src="{{ url_for('static', filename='images/record-g1ebaaace1_640.jpg') }}" height="200"
+                                width="200">
                         </a>
                         {% endif %}
                     </div>
@@ -95,7 +97,8 @@
                     {% else %}
                     <div class="col s12">
                         <a href="{{ url_for('review_page', review_id=review._id) }}">
-                            <img src="{{ url_for('static', filename='images/brett-jordan-hrUhyFq6u-A-unsplash.jpg') }}" height="200" width="200">
+                            <img src="{{ url_for('static', filename='images/brett-jordan-hrUhyFq6u-A-unsplash.jpg') }}"
+                                height="200" width="200">
                         </a>
                     </div>
                     {% endif %}
@@ -104,6 +107,10 @@
                     <h5 class="center-align">
                         {{ review.album_name }}
                     </h5>
+                </div>
+                <div class="row buttons">
+                    <a href="{{ url_for('delete_wishlist', review_id=review._id) }}"
+                        class="waves-effect waves-light btn-large red">Remove</a>
                 </div>
             </div>
         </div>
@@ -125,7 +132,8 @@
                         <!-- If not -->
                         {% else %}
                         <a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
-                            <img src="{{ url_for('static', filename='images/record-g1ebaaace1_640.jpg') }}" height="200" width="200">
+                            <img src="{{ url_for('static', filename='images/record-g1ebaaace1_640.jpg') }}" height="200"
+                                width="200">
                         </a>
                         {% endif %}
                     </div>
@@ -133,6 +141,10 @@
                         <h5 class="center-align">
                             {{ store_review.store_name }}
                         </h5>
+                    </div>
+                    <div class="row buttons">
+                        <a href="{{ url_for('delete_store_wishlist', store_review_id=store_review._id) }}"
+                            class="waves-effect waves-light btn-large red">Remove</a>
                     </div>
                 </div>
             </div>
