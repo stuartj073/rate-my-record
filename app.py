@@ -272,10 +272,10 @@ def add_to_wishlist(review_id):
 def add_to_stores_wishlist(store_review_id):
     # update 'wishlist' key of each record
     # review with the current session username
-    in_wishlist = mongo.db.reviews.find_one(
-    {"_id": ObjectId(store_review_id), "wishlist": session["user"]})
+    in_stores_wishlist = mongo.db.reviews.find_one(
+        {"_id": ObjectId(store_review_id), "wishlist": session["user"]})
 
-    if not in_wishlist:
+    if not in_stores_wishlist:
         mongo.db.store_reviews.find_one_and_update(
         {"_id":ObjectId(store_review_id)}, {"$addToSet":{"wishlist":session['user']}})
         flash("Added to wishlist")

@@ -11,7 +11,7 @@
                 <a href="{{ url_for('review_page', review_id=review._id) }}">{{ review.album_name }}</a>
             </h5>
             <!-- If img is provided by user -->
-            {% if review.img is defined %}
+            {% if review.img|length %}
             <div class="col s12">
                 <img src="{{ review.img }}" height="250px" width="250px" alt="album-cover">
             </div>
@@ -52,7 +52,7 @@
                     href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">{{ store_review.store_name }}</a>
             </h5>
             <!-- If img is provided by user -->
-            {% if store_review.store_img is defined %}
+            {% if store_review.store_img|length %}
             <div class="col s12">
                 <img src="{{ store_review.store_img }}" height="250px" width="250px" alt="album-cover">
             </div>
