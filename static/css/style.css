@@ -285,7 +285,7 @@ label {
 }
 
 #reviews p {
-    margin: 15px;
+    margin: 5px;
     font-size: 1rem;
     text-align: center;
 }
@@ -443,6 +443,11 @@ ul:not(.browser-default) {
     #reviews img {
         height:100px;
         width:100px;
+    }
+
+    .btn-large {
+        height:40px;
+        line-height:40px;
     }
 }
 
