@@ -81,7 +81,22 @@ The features of the website were drafted up to suit the project criteria whilst 
 
 - Each review will have it's own designated review page. This page provides full information on the review and if the user has created it they will have access to the edit and delete buttons.
 
-###
+### Skeleton
+
+The site was first sketched on paper with a pen by myself before I attempted to make a more concrete blueprint using [Balsamiq](https://balsamiq.com/).
+
+### Surface
+
+In order to mitigate the effects of colour overload, I kept this in mind whilst debating which colours to use for the website.
+
+- Colours
+For the main body of the site I decided to utilise a background color of '#d7ccc8' and for the font color of all elements in the body element I used the hex color of '#212121'. For all headings on the site I used the 'jungle' font-family along with a background colour of '#a1887f'. All in all, I felt the background colours worked to project the core colours of the body elements very well. When I look at the site (across all pages) I feel that all sections are distinct and visible and this is more or less down to the combination of colours I conciously decided on at the onset of the project. 
+
+- Typography
+The font-families that were utilised throughout the project were: 'Zilla & Slab', 'Gabriel' & 'Jungle'. I didn't want to choose anymore than three as I felt that would work to distract the overall experience for a visitor to the website. 
+
+- Images
+The images used for the cover of the landing page was obtained through [unsplash] (https://unsplash.com/) as was the default image for the record store reviews. The default image for the record reviews was obtained through [google] (www.google.com).
 
 
 ### Landing Page
