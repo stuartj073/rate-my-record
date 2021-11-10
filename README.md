@@ -98,6 +98,47 @@ The font-families that were utilised throughout the project were: 'Zilla & Slab'
 - Images
 The images used for the cover of the landing page was obtained through [unsplash] (https://unsplash.com/) as was the default image for the record store reviews. The default image for the record reviews was obtained through [google] (www.google.com).
 
+## Technologies used
+
+### Languages
+
+- Python 
+- HTML5
+- CSS3
+- Javascript
+
+### Frameworks, Libraries and Programs
+
+- Materialise
+- Google Fonts
+- Font awesome
+- Flask
+- Git 
+- Gitpod
+- Github
+- Balsamiq
+- MongoDB
+- Heroku
+- RandomKeygen
+- Jinja
+- Werkzeug
+- Am I responsive
+- jQuery
+
+## Deployment 
+
+The deployment of the website was done so using three different work spaces, each with their own respective steps.
+
+- Creation
+I first created the repositary through logging into my Github account and:
+- Clicking the 'new' green button.
+- This then prompted me to another page with asked me to name my new repositary. Above this input there is a dropdown menu offering a selection of various templates to utilise with the repository. I chose the Code Institute template in order to faciliate all the shortcuts included within it to make my workflow as fast as possible.
+
+- Cloning and Forking
+In order to clone my repository, the user must visit my repository page.
+- Cloning by command line: Click the button beside the green button titled 'code', there you will be given various options on how you would like to clone the repository. You must then type 'git clone' into your own workspace along with the repo URL and enter.
+- Forking: Go to my repositary [page] (https://github.com/stuartj073/rate-my-record). In the top right of the page, below the navbar, click the 'fork' button. The fork should now be in your repositories.
+
 
 ### Landing Page
 
