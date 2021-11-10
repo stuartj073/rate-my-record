@@ -24,7 +24,7 @@ Going forward with this project, I would ideally like to allow user’s to inter
 
 ## UX/UI
 
-## Scope
+### Scope
 
 For this particularly project to flourish, it was vital that the correct steps and frameworks were utilised in order to provide the users a fluid manner in which to perform CRUD operations at will. 
 The functional requirements utilised to achieve the project criteria were as follows:
@@ -36,7 +36,7 @@ The functional requirements utilised to achieve the project criteria were as fol
 
 The features of the website were drafted up to suit the project criteria whilst also making sense for a potential user of the site itself. Being an online review page for music, I felt the following features were more than necessary for the website:
 
-### Current Features
+#### Current Features
 
 - Landing page (with all reviews)
 - Search bar (for all reviews)
@@ -57,11 +57,31 @@ The features of the website were drafted up to suit the project criteria whilst 
 - Social links
 - Site banner with core message
 
-### Features left to implement
+#### Features left to implement
 - Direct Messaging: Allow user's to contact one another, which will promote the essence of the website in a more intimate matter as they discuss an album or store together.
 - Marketplace: Eventually, I would like to push the website into the realm of e-commerce, allowing user's to advertise what they have got for sale and what they would like to purchase. Allowing them to search through the site will help users locate records they would like to buy and in tandem with direct messaging they will be able to set up a payment with the seller of said record.
 
+### Structure
 
+- The landing page (home page) will be home to every review made from all user's to the website. If it is a first time visitor to the site, the page will only work as to be read from. On the site banner above the image at the top of the page, the unregistered/not logged on user will have two links available to them. One for registering (which will bring a user to the registration page) and the other for loggin in. If the user is logged in then each review will have the following buttons below the review description: Add to wishlist (if the user didn't create the review), Edit & Delete (if they did create the review).
+
+- The edit button will take the user to the edit review page/ edit store review page. Here they will be able to update all current information on the review to date.
+
+- The delete button will permanently delete whatever review is chosen by the user. Admin has access to this button on every review on the site.
+
+- The about page will give a brief background into what the website is all about. It will also have links for first time visitors to register or for current users to report something that is amiss.
+
+- Log in/ Log out. In the navbar, these two options will be available to visitors to the website depending on whether they are currently logged in (log out displays) and vice-versa.
+
+- The add a review link works as a dropdown and allows user's to decide on writing up a review on either a record or on a record store. 
+
+- For the admin two additional pages will be available: Manage Reviews & Manage Users. Each page allows admin full control over the content of the site and who is able to contribute.
+
+- Profile page has all of a user's reviews along with the reviews they have added to their own wishlist. The user can click into any review to view it and can remove any review from either their own review list or from their wishlist if they want.
+
+- Each review will have it's own designated review page. This page provides full information on the review and if the user has created it they will have access to the edit and delete buttons.
+
+###
 
 
 ### Landing Page
