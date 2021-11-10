@@ -111,7 +111,7 @@ def profile(username):
         {"username":session["user"]})["username"]
     
     reviews = list(mongo.db.reviews.find())
-    store_reviews = list(mongo.db.store_reviews.find({"created_by": session["user"]}))
+    store_reviews = list(mongo.db.store_reviews.find())
     
     if session["user"]:
         return render_template('profile.html', username=username,
