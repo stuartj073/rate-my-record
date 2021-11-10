@@ -24,6 +24,46 @@ Going forward with this project, I would ideally like to allow user’s to inter
 
 ## UX/UI
 
+## Scope
+
+For this particularly project to flourish, it was vital that the correct steps and frameworks were utilised in order to provide the users a fluid manner in which to perform CRUD operations at will. 
+The functional requirements utilised to achieve the project criteria were as follows:
+- Materialise 
+- Flask
+- Python
+- Flash 
+- MongoDB
+
+The features of the website were drafted up to suit the project criteria whilst also making sense for a potential user of the site itself. Being an online review page for music, I felt the following features were more than necessary for the website:
+
+### Current Features
+
+- Landing page (with all reviews)
+- Search bar (for all reviews)
+- Log in page
+- Register page
+- About page
+- Add a record review page
+- Add a record store review page
+- Edit a record review page
+- Edit a record store review page
+- Profile page (displays a user's reviews & wishlist)
+- Delete button (for reviews)
+- Add to wishlist button
+- Remove from wishlist button
+- Manage reviews page (for admin)
+- Manage user's page (admin)
+- Contact page
+- Social links
+- Site banner with core message
+
+### Features left to implement
+- Direct Messaging: Allow user's to contact one another, which will promote the essence of the website in a more intimate matter as they discuss an album or store together.
+- Marketplace: Eventually, I would like to push the website into the realm of e-commerce, allowing user's to advertise what they have got for sale and what they would like to purchase. Allowing them to search through the site will help users locate records they would like to buy and in tandem with direct messaging they will be able to set up a payment with the seller of said record.
+
+
+
+
 ### Landing Page
 
 As stated in the above user stories, I want the main message of the site to become known to the user upon entering the website. When a user clicks on to the site, they will be greeted by a large cover photo with a backgdrop image of vinyl records. The banner presiding over the image reads: "Rate My Record.. A place for like-minded music lovers to contribute". Below it are two options allowing a first time visitor the option to register or a current user the chance to log back in. Below this (if a user is logged in) section is a search bar allowing user's to look for anything they are interested in. Following underneath the search bar are the various record and record store reviews left by user's registered on the website. Each part is accompanied with headings and each review is given it's own 'review-card'.
@@ -37,4 +77,10 @@ The background color to the website was chosen as '#d7ccc8'. I chose it as I fel
 The profile page is split into two halves. On the left side are all the reviews the user has left on the website and on the right are the reviews that have been added to the user's wishlist. 
 
 The reviews here are styled similiarly to the reviews as seen on the landing page but with a slight difference. The image element has no padding around it and instead takes up the top half of the review. On the bottom half of the review we are left with the review name which is either the album name or the record store name. Clicking on the review will lead the user to each individual review page which in turn provides full information on the review in question. 
+
+### Manage Reviews
+
+This page is only visible for the admin of the website. 
+
+
 
