@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Page that allows user's to post record review -->
 <h2 class="center-align headings">Add a Review !</h2>
 <form id="record" method="POST" action="{{ url_for(
     'add_review') }}">
@@ -70,8 +71,5 @@
     </div>
 </form>
 </div>
-<!-- <div class="col s-12 m-6">
-        <img src="static/images/clem-onojeghuo-pTeZKi29EYE-unsplash.jpg" height="500" width="600">
-    </div> -->
 
 {% endblock %}

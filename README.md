@@ -127,7 +127,9 @@ The images used for the cover of the landing page was obtained through [unsplash
 
 ## Deployment 
 
-The deployment of the website was done so using three different work spaces, each with their own respective steps.
+The deployment of the website was done so using three different work spaces, each with their own respective steps. Github, MongoDB and heroku combined all their necessary functions to enable the creation of the site. 
+
+### Github
 
 - Creation
 I first created the repositary through logging into my Github account and:
@@ -138,6 +140,37 @@ I first created the repositary through logging into my Github account and:
 In order to clone my repository, the user must visit my repository page.
 - Cloning by command line: Click the button beside the green button titled 'code', there you will be given various options on how you would like to clone the repository. You must then type 'git clone' into your own workspace along with the repo URL and enter.
 - Forking: Go to my repositary [page] (https://github.com/stuartj073/rate-my-record). In the top right of the page, below the navbar, click the 'fork' button. The fork should now be in your repositories.
+
+### MongoDB
+
+#### Site configuration
+
+- Once you're registered, create and name a cluster.
+- Set up a username and password in Database Access. Make sure to select the 'read and write to any database' option.
+- Go back to the menu section and select Network Access. Add an IP address and select access from anywhere.
+- Next step is to create a database. Do so by clicking 'collections'. The 'create database' button should be visible under the headings. Set up the name of the database and add any collections using the '+' button seen beside the database title.
+- To add a document to any collection simply click the 'insert document' button in the top right hand side of the form.
+
+#### Github configuration
+
+- Create an env.py file with the following connections. ENSURE THIS FILE IS ADDED TO THE .GITIGNORE FILE.
+- To install any requirements as needed, use the terminal and prefix any requirement with 'pip3'.
+
+#### Connecting to MongoDB
+
+- On the top right of the cluster page, click the connect button.
+- Select 'connect your application' and then 'python' for the driver and whatever version of python that applies to you.
+- You will then be given a connection string. Copy and paste this string into the MONGO_URI value in the env.py file. Change the placeholder database name to the database of which you are using.
+
+### Heroku 
+
+- Once logged in to Heroku click 'New' and then 'Create New app'. Click 'settings' and 'reveal config vars'. 
+- Here you must put in all the key-value pairs as written down from the env.py file. Update any missing values with the new information you now have. 
+- Now click 'Deploy'. 
+- You are given three options in which to deploy the site. In my case I used Github, which allows you to manually search for your own Github repository. 
+- Click 'enable automatic deployment' and your website should now be ready to go.
+
+
 
 
 ### Landing Page

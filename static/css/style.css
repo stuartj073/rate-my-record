@@ -468,10 +468,14 @@ ul:not(.browser-default) {
         height:150px;
         width:150px;
     }
+
+    nav .brand-logo {
+        font-size:1.2rem;
+    }
 }
 
 @media only screen and (max-width: 500px){
-    .nav .brand-logo {
+    nav .brand-logo {
         font-size:1.5rem;
     }
 }
