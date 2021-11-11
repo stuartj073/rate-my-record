@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <!-- Meta deta and external links -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,26 +17,31 @@
 </head>
 
 <body>
+  <!-- Navbar dropdown configuration -->
   <ul id="dropdown1" class="dropdown-content">
     <li><a href="{{ url_for('add_review') }}">Add Record Review</a></li>
     <li class="divider"></li>
     <li><a href="{{ url_for('add_store_review') }}">Add Store Review</a></li>
   </ul>
   <nav>
+    <!-- Navbar for larger screens -->
     <div class="nav-wrapper">
       <a href="{{ url_for('landing') }}" class="brand-logo">Rate My Record</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="{{ url_for('landing') }}">Home</a></li>
         <li><a href="{{ url_for('about') }}">About</a></li>
+        <!-- Options shown when signed in -->
         {% if session.user %}
         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
         <li><a class="dropdown-trigger" href="{{ url_for('add_review') }}" data-target="dropdown1">Add a Review<i class="material-icons right"></i></a></li>
+        <!-- Shown for admin of page -->
         {% if session.user == "admin" %}
         <li><a href="{{ url_for('manage_reviews') }}">Manage Reviews</a></li>
         <li><a href="{{ url_for('manage_users') }}">Manage Users</a></li>
         {% endif %}
         <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        <!-- Shown for logged out or new user's -->
         {% else %}
         <li><a href="{{ url_for('login') }}">Log in</a></li>
         <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -43,24 +49,29 @@
       </ul>
     </div>
   </nav>
-
+  <!-- Burger menu dropdown for smaller devices -->
   <ul class="sidenav" id="mobile-demo">
     <li><a href="{{ url_for('landing') }}">Home</a></li>
     <li><a href="{{ url_for('about') }}">About</a></li>
+    <!-- Options shown when signed in -->
     {% if session.user %}
     <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
     <li><a class="dropdown-trigger" href="{{ url_for('add_review') }}" data-target="dropdown1">Add a Review<i class="material-icons right"></i></a></li>
+    <!-- Shown for admin of page -->
     {% if session.user == "admin" %}
     <li><a href="{{ url_for('manage_reviews') }}">Manage Reviews</a></li>
     <li><a href="{{ url_for('manage_users') }}">Manage Users</a></li>
     {% endif %}
     <li><a href="{{ url_for('logout') }}">Logout</a></li>
+    <!-- Shown for logged out or new user's -->
     {% else %}
     <li><a href="{{ url_for('login') }}">Log in</a></li>
     <li><a href="{{ url_for('register') }}">Register</a></li>
     {% endif %}
   </ul>
   <section>
+    <!-- Flash messages -->
+    <!-- Messages retrieved from function from flash from flask -->
     {% with messages = get_flashed_messages() %}
     {% if messages %}
     {% for message in messages %}
@@ -77,6 +88,7 @@
     {% endblock %}
   </section>
   <footer>
+    <!-- Footer -->
     <div class="social-links">
       <h4 class="center-align">Contact us</h4>
       <ul class="social-media">
@@ -89,10 +101,12 @@
       <h5 class="center-align">Want to get in touch directly? Contact us <a href="{{ url_for('contact') }}">here.</a></h5>
     </div>
   </footer>
+  <!-- Script sources -->
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <!-- Any extra scripts needed from other pages can be entered here -->
   {% block scripts %}
   {% endblock %}
 </body>
