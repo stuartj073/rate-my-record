@@ -451,8 +451,11 @@ ul:not(.browser-default) {
     }
 
     .btn-large {
-        height:40px;
+        margin:0;
+        padding:0;
         line-height:40px;
+        height:40px;
+        font-size:13px;
     }
 }
 
