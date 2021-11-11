@@ -80,11 +80,18 @@
                         </div>Delete
                     </div>
                     {% else %}
+                    {% if session.user not in review.wishlist %}
                     <button>
                         <a href="{{ url_for('add_to_wishlist', review_id=review._id) }}"
                             class="waves-effect waves-light btn-large grey">Add to wishlist</a>
                     </button>
+                    {% else %}
+                    <button>
+                        <a href="{{ url_for('delete_wishlist', review_id=review._id) }}"
+                            class="waves-effect waves-light btn-large orange">Remove</a>
+                    </button>
                     {% endif %}
+                {% endif %}
                 </div>
                 {% endif %}
             </div>
@@ -148,10 +155,17 @@
                         </div>Delete
                     </div>
                     {% else %}
+                    {% if session.user not in store_review.wishlist %}
                     <button>
                         <a href="{{ url_for('add_to_stores_wishlist', store_review_id=store_review._id) }}"
                             class="waves-effect waves-light btn-large grey">Add to wishlist</a>
                     </button>
+                    {% else %}
+                    <button>
+                        <a href="{{ url_for('delete_store_wishlist', store_review_id=store_review._id) }}"
+                            class="waves-effect waves-light btn-large orange">Remove</a>
+                    </button>
+                    {% endif %}
                     {% endif %}
                 </div>
                 {% endif %}
