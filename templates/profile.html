@@ -119,6 +119,7 @@
 
         <!-- display store reviews -->
         {% for store_review in store_reviews %}
+        <p>{{ store_review_id }}</p>
         {% if session["user"] in store_review.wishlist %}
         <div class="row">
             <div class="col s12 m6 profile-reviews">

@@ -24,7 +24,7 @@
             {% if session.user %}
             <div class="row buttons">
                 {% if session.user == store_review.created_by %}
-                <a href="{{ url_for('edit_store_review', store_review_id=store_review._id) }}"
+                <a href="{{ url_for('edit_store_review', store_review_id=store_review_.id) }}"
                     class="waves-effect waves-light btn-large green">Edit</a>
                 <div href="#" class="waves-effect waves-light btn-large red" class="rules">
                     <div id="myModal" class="modal">
