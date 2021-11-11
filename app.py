@@ -305,7 +305,7 @@ def delete_wishlist(review_id):
 def delete_store_wishlist(store_review_id):
     # find review and remove user
     # from the wishlist array
-    mongo.db.reviews.update({"_id": ObjectId(store_review_id)},
+    mongo.db.store_reviews.update({"_id": ObjectId(store_review_id)},
     {"$pull": {"wishlist": session["user"]}})
     flash("Removed from wishlist")
     
