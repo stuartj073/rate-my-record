@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Log in form for users -->
 <h2 class="center-align headings">Sign in</h2>
 <div class="row">
+    <!-- Form content -->
     <form class="col s12 form" method="POST" action="{{ url_for('login') }}">
         <div class="row">
             <div class="input-field col s10 m2">
@@ -20,14 +22,14 @@
                 <input id="password" name="password" type="password" class="validate">
             </div>
         </div>
-</div>
-<div class="row">
-    <div class="center-align">
-        <button class="btn waves-effect waves-light" type="submit" name="action">Sign in
-            <i class="material-icons right"></i>
-        </button>
-    </div>
-</div>
-</form>
+        <!-- Sign in button -->
+        <div class="row">
+            <div class="center-align">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Sign in
+                    <i class="material-icons right"></i>
+                </button>
+            </div>
+        </div>
+    </form>
 </div>
 {% endblock %}
