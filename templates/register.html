@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Register form -->
 <h2 class="center-align headings">Register</h2>
 <div class="row">
+    <!-- Form content -->
     <form class="col s12 form" method="POST" action="{{ url_for('register') }}">
         <div class="row">
             <div class="input-field col s12 m2">
@@ -44,6 +46,7 @@
                 <input id="email" name="email" type="email" class="validate">
             </div>
         </div>
+        <!-- Register button -->
         <div class="row">
             <div class="center-align">
                 <button class="btn waves-effect waves-light" type="submit" name="action">Register
@@ -52,7 +55,7 @@
             </div>
         </div>
         <div class="row">
-            <p class="center-align">Already registered? <a href="#">Log in</a></p>
+            <p class="center-align">Already registered? <a href="{{ url_for('login') }}">Log in</a></p>
         </div>
     </form>
 </div>

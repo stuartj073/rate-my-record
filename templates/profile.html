@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Profile page for user -->
 <h3 class="center-align headings">{{ username.username }}'s Profile</h3>
 <div class="row">
     <div class="col s12 m6 profile-reviews">
@@ -36,6 +37,7 @@
                         {{ review.album_name }}
                     </h5>
                 </div>
+                <!-- Edit & Delete buttons -->
                 <div class="row buttons">
                     <a href="{{ url_for('edit_review', review_id=review._id) }}"
                         class="waves-effect waves-light btn-large green">Edit
@@ -75,6 +77,7 @@
                             {{ store_review.store_name }}
                         </h5>
                     </div>
+                    <!-- Edit & Delete buttons -->
                     <div class="row buttons">
                         <a href="{{ url_for('edit_store_review', store_review_id=store_review._id) }}"
                             class="waves-effect waves-light btn-large green">Edit
