@@ -80,7 +80,7 @@
                         </div>Delete
                     </div>
                     {% else %}
-                    {% if session.user not in review.wishlist %}
+                    {% if username._id not in review.wishlist %}
                     <button>
                         <a href="{{ url_for('add_to_wishlist', review_id=review._id) }}"
                             class="waves-effect waves-light btn-large grey">Add to wishlist</a>

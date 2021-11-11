@@ -26,9 +26,10 @@ def landing():
     # on each page
     reviews = list(mongo.db.reviews.find())
     store_reviews = list(mongo.db.store_reviews.find())
-    user = list(mongo.db.users.find())
+    username = mongo.db.users.find_one(
+    {"username": session["user"]})
     return render_template("landing_page.html", reviews=reviews,
-                        store_reviews=store_reviews, user=user)
+                        store_reviews=store_reviews, username=username)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -108,7 +109,7 @@ def profile(username):
     # put user into session and return 
     # profile page as soon as they register
     username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+        {"username": session["user"]})
     
     reviews = list(mongo.db.reviews.find())
     store_reviews = list(mongo.db.store_reviews.find())
@@ -257,13 +258,14 @@ def store_review_page(store_review_id):
 def add_to_wishlist(review_id):
     # update 'wishlist' key of each record
     # review with the current session username
+    user = mongo.db.users.find_one({"username": session["user"]})
     in_wishlist = mongo.db.reviews.find_one(
-        {"_id": ObjectId(review_id), "wishlist": session["user"]})
+        {"_id": ObjectId(review_id), "wishlist": ObjectId(user["_id"])})
     
     # if user is not in review wishlist
     if not in_wishlist:
         mongo.db.reviews.find_one_and_update(
-        {"_id": ObjectId(review_id)}, {"$addToSet": {"wishlist": session['user']}})
+        {"_id": ObjectId(review_id)}, {"$addToSet": {"wishlist": ObjectId(user["_id"])}})
         flash("Added to wishlist")
     
     else: 
@@ -294,8 +296,9 @@ def add_to_stores_wishlist(store_review_id):
 def delete_wishlist(review_id):
     # find review and remove user
     # from the wishlist array
+    user = mongo.db.users.find_one({"username": session["user"]})
     mongo.db.reviews.update({"_id": ObjectId(review_id)},
-    {"$pull": {"wishlist": session["user"]}})
+    {"$pull": {"wishlist": ObjectId(user["_id"])}})
     flash("Removed from wishlist")
     
     return redirect(url_for("profile", username=session["user"]))
