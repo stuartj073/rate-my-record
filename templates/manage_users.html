@@ -1,13 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Page for admin moderation over user's -->
 <h1 class="center-align headings">Users</h1>
 {% for user in users %}
 <div class="row">
     <div class="col s12">
         <p class="center-align user">{{ user.username }}<i class="fas fa-male"></i>
-            <span><a class="waves-effect waves-light btn" href="{{ url_for('delete_user', user_id=user._id) }}">Remove
-                    User</a>
+            <!-- Remove user button -->
+            <span>
+                <a class="waves-effect waves-light btn" href="{{ url_for('delete_user', user_id=user._id) }}">Remove
+                User
+                </a>
             </span>
         </p>
     </div>
