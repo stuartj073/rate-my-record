@@ -473,6 +473,10 @@ ul:not(.browser-default) {
     #search-bar input[type=text]:not(.browser-default), label {
         margin:0;
     }
+
+    .landing-page-img img {
+        height:300px;
+    }
 }
 
 @media only screen and (max-width: 730px) {
