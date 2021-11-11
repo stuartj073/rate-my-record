@@ -155,7 +155,7 @@
                         </div>Delete
                     </div>
                     {% else %}
-                    {% if session.user not in store_review.wishlist %}
+                    {% if username._id not in store_review.wishlist %}
                     <button>
                         <a href="{{ url_for('add_to_stores_wishlist', store_review_id=store_review._id) }}"
                             class="waves-effect waves-light btn-large grey">Add to wishlist</a>

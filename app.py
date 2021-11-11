@@ -278,12 +278,13 @@ def add_to_wishlist(review_id):
 def add_to_stores_wishlist(store_review_id):
     # update 'wishlist' key of each record
     # review with the current session username
-    in_wishlist = mongo.db.reviews.find_one(
-        {"_id": ObjectId(store_review_id), "wishlist": session["user"]})
+    user = mongo.db.users.find_one({"username": session["user"]})
+    in_wishlist = mongo.db.store_reviews.find_one(
+        {"_id": ObjectId(store_review_id), "wishlist": ObjectId(user["_id"])})
 
     if not in_wishlist:
         mongo.db.store_reviews.find_one_and_update(
-        {"_id": ObjectId(store_review_id)}, {"$addToSet": {"wishlist": session['user']}})
+        {"_id": ObjectId(store_review_id)}, {"$addToSet": {"wishlist": ObjectId(user["_id"])}})
         flash("Added to wishlist")
 
     else:
@@ -308,8 +309,9 @@ def delete_wishlist(review_id):
 def delete_store_wishlist(store_review_id):
     # find review and remove user
     # from the wishlist array
+    user = mongo.db.users.find_one({"username": session["user"]})
     mongo.db.store_reviews.update({"_id": ObjectId(store_review_id)},
-    {"$pull": {"wishlist": session["user"]}})
+    {"$pull": {"wishlist": ObjectId(user["_id"])}})
     flash("Removed from wishlist")
     
     return redirect(url_for("profile", username=session["user"]))

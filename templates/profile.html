@@ -141,7 +141,7 @@
 
         <!-- display store reviews -->
         {% for store_review in store_reviews %}
-        {% if session["user"] in store_review.wishlist %}
+        {% if username._id in store_review.wishlist %}
         <div class="row">
             <div class="col s12 m6 profile-reviews">
                 <div class="card">
