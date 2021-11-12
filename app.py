@@ -1,3 +1,7 @@
+"""
+Imports used to connect to MongoDB, flask
+and werkzeug
+"""
 import os
 from flask import (
     Flask, flash, render_template,
@@ -21,32 +25,48 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def landing():
-    # generate list to allow iteration over
-    # the reviews collection more than once
-    # on each page
+    """
+    generate list to allow iteration over
+    the reviews collection more than once
+    on each page
+    """
     reviews = list(mongo.db.reviews.find())
     store_reviews = list(mongo.db.store_reviews.find())
+    username = mongo.db.users.find_one(
+            {"username": session["user"]})
     return render_template("landing_page.html", reviews=reviews,
-                        store_reviews=store_reviews)
+                           store_reviews=store_reviews,
+                           username=username)
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    """
+    Function for search form
+    """
     search = request.form.get("search")
     reviews = list(mongo.db.reviews.find({"$text": {"$search": search}}))
     store_reviews = list(mongo.db.store_reviews.find(
         {"$text": {"$search": search}}))
     return render_template("landing_page.html", reviews=reviews,
-                            store_reviews=store_reviews)
+                           store_reviews=store_reviews)
 
 
 @app.route("/about")
 def about():
+    """
+    Renders about page
+    """
     return render_template("about.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """
+    Renders page for new users
+    to register their username and
+    password
+    """
     if request.method == "POST":
         # check if the user is already
         # in the database
@@ -75,6 +95,9 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """
+    Renders log in page for users
+    """
     if request.method == "POST":
         # check if username exists
         # (taken from Tim Nelson's tutorial)
@@ -82,8 +105,8 @@ def login():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+            if check_password_hash(existing_user["password"],
+                                   request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome {}".format(
                     request.form.get("username")))
@@ -93,7 +116,6 @@ def login():
             else:
                 flash("Incorrect password")
                 return redirect(url_for('login'))
-        
         else:
             # username doesn't exist
             flash("username doesn't exist")
@@ -104,25 +126,27 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # put user into session and return 
-    # profile page as soon as they register
+    """
+    put user into session and return
+    profile page as soon as they register
+    """
     username = mongo.db.users.find_one(
         {"username": session["user"]})
-    
     reviews = list(mongo.db.reviews.find())
     store_reviews = list(mongo.db.store_reviews.find())
-    
     if session["user"]:
         return render_template('profile.html', username=username,
-        reviews=reviews, store_reviews=store_reviews)
+                               reviews=reviews, store_reviews=store_reviews)
 
     return redirect(url_for('login'))
 
 
 @app.route("/logout")
 def logout():
-    # allow user to log out
-    # by utilising the pop method
+    """
+    allow user to log out
+    by utilising the pop method
+    """
     session.pop("user")
     flash("You have been logged out")
     return redirect(url_for('login'))
@@ -130,8 +154,10 @@ def logout():
 
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
-    # allow user to input values to
-    # keys in form
+    """
+    allow user to input values to
+    keys in form
+    """
     if request.method == "POST":
         review = {
             "album_name": request.form.get("album"),
@@ -150,14 +176,15 @@ def add_review():
         mongo.db.reviews.insert_one(review)
         flash("Review added")
         return redirect(url_for('add_review'))
-    
     return render_template("add_review.html")
 
 
 @app.route("/add_store_review", methods=["GET", "POST"])
 def add_store_review():
-    # add store review to db if 
-    # request method is POST
+    """
+    add store review to db if
+    request method is POST
+    """
     if request.method == "POST":
         store_review = {
             "store_name": request.form.get("store-name"),
@@ -179,22 +206,34 @@ def add_store_review():
 
 @app.route("/manage_reviews")
 def manage_reviews():
+    """
+    Manage review page enlists all reviews
+    made by all users to the site
+    """
     reviews = mongo.db.reviews.find()
     store_reviews = mongo.db.store_reviews.find()
     return render_template("manage_reviews.html", reviews=reviews,
-    store_reviews=store_reviews)
+                           store_reviews=store_reviews)
 
 
 @app.route("/manage_users")
 def manage_users():
+    """
+    Manage users lists all
+    users to the website
+    """
     users = mongo.db.users.find()
     return render_template("manage_users.html", users=users)
 
 
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
+    """
+    Page for editing a users record
+    review
+    """
     if not session["user"]:
-        return 
+        return
 
     if request.method == "POST":
         review = {
@@ -212,7 +251,6 @@ def edit_review(review_id):
         }
         mongo.db.reviews.update({"_id": ObjectId(review_id)}, review)
         flash("Review updated")
-    
     # locate the reviews in the database
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     return render_template("edit_review.html", review=review)
@@ -220,7 +258,9 @@ def edit_review(review_id):
 
 @app.route("/edit_store_review/<store_review_id>", methods=["GET", "POST"])
 def edit_store_review(store_review_id):
-    # locate the reviews in the database
+    """
+    Locates the reviews in the database
+    """
     if request.method == "POST":
         store_review = {
             "$set": {
@@ -233,40 +273,49 @@ def edit_store_review(store_review_id):
             }
         }
         mongo.db.store_reviews.update({"_id": ObjectId(store_review_id)},
-                                        store_review)
+                                      store_review)
         flash("Review updated")
 
-    store_review = mongo.db.store_reviews.find_one({"_id": ObjectId(store_review_id)})
+    store_review = mongo.db.store_reviews.find_one({"_id": ObjectId
+                                                   (store_review_id)})
     return render_template("edit_store_review.html", store_review=store_review)
 
 
 @app.route("/review_page/<review_id>")
 def review_page(review_id):
+    """
+    Individual review page
+    """
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     return render_template("review_page.html", review=review)
 
 
 @app.route("/store_review_page/<store_review_id>")
 def store_review_page(store_review_id):
-    store_review = mongo.db.store_reviews.find_one({"_id": ObjectId(store_review_id)})
+    """
+    Individual store review page
+    """
+    store_review = mongo.db.store_reviews.find_one({"_id": ObjectId
+                                                   (store_review_id)})
     return render_template("store_review_page.html", store_review=store_review)
 
 
 @app.route("/add_to_wishlist/<review_id>")
 def add_to_wishlist(review_id):
-    # update 'wishlist' key of each record
-    # review with the current session username
+    """
+    Update 'wishlist' key of each record
+    review with the current session username
+    """
     user = mongo.db.users.find_one({"username": session["user"]})
     in_wishlist = mongo.db.reviews.find_one(
         {"_id": ObjectId(review_id), "wishlist": ObjectId(user["_id"])})
-    
     # if user is not in review wishlist
     if not in_wishlist:
         mongo.db.reviews.find_one_and_update(
-        {"_id": ObjectId(review_id)}, {"$addToSet": {"wishlist": ObjectId(user["_id"])}})
+                        {"_id": ObjectId(review_id)},
+                        {"$addToSet": {"wishlist": ObjectId(user["_id"])}})
         flash("Added to wishlist")
-    
-    else: 
+    else:
         flash("Review already in wishlist")
 
     return redirect(url_for("landing"))
@@ -274,49 +323,58 @@ def add_to_wishlist(review_id):
 
 @app.route("/add_to_stores_wishlist/<store_review_id>")
 def add_to_stores_wishlist(store_review_id):
-    # update 'wishlist' key of each record
-    # review with the current session username
+    """
+    Update 'wishlist' key of each record
+    review with the current session username
+    """
     user = mongo.db.users.find_one({"username": session["user"]})
     in_wishlist = mongo.db.store_reviews.find_one(
         {"_id": ObjectId(store_review_id), "wishlist": ObjectId(user["_id"])})
 
     if not in_wishlist:
         mongo.db.store_reviews.find_one_and_update(
-        {"_id": ObjectId(store_review_id)}, {"$addToSet": {"wishlist": ObjectId(user["_id"])}})
+                        {"_id": ObjectId(store_review_id)},
+                        {"$addToSet": {"wishlist": ObjectId(user["_id"])}})
         flash("Added to wishlist")
 
     else:
         flash("Review already in wishlist")
-    
     return redirect(url_for("landing"))
 
 
 @app.route("/delete_wishlist/<review_id>")
 def delete_wishlist(review_id):
-    # find review and remove user
-    # from the wishlist array
+    """
+    find review and remove user
+    from the wishlist array
+    """
     user = mongo.db.users.find_one({"username": session["user"]})
     mongo.db.reviews.update({"_id": ObjectId(review_id)},
-    {"$pull": {"wishlist": ObjectId(user["_id"])}})
+                            {"$pull": {"wishlist": ObjectId(user["_id"])}})
     flash("Removed from wishlist")
-    
     return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/delete_store_wishlist/<store_review_id>")
 def delete_store_wishlist(store_review_id):
-    # find review and remove user
-    # from the wishlist array
+    """
+    Find review and remove user
+    from the wishlist array
+    """
     user = mongo.db.users.find_one({"username": session["user"]})
     mongo.db.store_reviews.update({"_id": ObjectId(store_review_id)},
-    {"$pull": {"wishlist": ObjectId(user["_id"])}})
+                                  {"$pull": {"wishlist":
+                                   ObjectId(user["_id"])}})
     flash("Removed from wishlist")
-    
     return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/delete_review/<review_id>")
 def delete_review(review_id):
+    """
+    Located the review id
+    and remove
+    """
     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
     flash("Review removed")
     return redirect(url_for('landing'))
@@ -324,6 +382,10 @@ def delete_review(review_id):
 
 @app.route("/delete_store_review/<store_review_id>")
 def delete_store_review(store_review_id):
+    """
+    Locate the store review id
+    and remove
+    """
     mongo.db.store_reviews.remove({"_id": ObjectId(store_review_id)})
     flash("Review removed")
     return redirect(url_for('landing'))
@@ -331,17 +393,21 @@ def delete_store_review(store_review_id):
 
 @app.route("/delete_user/<user_id>")
 def delete_user(user_id):
-    # find the user in question on
-    # the mongodb
+    """
+    Find the user in question on
+    the mongodb
+    """
     mongo.db.users.remove({"_id": ObjectId(user_id)})
     flash("User removed")
     return redirect(url_for('landing'))
-  
-  
+
+
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
-    # allow user to send message to 
-    # admin through mongodb collections
+    """
+    Allow user to send message to
+    admin through mongodb collections
+    """
     if request.method == "POST":
         message = {
             "username": session["user"],
@@ -351,7 +417,6 @@ def contact():
         mongo.db.issues.insert_one(message)
         flash("Message sent")
         return redirect(url_for('contact'))
-    
     return render_template("contact.html")
 
 
@@ -359,5 +424,5 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-# Remember to remove debug = True prior to 
+# Remember to remove debug = True prior to
 # project submission !!
