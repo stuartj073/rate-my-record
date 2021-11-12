@@ -21,6 +21,7 @@
             <p><strong>Description: </strong>{{ store_review.store_desc }}</p>
             <p><strong>Genre: </strong>{{ store_review.store_genre }}</p>
             <p><strong>Created by: </strong>{{ store_review.created_by }}</p>
+            <!-- Show if user is logged on -->
             {% if session.user %}
             <div class="row buttons">
                 {% if session.user == store_review.created_by %}
@@ -36,6 +37,7 @@
                         </div>
                     </div>Delete
                 </div>
+                <!-- Show if admin -->
                 {% elif session.user == "admin" %}
                 <a href="{{ url_for('edit_store_review', store_review_id=store_review._id) }}"
                     class="waves-effect waves-light btn-large blue"><i class="material-icons">Edit</i></a>
