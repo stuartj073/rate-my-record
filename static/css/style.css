@@ -128,8 +128,7 @@ nav .sidenav-trigger {
 
 #search-bar input[type=text]:not(.browser-default),
 label {
-    width: 66%;
-    margin-left: 35%;
+    width: 100%;
 }
 
 #search-bar button {

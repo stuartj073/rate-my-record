@@ -232,9 +232,6 @@ def edit_review(review_id):
     Page for editing a users record
     review
     """
-    if not session["user"]:
-        return
-
     if request.method == "POST":
         review = {
             "$set": {
