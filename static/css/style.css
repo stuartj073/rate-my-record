@@ -307,12 +307,9 @@ label {
     margin: 10px 0 0 10px;
     height:35px;
     line-height:35px;
-    padding: 0 20px;
+    padding: 0 10px;
 }
 
-.row .col.s7 {
-    line-height: 50px;
-}
 
 /********************************* PROFILE **/
 
@@ -326,8 +323,12 @@ label {
     min-width:70%;
 }
 
+.row .col {
+    padding:0px 0.21em;
+}
+
 .card .card-content {
-    padding:10px;
+    padding:0px;
 }
 
 /************************************ REVIEWS  **/
