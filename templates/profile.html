@@ -11,7 +11,7 @@
         {% if review.created_by == session["user"] %}
         <div class="col s12 m6">
             <div class="card">
-                <div class="card-image">
+                <div class="card-image images">
                     <!-- If img provided by user -->
                     {% if review.img|length %}
                     <a href="{{ url_for('review_page', review_id=review._id) }}">
@@ -49,7 +49,7 @@
         {% if store_review.created_by == session["user"] %}
         <div class="col s12 m6">
             <div class="card">
-                <div class="card-image">
+                <div class="card-image images">
                     <!-- If img provided by user -->
                     {% if store_review.img|length %}
                     <a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
@@ -92,7 +92,7 @@
         {% if username._id in review.wishlist %}
         <div class="col s12 m6">
             <div class="card">
-                <div class="card-image">
+                <div class="card-image images">
                     <!-- If img provided by user -->
                     {% if review.img|length %}
                     <a href="{{ url_for('review_page', review_id=review._id) }}">
@@ -125,7 +125,7 @@
         {% if username._id in store_review.wishlist %}
         <div class="col s12 m6">
             <div class="card">
-                <div class="card-image">
+                <div class="card-image images">
                     <!-- If img provided by user -->
                     {% if store_review.img|length %}
                     <a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
@@ -134,7 +134,7 @@
                     <!-- If not -->
                     {% else %}
                     <a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
-                        <img src="{{ url_for('static', filename='images/record-g1ebaaace1_640.jpg') }}" height="200"
+                        <img src="{{ url_for('static', filename='images/record-g1ebaaace1_640.jpg') }}" id="default-store" height="200"
                             width="200">
                     </a>
                     {% endif %}
