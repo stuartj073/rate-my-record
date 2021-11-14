@@ -5,15 +5,8 @@
 <h3 class="center-align headings">{{ username.username }}'s Profile</h3>
 <div class="row">
     <div class="col s12 m6 profile-reviews">
-        <h3 class="center-align">Your Reviews</h3>
+        <h4 class="center-align headings">Reviews</h4>
         <!-- if the user has no reviews -->
-        {% if reviews|length == 0  %}
-        <div>
-            <h5 class="center-align">No reviews yet.</h5><br>
-            <p class="center-align">Add record review<a href="{{ url_for('add_review') }}"> here.</a></p>
-            <p class="center-align">Add store review<a href="{{ url_for('add_store_review') }}"> here.</a></p>
-        </div>
-        {% else %}
         {% for review in reviews %}
         {% if review.created_by == session["user"] %}
         <div class="col s12 m6">
@@ -43,59 +36,58 @@
                         class="waves-effect waves-light btn-large green">Edit
                     </a>
                     <a href="{{ url_for('delete_review', review_id=review._id) }}"
-                    class="waves-effect waves-light btn-large red">Delete
+                        class="waves-effect waves-light btn-large red">Delete
                     </a>
                 </div>
             </div>
         </div>
         {% endif %}
         {% endfor %}
-        {% endif %}
 
         <!-- display store reviews -->
         {% for store_review in store_reviews %}
         {% if store_review.created_by == session["user"] %}
-        <div class="row">
-            <div class="col s12 m6">
-                <div class="card">
-                    <div class="card-image">
-                        <!-- If img provided by user -->
-                        {% if store_review.img|length %}
-                        <a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
-                            <img src="{{ store_review.img }}" height="200" width="200">
-                        </a>
-                        <!-- If not -->
-                        {% else %}
-                        <a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
-                            <img src="{{ url_for('static', filename='images/record-g1ebaaace1_640.jpg') }}" height="200"
-                                width="200">
-                        </a>
-                        {% endif %}
-                    </div>
-                    <div class="card-content">
-                        <h5 class="center-align">
-                            {{ store_review.store_name }}
-                        </h5>
-                    </div>
-                    <!-- Edit & Delete buttons -->
-                    <div class="row buttons">
-                        <a href="{{ url_for('edit_store_review', store_review_id=store_review._id) }}"
-                            class="waves-effect waves-light btn-large green">Edit
-                        </a>
-                        <a href="{{ url_for('delete_store_review', store_review_id=store_review._id) }}"
-                            class="waves-effect waves-light btn-large red">Delete
-                        </a>
-                    </div>
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-image">
+                    <!-- If img provided by user -->
+                    {% if store_review.img|length %}
+                    <a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
+                        <img src="{{ store_review.img }}" height="200" width="200">
+                    </a>
+                    <!-- If not -->
+                    {% else %}
+                    <a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
+                        <img src="{{ url_for('static', filename='images/record-g1ebaaace1_640.jpg') }}" height="200"
+                            width="200">
+                    </a>
+                    {% endif %}
+                </div>
+                <div class="card-content">
+                    <h5 class="center-align">
+                        {{ store_review.store_name }}
+                    </h5>
+                </div>
+                <!-- Edit & Delete buttons -->
+                <div class="row buttons">
+                    <a href="{{ url_for('edit_store_review', store_review_id=store_review._id) }}"
+                        class="waves-effect waves-light btn-large green">Edit
+                    </a>
+                    <a href="{{ url_for('delete_store_review', store_review_id=store_review._id) }}"
+                        class="waves-effect waves-light btn-large red">Delete
+                    </a>
                 </div>
             </div>
         </div>
+
         {% endif %}
         {% endfor %}
     </div>
 
+
     <!-- Wishlist -->
     <div class="col s12 m6 profile-reviews">
-        <h3 class="center-align">Your Reviews</h3>
+        <h4 class="center-align headings">Wishlist</h4>
         {% for review in reviews %}
         {% if username._id in review.wishlist %}
         <div class="col s12 m6">
@@ -131,37 +123,37 @@
         <!-- display store reviews -->
         {% for store_review in store_reviews %}
         {% if username._id in store_review.wishlist %}
-        <div class="row">
-            <div class="col s12 m6 profile-reviews">
-                <div class="card">
-                    <div class="card-image">
-                        <!-- If img provided by user -->
-                        {% if store_review.img|length %}
-                        <a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
-                            <img src="{{ store_review.img }}" height="200" width="200">
-                        </a>
-                        <!-- If not -->
-                        {% else %}
-                        <a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
-                            <img src="{{ url_for('static', filename='images/record-g1ebaaace1_640.jpg') }}" height="200"
-                                width="200">
-                        </a>
-                        {% endif %}
-                    </div>
-                    <div class="card-content">
-                        <h5 class="center-align">
-                            {{ store_review.store_name }}
-                        </h5>
-                    </div>
-                    <div class="row buttons">
-                        <a href="{{ url_for('delete_store_wishlist', store_review_id=store_review._id) }}"
-                            class="waves-effect waves-light btn-large red">Remove</a>
-                    </div>
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-image">
+                    <!-- If img provided by user -->
+                    {% if store_review.img|length %}
+                    <a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
+                        <img src="{{ store_review.img }}" height="200" width="200">
+                    </a>
+                    <!-- If not -->
+                    {% else %}
+                    <a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
+                        <img src="{{ url_for('static', filename='images/record-g1ebaaace1_640.jpg') }}" height="200"
+                            width="200">
+                    </a>
+                    {% endif %}
+                </div>
+                <div class="card-content">
+                    <h5 class="center-align">
+                        {{ store_review.store_name }}
+                    </h5>
+                </div>
+                <div class="row buttons">
+                    <a href="{{ url_for('delete_store_wishlist', store_review_id=store_review._id) }}"
+                        class="waves-effect waves-light btn-large red">Remove</a>
                 </div>
             </div>
         </div>
+
         {% endif %}
         {% endfor %}
     </div>
 </div>
+
 {% endblock %}
