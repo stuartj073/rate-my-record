@@ -86,9 +86,9 @@ The features of the website were drafted up to suit the project criteria whilst 
 The site was first sketched on paper with a pen by myself before I attempted to make a more concrete blueprint using [Balsamiq](https://balsamiq.com/).
 
 The following links will take you to each set of wireframes associated with the corresponding screen size.
-- [Phone] (static/wireframes/phone)
-- [Tablet] (static/wireframes/tablet)
-- [Desktop] (static/wireframes/desktop)
+- [Phone] (/static/wireframes/phone)
+- [Tablet] (/static/wireframes/tablet)
+- [Desktop] (/static/wireframes/desktop)
 
 ### Surface
 
