@@ -51,4 +51,14 @@ Ensuring a site is responsive is tantamount to maximising user experience on the
 
 ![mobile](static/images/mobile.png)
 
+## Manually Testing
+
+### Chrome Developer Tools
+
+A integral part of any developing projects I work on now. Using the chrome developer tools allowed me to continuosly check on how page rendered on various different screen sizes. Not only did it provided this for me but it also provides a vital edit function which allowed me to integrate different css properties to different tag, class and id elements. The developer tools were vital for the production on this project and If I didn't have access to them I am entirely sure the production process wouldn't have been as smooth or quick.
+
+Another key aspect of my manually testing was in relation to jinja templating and ensuring that it was at all times working for me. At times, my syntax and file referencing to mongodb was not correct. A key way in which I was inspecting the correct rendering of the jinja templating was to include some test writing wrapped in either 'p' or 'h1' tags. I would place a small bit of text within a jinja for loop/if-else statement and if the code was rendered back to the site page I would know that my for/if-else statements were being written down correctly. I would also test out whether the variables I was stating in the functions were being referenced to correctly. I would place a certain variable into the main section of any html page (using double curly brackets) and if it was printed back on the main site I would be ensured that my variable referencing was being correctly implemented.
+
+In addition to these testing procedures, I used console log feature to ensure all javascript code was being implemented correctly.
+
 
