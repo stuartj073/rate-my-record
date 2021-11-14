@@ -61,4 +61,17 @@ Another key aspect of my manually testing was in relation to jinja templating an
 
 In addition to these testing procedures, I used console log feature to ensure all javascript code was being implemented correctly.
 
+## Automated Testing
+
+### HTML
+
+Using the (w3 validator), I was able to located few issues within some of my html code.
+
+- Add_review page
+The review page showed the following errors from which I was able to sort out after noting. I left an extra div tag at the end of the html which was then removed. I also forgot to match the id of the image input with the 'for' attribute of the label
+
+![review-issues](static/images/review-html-issues.png)
+
+
+
 
