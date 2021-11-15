@@ -175,7 +175,8 @@ label {
 
 .flashes h4 {
     min-height: 50px;
-    width: 30%;
+    min-width: 30%;
+    max-width: 70%;
     margin: 10px auto;
     font-weight: 599;
     border: 1px solid #424242;
