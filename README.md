@@ -81,14 +81,16 @@ The features of the website were drafted up to suit the project criteria whilst 
 
 - Each review will have it's own designated review page. This page provides full information on the review and if the user has created it they will have access to the edit and delete buttons.
 
+I have included the data schema ![here](static/images/data-schema/data-schema.png).
+
 ### Skeleton
 
 The site was first sketched on paper with a pen by myself before I attempted to make a more concrete blueprint using [Balsamiq](https://balsamiq.com/).
 
 The following links will take you to each set of wireframes associated with the corresponding screen size.
-- [Phone] (/static/wireframes/phone)
-- [Tablet] (/static/wireframes/tablet)
-- [Desktop] (/static/wireframes/desktop)
+- [Phone] (static/wireframes/phone)
+- [Tablet] (static/wireframes/tablet)
+- [Desktop] (static/wireframes/desktop)
 
 ### Surface
 
