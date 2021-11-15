@@ -225,7 +225,7 @@ label {
 
 /************************************ Reviews **/
 
-#reviews {
+.reviews {
     background-color: #eeeeee;
     min-height: 300px;
     letter-spacing: 2px;
@@ -234,19 +234,19 @@ label {
     padding-bottom: 20px;
 }
 
-#reviews img {
+.reviews img {
     border-radius: 10px;
     border: 1px solid grey;
     display: flex;
     margin: 0 auto;
 }
 
-#reviews h5 {
+.reviews h5 {
     font-weight: 2000;
     margin: 15px;
 }
 
-#reviews p {
+.reviews p {
     margin: 5px;
     font-size: 1rem;
     text-align: center;
@@ -411,7 +411,7 @@ ul:not(.browser-default) {
 }
 
 @media only screen and (max-width: 260px){
-    #reviews img {
+    .reviews img {
         height:100px;
         width:100px;
     }
@@ -426,7 +426,7 @@ ul:not(.browser-default) {
 }
 
 @media only screen and (max-width: 370px){
-    #reviews img {
+    .reviews img {
         height:150px;
         width:150px;
     }
