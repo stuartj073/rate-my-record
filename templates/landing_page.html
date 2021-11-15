@@ -38,7 +38,7 @@
     <div class="row">
         <!-- Iterate over all reviews in reviews collection -->
         {% for review in reviews %}
-        <div class="col s12 m6" id="reviews">
+        <div class="col s12 m6 reviews">
             <h5 class="center-align">
                 <a href="{{ url_for('review_page', review_id=review._id) }}">{{ review.album_name }}</a>
             </h5>
@@ -101,7 +101,7 @@
     <div class="row">
         <!-- Iterate over all store reviews in store_reviews collection -->
         {% for store_review in store_reviews %}
-        <div class="col s12 m6" id="reviews">
+        <div class="col s12 m6 reviews">
             <h5 class="center-align">
                 <a href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">
                     {{ store_review.store_name }}
