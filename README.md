@@ -81,7 +81,8 @@ The features of the website were drafted up to suit the project criteria whilst 
 
 - Each review will have it's own designated review page. This page provides full information on the review and if the user has created it they will have access to the edit and delete buttons.
 
-I have included the data schema ![here](static/images/data-schema/data-schema.png).
+I constructed a data schema using [dbdiagram.io](https://dbdiagram.io/home).
+![here](static/images/data-schema/data-schema.png).
 
 ### Skeleton
 
