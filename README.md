@@ -180,7 +180,6 @@ In order to clone my repository, the user must visit my repository page.
 
 
 
-
 ### Landing Page
 
 As stated in the above user stories, I want the main message of the site to become known to the user upon entering the website. When a user clicks on to the site, they will be greeted by a large cover photo with a backgdrop image of vinyl records. The banner presiding over the image reads: "Rate My Record.. A place for like-minded music lovers to contribute". Below it are two options allowing a first time visitor the option to register or a current user the chance to log back in. Below this (if a user is logged in) section is a search bar allowing user's to look for anything they are interested in. Following underneath the search bar are the various record and record store reviews left by user's registered on the website. Each part is accompanied with headings and each review is given it's own 'review-card'.
@@ -198,6 +197,24 @@ The reviews here are styled similiarly to the reviews as seen on the landing pag
 ### Manage Reviews
 
 This page is only visible for the admin of the website. 
+
+## Credit 
+
+### Content
+
+- [Unsplash](https://unsplash.com/) was used for the cover image along with the default imaging for each store and record review. 
+- [AmiResponsive](http://ami.responsivedesign.is/#) for the cover of the README file showing the website on four different screen resolutions.
+- [Balsamiq](https://balsamiq.com/) for the blueprints needed to create the initial wireframes of the website on different screen resolutions at the project conception.
+- [FontAwesome](https://fontawesome.com/) for the different logos utilised throughout the site as well as the social links for the site footer.
+- [Dbdiagram.io](https://dbdiagram.io/home) for the visual representation of my data schema.
+- [W3C](https://validator.w3.org/) to ensure all CSS and HTML code was bug free.
+
+### Acknowledgements
+I'd like to place on record my sincere thanks to my mentor Cans Succulu. Cans was always on hand for any issue I had with the project and I am very grateful for his efforts and insight into how I could improve the overall functioning and look of the game. 
+
+I'd also like to thank the wider Code Institute community through the slack channel for any queries I had throughout my time on the project.
+
+
 
 
 
