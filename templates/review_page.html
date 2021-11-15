@@ -9,12 +9,12 @@
         <!-- If img is provided by user -->
         {% if review.img|length %}
         <div class="col s12">
-            <img src="{{ review.img }}" height="250px" width="250px" alt="album-cover">
+            <img src="{{ review.img }}" height="250" width="250" alt="album-cover">
         </div>
         <!-- Default image if no img provided -->
         {% else %}
         <div class="col s12">
-            <img src="{{ url_for('static', filename='images/brett-jordan-hrUhyFq6u-A-unsplash.jpg') }}" height="250px" width="250px"
+            <img src="{{ url_for('static', filename='images/brett-jordan-hrUhyFq6u-A-unsplash.jpg') }}" height="250" width="250"
                 alt="record-cover">
         </div>
         {% endif %}
