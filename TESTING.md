@@ -70,32 +70,43 @@ Using the (w3 validator), I was able to located few issues within some of my htm
 #### Heading issue
 Throughout every page the same error was being displayed which was in relation to the lack of a heading for the flash section. After some time looking into the issue online through various resources It was discovered that it was a 'non-normative usage recommendation' as per the specifications of HTML5. I chose to ignore the issue as it was simply noted as a usage recommendation rather than something impending the overall functioning of the code itself.
 
-
-- Add_review page
-The review page showed the following errors from which I was able to sort out after noting. I left an extra div tag at the end of the html which was then removed. I also forgot to match the id of the image input with the 'for' attribute of the label.
-
-![review-issues](static/images/review-html-issues.png)
-
 - Landing page 
 There were a few issues with the landing page. The main issues, which were centered around the attributes for the 'img' tag were sorted by removing the pixels ending to the height and width of the element. I also forgot to include the 'alt' tag to the element. This removed many of the errors that were being disovered in the html validator. I also was given an error for the 'h1' element being used elsewher throughout the document. It is considered bad practice to use the top level heading further down a page.
 
-![landing-issues](static/images/landing-issues.png)
+![landing-issues](static/images/testing/landing-issues.png)
 
 - About page
-![about-page](static/images/about-page.png)
+![about-page](static/images/testing/about-page.png)
 
 - Log in page
-![login](static/images/login.png)
+![login](static/images/testing/login.png)
 
 - Register page
-![register](static/images/register.png)
+![register](static/images/testing/register.png)
 
 - Profile page
 For the profile page I made the mistake of leaving out the alt attribute for both the default images for each reviews. The issue repeated itself a numeber of times due to the jinja for loop in the html code.This issue was fixed when I included the alt tags with some text.
 
-![profile](static/images/profile.png)
+![profile](static/images/testing/profile.png)
 
+- Add a review page
+![add-review](static/images/testing/add-review.png)
 
+- Add a store review
+The following error was noted from the store reviews html code. It was fixed by leaving a space between the two attributes in question
+
+![add-store-review](static/images/testing/add-store-review.png)
+
+- Manage Reviews page
+The following errors were found from the page. The 'px' issue again was replicated a number of times due to the jinja for loop. This was taken care of by removing the px at the end of the height and width attributes. 
+
+![manage-reviews.png](static/images/testing/manage-reviews.png)
+
+- Manage users
+![manage-users](static/images/testing/manage-users.png)
+
+- Contact page
+![contact-page](static/images/testing/contact-page.png)
 
 
 
