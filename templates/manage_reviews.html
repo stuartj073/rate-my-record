@@ -6,7 +6,7 @@
     <!-- Record Reviews -->
     <div class="row">
         {% for review in reviews %}
-        <div class="col s12 m6" id="reviews">
+        <div class="col s12 m6 reviews">
             <h5 class="center-align">
                 <a href="{{ url_for('review_page', review_id=review._id) }}">{{ review.album_name }}</a>
             </h5>
@@ -39,7 +39,7 @@
     <h4 class="center-align headings">Store Reviews</h4>
     <div class="row">
         {% for store_review in store_reviews %}
-        <div class="col s12 m6" id="reviews">
+        <div class="col s12 m6 reviews">
             <h5 class="center-align">
                 <a
                     href="{{ url_for('store_review_page', store_review_id=store_review._id) }}">{{ store_review.store_name }}</a>
