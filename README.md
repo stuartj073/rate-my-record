@@ -89,9 +89,9 @@ I constructed a data schema using [dbdiagram.io](https://dbdiagram.io/home).
 The site was first sketched on paper with a pen by myself before I attempted to make a more concrete blueprint using [Balsamiq](https://balsamiq.com/).
 
 The following links will take you to each set of wireframes associated with the corresponding screen size.
-- [Phone] (static/wireframes/phone)
-- [Tablet] (static/wireframes/tablet)
-- [Desktop] (static/wireframes/desktop)
+- [Phone](static/wireframes/phone)
+- [Tablet](static/wireframes/tablet)
+- [Desktop](static/wireframes/desktop)
 
 ### Surface
 
@@ -104,7 +104,7 @@ For the main body of the site I decided to utilise a background color of '#d7ccc
 The font-families that were utilised throughout the project were: 'Zilla & Slab', 'Gabriel' & 'Jungle'. I didn't want to choose anymore than three as I felt that would work to distract the overall experience for a visitor to the website. 
 
 - Images
-The images used for the cover of the landing page was obtained through [unsplash] (https://unsplash.com/) as was the default image for the record store reviews. The default image for the record reviews was obtained through [google] (www.google.com).
+The images used for the cover of the landing page was obtained through [unsplash](https://unsplash.com/) as was the default image for the record  and store reviews.
 
 ## Technologies used
 
@@ -147,7 +147,7 @@ I first created the repositary through logging into my Github account and:
 - Cloning and Forking
 In order to clone my repository, the user must visit my repository page.
 - Cloning by command line: Click the button beside the green button titled 'code', there you will be given various options on how you would like to clone the repository. You must then type 'git clone' into your own workspace along with the repo URL and enter.
-- Forking: Go to my repositary [page] (https://github.com/stuartj073/rate-my-record). In the top right of the page, below the navbar, click the 'fork' button. The fork should now be in your repositories.
+- Forking: Go to my repositary [page](https://github.com/stuartj073/rate-my-record). In the top right of the page, below the navbar, click the 'fork' button. The fork should now be in your repositories.
 
 ### MongoDB
 
@@ -198,7 +198,7 @@ The reviews here are styled similiarly to the reviews as seen on the landing pag
 
 This page is only visible for the admin of the website. 
 
-## Credit 
+## Credits
 
 ### Content
 

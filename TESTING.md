@@ -108,6 +108,10 @@ The following errors were found from the page. The 'px' issue again was replicat
 - Contact page
 ![contact-page](static/images/testing/contact-page.png)
 
+### CSS
+
+![css](static/images/testing/css.png)
+
 
 
 
