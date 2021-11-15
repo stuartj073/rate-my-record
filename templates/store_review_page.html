@@ -4,7 +4,7 @@
 
 <section class="review-page">
     <h1 class="center-align headings">Reviews</h1>
-    <div class="row" id="reviews">
+    <div class="row reviews">
         <h2 class="center-align text-underline">{{ store_review.store_name }}</h2>
         <!-- If img is provided by user -->
         {% if store_review.img|length %}
@@ -13,7 +13,7 @@
         </div>
         {% else %}
         <div class="col s12">
-            <img src="{{ url_for('static', filename='images/record-g1ebaaace1_640.jpg) }}" height="250" width="250"
+            <img src="{{ url_for('static', filename='images/record-g1ebaaace1_640.jpg') }}" height="250" width="250"
                 alt="store-cover">
         </div>
         {% endif %}
@@ -26,9 +26,9 @@
             {% if session.user %}
             <div class="row buttons">
                 {% if session.user == store_review.created_by %}
-                <a href="{{ url_for('edit_store_review', store_review_id=store_review_.id) }}"
+                <a href="{{ url_for('edit_store_review', store_review_id=store_review._id) }}"
                     class="waves-effect waves-light btn-large green">Edit</a>
-                <a href="{{ url_for('delete_store_review', store_review_id=store_review_.id) }}"
+                <a href="{{ url_for('delete_store_review', store_review_id=store_review._id) }}"
                     class="waves-effect waves-light btn-large green">Delete</a>
                 <!-- Show if admin -->
                 {% elif session.user == "admin" %}
@@ -37,7 +37,8 @@
                 <a href="{{ url_for('delete_store_review', store_review_id=store_review._id) }}"
                     class="waves-effect waves-light btn-large red"><i class="material-icons">Delete</i></a>
                 {% else %}
-                <a href="#"><i class="waves-effect waves-light btn-large grey">Add to wishlist</i></a>
+                <a href="{{ url_for('add_to_stores_wishlist', store_review_id=store_review._id) }}"
+                class="waves-effect waves-light btn-large grey">>Add to wishlist</a>
                 {% endif %}
             </div>
             {% endif %}

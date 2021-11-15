@@ -4,7 +4,7 @@
 
 <section class="review-page">
     <h1 class="center-align headings">Reviews</h1>
-    <div class="row" id="reviews">
+    <div class="row reviews">
         <h2 class="center-align text-underline">{{ review.album_name }}</h2>
         <!-- If img is provided by user -->
         {% if review.img|length %}
@@ -37,7 +37,11 @@
                     class="waves-effect waves-light btn-large blue"><i class="material-icons">Edit</i></a>
                 <a href="{{ url_for('delete_review', review_id=review._id) }}" class="waves-effect waves-light btn-large red"><i class="material-icons">Delete</i></a>
                 {% else %}
-                <a href="{{ url_for('add_to_wishlist', review_id=review._id) }}"><i class="waves-effect waves-light btn-large grey">Add to wishlist</i></a>
+                <button>
+                    
+                </button>
+                <a href="{{ url_for('add_to_wishlist', review_id=review._id) }}" class="waves-effect waves-light btn-large grey">
+                    Add to wishlist</a>
                 {% endif %}
             </div>
             {% endif %}

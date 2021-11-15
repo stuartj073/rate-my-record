@@ -26,11 +26,11 @@
         </div>
         <!-- Search button -->
         <div class="row">
-        <div class="col s12 buttons">
-            <button class="waves-effect waves-light btn-large blue">
-                Search
-            </button>
-        </div>
+            <div class="col s12 buttons">
+                <button class="waves-effect waves-light btn-large blue">
+                    Search
+                </button>
+            </div>
         </div>
     </form>
     <!-- Show all record reviews from reviews collection -->
@@ -66,14 +66,14 @@
                         class="waves-effect waves-light btn-large green">Edit
                     </a>
                     <a href="{{ url_for('delete_review', review_id=review._id) }}"
-                    class="waves-effect waves-light btn-large red">Delete
+                        class="waves-effect waves-light btn-large red">Delete
                     </a>
                     <!-- Show if admin -->
                     {% elif session.user == "admin" %}
                     <a href="{{ url_for('edit_review', review_id=review._id) }}"
                         class="waves-effect waves-light btn-large green">Edit</a>
                     <a href="{{ url_for('delete_review', review_id=review._id) }}"
-                    class="waves-effect waves-light btn-large red">Delete</a>
+                        class="waves-effect waves-light btn-large red">Delete</a>
                     {% else %}
                     <!-- If user id is not in a wishlist array -->
                     {% if user._id not in review.wishlist %}
@@ -125,7 +125,9 @@
                 <div class="row buttons">
                     {% if session.user == store_review.created_by %}
                     <a href="{{ url_for('edit_store_review', store_review_id=store_review._id) }}"
-                        class="waves-effect waves-light btn-large green">Edit</a>
+                        class="waves-effect waves-light btn-large green">
+                        Edit
+                    </a>
                     <a href="{{ url_for('delete_store_review', store_review_id=store_review._id) }}"
                         class="waves-effect waves-light btn-large red">
                         Delete
