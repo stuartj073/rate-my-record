@@ -98,7 +98,9 @@
           <a href="https://twitter.com/?lang=en" target="_blank"><i class="fab fa-twitter"></i></a>
         </li>
       </ul>
+      {% if session.user %}
       <h5 class="center-align">Want to get in touch directly? Contact us <a href="{{ url_for('contact') }}">here.</a></h5>
+      {% endif %}
     </div>
   </footer>
   <!-- Script sources -->
