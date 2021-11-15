@@ -2,9 +2,9 @@
 {% block content %}
 
 <!-- Customer section  -->
-<section class="landing-container">
+<div class="landing-container">
     <div class="landing-page-img">
-        <img src="static/images/mick-haupt--EoUIP5q2q8-unsplash.jpg" height="600" width="100%">
+        <img src="static/images/mick-haupt--EoUIP5q2q8-unsplash.jpg" height="600" width="100">
         <div class="login">
             <h1 class="center-align"><a href="url_for('landing')">Rate My Record</a></h1>
             <p class="center-align hide-on-small-only"><i>A place for like-minded music lovers to contribute</i></hp>
@@ -15,7 +15,7 @@
                 {% endif %}
         </div>
     </div>
-    <h1 class="center-align headings">Reviews</h1>
+    <h2 class="center-align headings">Reviews</h2>
     <!-- Display search bar -->
     <form action="{{ url_for('search') }}" method="POST" id="search-bar">
         <div class="row">
@@ -45,12 +45,12 @@
             <!-- If img is provided by user -->
             {% if review.img|length %}
             <div class="col s12">
-                <img src="{{ review.img }}" height="250px" width="250px" alt="album-cover">
+                <img src="{{ review.img }}" height="250" width="250" alt="user-cover">
             </div>
             <!-- Default image if no img provided -->
             {% else %}
             <div class="col s12">
-                <img src="static/images/brett-jordan-hrUhyFq6u-A-unsplash.jpg" height="250px" width="250px"
+                <img src="static/images/brett-jordan-hrUhyFq6u-A-unsplash.jpg" height="250" width="250"
                     alt="record-cover">
             </div>
             {% endif %}
@@ -110,11 +110,11 @@
             <!-- If img is provided by user -->
             {% if store_review.img|length %}
             <div class="col s12">
-                <img src="{{ store_review.store_img }}" height="250px" width="250px" alt="store_img">
+                <img src="{{ store_review.store_img }}" height="250" width="250" alt="user-store">
             </div>
             {% else %}
             <div class="col s12">
-                <img src="static/images/record-g1ebaaace1_640.jpg" height="250px" width="250px" alt="store-cover">
+                <img src="static/images/record-g1ebaaace1_640.jpg" height="250" width="250" alt="default-store">
             </div>
             {% endif %}
             <div class="col s12">
@@ -161,5 +161,5 @@
         </div>
         {% endfor %}
     </div>
-</section>
+</div>
 {% endblock %}

@@ -68,9 +68,14 @@ In addition to these testing procedures, I used console log feature to ensure al
 Using the (w3 validator), I was able to located few issues within some of my html code.
 
 - Add_review page
-The review page showed the following errors from which I was able to sort out after noting. I left an extra div tag at the end of the html which was then removed. I also forgot to match the id of the image input with the 'for' attribute of the label
+The review page showed the following errors from which I was able to sort out after noting. I left an extra div tag at the end of the html which was then removed. I also forgot to match the id of the image input with the 'for' attribute of the label.
 
 ![review-issues](static/images/review-html-issues.png)
+
+- Landing page 
+There were a few issues with the landing page. The main issues, which were centered around the attributes for the 'img' tag were sorted by removing the pixels ending to the height and width of the element. I also forgot to include the 'alt' tag to the element. This removed many of the errors that were being disovered in the html validator. I also was given an error for the 'h1' element being used elsewher throughout the document. It is considered bad practice to use the top level heading further down a page.
+
+![landing-issues](static/images/landing-issues.png)
 
 
 
