@@ -1,5 +1,7 @@
 # Rate My Record
 
+![amiresponsive](static/images/amiresponsive.png)
+
 In line with the criteria for the third milestone project I have chosen to adopt the first route in developing my own idea and bringing it to life. The idea chosen meets all CRUD criteria in making the dynamic website function and allows visitors to sign up/sign in at any given point of their own choosing.
 The idea is quite simple. The website is a review sharing site which allows users to comment on specific albums/records/singles as well as record stores themselves. On their own profile page, user’s can view the reviews they’ve made in the past as well as editing them. They can also add reviews from other users to their own page using the ‘add to wishlist’ button displayed on reviews made from others on the landing page. Going with these features is the ability a user has to remove their own review as well as those from their wish list. 
 The purpose of the website is to give user’s the chance to acquire and learn about new music/record stores they would’ve been unfamiliar with. The database is utilised in such a way as to prompt users into discovering new things and potentially providing some knowledge of their own musical taste. 
