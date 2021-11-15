@@ -108,6 +108,10 @@ The font-families that were utilised throughout the project were: 'Zilla & Slab'
 - Images
 The images used for the cover of the landing page was obtained through [unsplash](https://unsplash.com/) as was the default image for the record  and store reviews.
 
+## Testing
+
+Full documentation of all manual and automated testing can be found [here](TESTING.md).
+
 ## Technologies used
 
 ### Languages
