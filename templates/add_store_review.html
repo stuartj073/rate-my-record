@@ -4,7 +4,7 @@
 <h2 class="center-align headings">Add a Store Review !</h2>
 <div class="row">
     <form id="store" name="store" method="POST" action="{{ url_for('add_store_review') }}">
-        <div class="row">
+        <div class="row inputs">
             <div class="input-field col s12 m2">
                 <label class="center-align" for="store-name">Name</label>
             </div>
@@ -12,7 +12,7 @@
                 <input id="store-name" name="store-name" type="text" class="validate" required>
             </div>
         </div>
-        <div class="row">
+        <div class="row inputs">
             <div class="input-field col s12 m2">
                 <label class="center-align" for="location">Location</label>
             </div>
@@ -20,7 +20,7 @@
                 <input id="location" name="location" type="text" class="validate" required>
             </div>
         </div>
-        <div class="row">
+        <div class="row inputs">
             <div class="input-field col s12 m2">
                 <label for="store-desc">Description</label>
             </div>
@@ -28,7 +28,7 @@
                 <textarea id="store-desc" name="store-desc" class="materialize-textarea"></textarea>
             </div>
         </div>
-        <div class="row">
+        <div class="row inputs">
             <div class="input-field col s12 m2">
                 <label for="genre-store">Genre's</label>
             </div>
@@ -36,7 +36,7 @@
                 <input id="genre-store" name="genre-store" type="text" class="validate">
             </div>
         </div>
-        <div class="row">
+        <div class="row inputs">
             <div class="input-field col s12 m2">
                 <label for="image-store">Image</label>
             </div>
@@ -44,7 +44,7 @@
                 <input id="image-store" name="image-store" type="text" class="validate" placeholder="optional">
             </div>
         </div>
-        <div class="row">
+        <div class="row inputs">
             <div class="center-align">
                 <button class="btn waves-effect waves-light" type="submit" name="action">Add Store Review
                     <i class="material-icons right"></i>
