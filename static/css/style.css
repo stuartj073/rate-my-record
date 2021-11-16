@@ -146,6 +146,10 @@ label {
     font-size: 1.5rem;
 }
 
+.input-field.col label {
+    left: -3.25rem;
+}
+
 /************************************ HEADER LINKS **/
 
 .login {
@@ -333,6 +337,10 @@ form label {
     margin: 0 auto;
 }
 
+.inputs {
+    margin-left:10%;
+}
+
 input[type=text]:not(.browser-default) {
     width:80%;
     margin:0 auto;
@@ -349,6 +357,8 @@ input:not([type]) {
 input[type=password]:not(.browser-default) {
     width:80%;
 }
+
+
 
 #record input {
     height:50px;
@@ -529,6 +539,10 @@ ul:not(.browser-default) {
         background-color: white;
         margin-top:30px;
         border-radius: 10px;
+    }
+
+    .input-field.col label {
+        left: -.75rem;
     }
 }
 
