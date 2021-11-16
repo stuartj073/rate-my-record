@@ -5,16 +5,16 @@
 <h2 class="center-align headings">Sign in</h2>
 <div class="row">
     <!-- Form content -->
-    <form class="col s12 form" method="POST" action="{{ url_for('login') }}">
-        <div class="row">
+    <form class="col s12 login-form" method="POST" action="{{ url_for('login') }}">
+        <div class="row inputs">
             <div class="input-field col s10 m2">
                 <label for="username">Username</label>
             </div>
             <div class="col s12 m10">
-                <input id="username" name="username" class="validate input">
+                <input id="username" name="username" class="validate">
             </div>
         </div>
-        <div class="row">
+        <div class="row inputs">
             <div class="input-field col s10 m2">
                 <label for="password">Password</label>
             </div>

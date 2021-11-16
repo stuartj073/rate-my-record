@@ -5,8 +5,8 @@
 <h2 class="center-align headings">Register</h2>
 <div class="row">
     <!-- Form content -->
-    <form class="col s12 form" method="POST" action="{{ url_for('register') }}">
-        <div class="row">
+    <form class="col s12 form" id="register" method="POST" action="{{ url_for('register') }}">
+        <div class="row inputs">
             <div class="input-field col s12 m2">
                 <label for="first_name">First Name</label>
             </div>
@@ -14,7 +14,7 @@
                 <input id="first_name" name="first_name" type="text" class="validate" required>
             </div>
         </div>
-        <div class="row">
+        <div class="row inputs">
             <div class="input-field col s12 m2">
                 <label for="last_name">Last Name</label>
             </div>
