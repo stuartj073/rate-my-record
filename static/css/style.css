@@ -121,6 +121,10 @@ nav .sidenav-trigger {
     line-height: 100px;
 }
 
+.landing-container .input-field.col label {
+    left:-.25rem;
+}
+
 /************************************ SEARCH BAR **/
 
 .card-panel {
