@@ -32,10 +32,13 @@ def landing():
     """
     reviews = list(mongo.db.reviews.find())
     store_reviews = list(mongo.db.store_reviews.find())
-    user = mongo.db.users.find_one({"username":session["user"]})
+
+    if not session:
+        return render_template("landing_page.html", reviews=reviews, store_reviews=store_reviews)
+    
+    user = mongo.db.users.find_one({"username": session["user"]})
     return render_template("landing_page.html", reviews=reviews,
-                           store_reviews=store_reviews,
-                           user=user)
+                        store_reviews=store_reviews, user=user)
 
 
 @app.route("/search", methods=["GET", "POST"])
