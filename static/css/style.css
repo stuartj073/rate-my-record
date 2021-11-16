@@ -350,6 +350,12 @@ input[type=password]:not(.browser-default) {
     width:80%;
 }
 
+#record input {
+    height:50px;
+    width:80%;
+    background-color: white;
+}
+
 /************************************ FOOTER **/
 
 .social-links {

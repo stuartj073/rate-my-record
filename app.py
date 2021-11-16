@@ -32,7 +32,7 @@ def landing():
     """
     reviews = list(mongo.db.reviews.find())
     store_reviews = list(mongo.db.store_reviews.find())
-    user = list(mongo.db.users.find())
+    user = mongo.db.users.find_one({"username":session["user"]})
     return render_template("landing_page.html", reviews=reviews,
                            store_reviews=store_reviews,
                            user=user)
