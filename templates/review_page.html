@@ -19,7 +19,14 @@
         </div>
         {% endif %}
         <div class="col s12">
-            <p><strong>Artist name: </strong>{{ review.artist_name }}</p>
+            <div class="row">
+                <div class="col s12 m4">
+                    <h4>Artist name: </h4>
+                </div>
+                <div class="col s12 m8">
+                    <h4>{{ review.artist_name }}</h4>
+                </div>
+            </div>
             <p><strong>Description: </strong>{{ review.desc }}</p>
             <p><strong>Label: </strong>{{ review.label }}</p>
             <p><strong>Created by: </strong>{{ review.created_by }}</p>

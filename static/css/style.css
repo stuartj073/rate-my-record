@@ -312,8 +312,9 @@ form {
 
 form label {
     font-size: 2rem;
-    line-height: 1px;
+    line-height: 10px;
     color: #eeeeee;
+    padding-left:30px;
 }
 
 .btn {
@@ -339,6 +340,10 @@ input[type=text]:not(.browser-default) {
 
 label {
     padding-right:10px;
+}
+
+input:not([type]) {
+    width:80%;
 }
 
 /************************************ FOOTER **/
