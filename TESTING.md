@@ -113,5 +113,6 @@ The following errors were found from the page. The 'px' issue again was replicat
 ![css](static/images/testing/css.png)
 
 
+# Bugs
 
-
+For the brand logo of the site (located in the navbar) I wanted to ensure it had different font-sizes to account for the different screen sizes. When the site is rendered at 500px, ideally I would like the font-size to decrease to 1.5rem px. Unfortunately, whenever I put this style rule in (under the max-width:500px styles) it would ignore the font style rules I would have for the smaller screen sizes. I looked up the issue on various different platforms and asked friends and colleagues to no avail. The result is that when the screen is decreased to 500px, the font size is rendered a lot smaller than I would ideally have it. This smaller font size however, accounts for the much smaller screen resolutions of other potential visitors to the site.
