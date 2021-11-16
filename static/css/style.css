@@ -354,6 +354,29 @@ input[type=password]:not(.browser-default) {
     height:50px;
     width:80%;
     background-color: white;
+    border-radius: 10px;
+}
+
+#store input {
+    height:50px;
+    width:80%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+
+#record textarea {
+    height:100px;
+    width:80%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#store textarea {
+    height:100px;
+    width:80%;
+    background-color: white;
+    border-radius: 10px;
 }
 
 /************************************ FOOTER **/
@@ -481,6 +504,31 @@ ul:not(.browser-default) {
         width:80%;
         background-color: white;
         margin-top:30px;
+        border-radius: 10px;
+    }
+
+    #store input {
+        height:50px;
+        width:80%;
+        background-color: white;
+        margin-top:30px;
+        border-radius: 10px;
+    }
+
+    #record textarea {
+        height:100px;
+        width:80%;
+        background-color: white;
+        margin-top:30px;
+        border-radius: 10px;
+    }
+
+    #store textarea {
+        height:100px;
+        width:80%;
+        background-color: white;
+        margin-top:30px;
+        border-radius: 10px;
     }
 }
 
