@@ -406,7 +406,7 @@ input[type=password]:not(.browser-default) {
 }
 
 #edit_review label {
-    left:-.75rem;
+    left:-4.25rem;
 }
 
 #edit_review textarea {
@@ -582,12 +582,24 @@ ul:not(.browser-default) {
         border-radius: 10px;
     }
 
+    #edit_review input {
+        height:50px;
+        width:80%;
+        background-color: white;
+        margin-top:30px;
+        border-radius: 10px;
+    }
+
     #register input {
         height:50px;
         width:80%;
         background-color: white;
         margin:30px;
         border-radius: 10px;
+    }
+
+    #register label {
+        left:20px;
     }
 
     #store input {
@@ -606,6 +618,14 @@ ul:not(.browser-default) {
         border-radius: 10px;
     }
 
+    #edit_review textarea {
+        height:100px;
+        width:80%;
+        background-color: white;
+        margin-top:30px;
+        border-radius: 10px;
+    }
+
     #store textarea {
         height:100px;
         width:80%;
@@ -617,6 +637,11 @@ ul:not(.browser-default) {
     .input-field.col label {
         left: -.75rem;
     }
+
+    #edit-review label {
+        text-align: center;
+    }
+    
 
     #login-form input {
         margin-top:20px;
