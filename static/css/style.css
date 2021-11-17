@@ -246,6 +246,10 @@ label {
     padding-bottom: 20px;
 }
 
+.reviews h2 {
+    padding-top:20px;
+    font-family: 'Gabriela', serif;
+}
 
 .reviews img {
     border-radius: 10px;
