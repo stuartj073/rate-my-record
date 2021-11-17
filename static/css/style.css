@@ -618,6 +618,10 @@ ul:not(.browser-default) {
     .input-field.col label {
         left: -.75rem;
     }
+
+    #login-form input {
+        margin-top:20px;
+    }
 }
 
 @media only screen and (max-width: 730px) {
