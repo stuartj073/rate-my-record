@@ -126,3 +126,8 @@ I also made use of the jinja templating to print out variables to the different 
 ## Brand Logo
 
 For the brand logo of the site (located in the navbar) I wanted to ensure it had different font-sizes to account for the different screen sizes. When the site is rendered at 500px, ideally I would like the font-size to decrease to 1.5rem px. Unfortunately, whenever I put this style rule in (under the max-width:500px styles) it would ignore the font style rules I would have for the smaller screen sizes. I looked up the issue on various different platforms and asked friends and colleagues to no avail. The result is that when the screen is decreased to 500px, the font size is rendered a lot smaller than I would ideally have it. This smaller font size however, accounts for the much smaller screen resolutions of other potential visitors to the site.
+
+## Image link
+
+I am aware that it is possible to input incorrect links into the image input for the record and store review links.
+Unfortunately, with the impending deadline and my current work routine I was unable to construct a function that correctly detects whether or not the link provided is in fact an image or not. As I get more spare time over the next few weeks I will be looking into devising a function that detects just that as I continue to learn on my path to finishing off the course to the best of my ability.
