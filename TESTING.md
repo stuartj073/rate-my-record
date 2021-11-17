@@ -112,6 +112,14 @@ The following errors were found from the page. The 'px' issue again was replicat
 
 ![css](static/images/testing/css.png)
 
+### JavaScript
+
+The code was passed through [JSHint](https://jshint.com/) with no issues.
+
+### Python
+
+All code was properly monitered using the terminal throughout the entire development process. There are currently only two errors throughout the app.py which are in reference to the env.py file which was to be expected when making the file itself.
+
 ## Manual Testing
 
 I used chrome developer tools extensively throughout my entire production process. This was done with the purpose of ensuring maximum responsiveness across all screen sizes and also by using the console log to ensure all javascript code was working. 
