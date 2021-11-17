@@ -2,7 +2,7 @@
 {% block content %}
 <!-- A page that allows a user to look at each review -->
 
-<section class="review-page">
+<div class="container">
     <h1 class="center-align headings">Reviews</h1>
     <div class="row reviews">
         <h2 class="center-align">{{ review.album_name }}</h2>
@@ -19,14 +19,7 @@
         </div>
         {% endif %}
         <div class="col s12">
-            <div class="row">
-                <div class="col s12 m4">
-                    <h4>Artist name: </h4>
-                </div>
-                <div class="col s12 m8">
-                    <h4>{{ review.artist_name }}</h4>
-                </div>
-            </div>
+            <p><strong>Artist: </strong>{{ review.artist_name }}</p>
             <p><strong>Description: </strong>{{ review.desc }}</p>
             <p><strong>Label: </strong>{{ review.label }}</p>
             <p><strong>Created by: </strong>{{ review.created_by }}</p>
@@ -54,6 +47,6 @@
             {% endif %}
         </div>
     </div>
-</section>
+</div>
 
 {% endblock %}

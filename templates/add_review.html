@@ -3,73 +3,72 @@
 
 <!-- Page that allows user's to post record review -->
 <h2 class="center-align headings">Add a Review !</h2>
-<form id="record" method="POST" action="{{ url_for(
-    'add_review') }}">
-    <div class="row inputs">
-        <div class="input-field col s12 m2">
-            <label class="center-align labels" for="album">Album</label>
+<div class="review-page">
+    <form id="record" method="POST" action="{{ url_for(
+        'add_review') }}">
+        <div class="row inputs">
+            <div class="input-field col s12 m2">
+                <label class="center-align labels" for="album">Album</label>
+            </div>
+            <div class="col s12 m10">
+                <input id="album" name="album" type="text" class="validate" required>
+            </div>
         </div>
-        <div class="col s12 m10">
-            <input id="album" name="album" type="text" class="validate" required>
+        <div class="row inputs">
+            <div class="input-field col s12 m2">
+                <label class="center-align" for="artist">Artist</label>
+            </div>
+            <div class="col s12 m10">
+                <input id="artist" name="artist" type="text" class="validate" required>
+            </div>
         </div>
-    </div>
-    <div class="row inputs">
-        <div class="input-field col s12 m2">
-            <label class="center-align" for="artist">Artist</label>
+        <div class="row inputs">
+            <div class="input-field col s12 m2">
+                <label for="desc">Description</label>
+            </div>
+            <div class="col s12 m10">
+                <textarea id="desc" name="desc" class="materialize-textarea" required></textarea>
+            </div>
         </div>
-        <div class="col s12 m10">
-            <input id="artist" name="artist" type="text" class="validate" required>
+        <div class="row inputs">
+            <div class="input-field col s12 m2">
+                <label for="genre">Genre</label>
+            </div>
+            <div class="col s12 m10">
+                <input id="genre" name="genre" type="text" class="validate" required>
+            </div>
         </div>
-    </div>
-    <div class="row inputs">
-        <div class="input-field col s12 m2">
-            <label for="desc">Description</label>
+        <div class="row inputs">
+            <div class="input-field col s12 m2">
+                <label for="label">Label</label>
+            </div>
+            <div class="col 12 m10">
+                <input id="label" name="label" type="text" class="validate" required>
+            </div>
         </div>
-        <div class="col s12 m10">
-            <textarea id="desc" name="desc" class="materialize-textarea" required></textarea>
+        <div class="row inputs">
+            <div class="input-field col s12 m2">
+                <label for="date">Date</label>
+            </div>
+            <div class="col s12 m10">
+                <input type="text" name="date" id="date" class="datepicker" required>
+            </div>
         </div>
-    </div>
-    <div class="row inputs">
-        <div class="input-field col s12 m2">
-            <label for="genre">Genre</label>
+        <div class="row inputs">
+            <div class="input-field col s12 m2">
+                <label for="image">Image</label>
+            </div>
+            <div class="col s12 m10">
+                <input id="image" name="image" type="text" class="validate" placeholder="optional">
+            </div>
         </div>
-        <div class="col s12 m10">
-            <input id="genre" name="genre" type="text" class="validate" required>
+        <div class="row">
+            <div class="center-align">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Add Review
+                    <i class="material-icons right"></i>
+                </button>
+            </div>
         </div>
-    </div>
-    <div class="row inputs">
-        <div class="input-field col s12 m2">
-            <label for="label">Label</label>
-        </div>
-        <div class="col 12 m10">
-            <input id="label" name="label" type="text" class="validate" required>
-        </div>
-    </div>
-    <div class="row inputs">
-        <div class="input-field col s12 m2">
-            <label for="date">Date</label>
-        </div>
-        <div class="col s12 m10">
-            <input type="text" name="date" id="date" class="datepicker" required>
-        </div>
-    </div>
-    <div class="row inputs">
-        <div class="input-field col s12 m2">
-            <label for="image">Image</label>
-        </div>
-        <div class="col s12 m10">
-            <input id="image" name="image" type="text" class="validate"
-            placeholder="optional">
-        </div>
-    </div>
-    <div class="row">
-        <div class="center-align">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Add Review
-                <i class="material-icons right"></i>
-            </button>
-        </div>
-    </div>
-</form>
-
-
+    </form>
+</div>
 {% endblock %}

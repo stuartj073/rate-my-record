@@ -74,7 +74,7 @@ img {
 }
 
 .landing-container {
-    padding: 10px;
+    padding: 0 50px;
 }
 
 
@@ -246,6 +246,7 @@ label {
     padding-bottom: 20px;
 }
 
+
 .reviews img {
     border-radius: 10px;
     border: 1px solid grey;
@@ -380,6 +381,14 @@ input[type=password]:not(.browser-default) {
 
 }
 
+#login-form input {
+    height:50px;
+    width:80%;
+    background-color: white;
+    border-radius: 10px;
+    margin:0 auto;
+}
+
 #register input {
     height:50px;
     width:80%;
@@ -476,7 +485,7 @@ ul:not(.browser-default) {
     }
 
     .container{
-        width:100%;
+        width:80%;
     }
 }
 
