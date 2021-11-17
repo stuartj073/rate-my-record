@@ -112,7 +112,17 @@ The following errors were found from the page. The 'px' issue again was replicat
 
 ![css](static/images/testing/css.png)
 
+## Manual Testing
+
+I used chrome developer tools extensively throughout my entire production process. This was done with the purpose of ensuring maximum responsiveness across all screen sizes and also by using the console log to ensure all javascript code was working. 
+
+The page was tested on all screen sizes as shown in the 'Dimensions' scrollbar at the top of the developer tab. All screen sizes were evaluated and deemed fit for purpose for all different screen size users. In tandem with this, I sent out the website URL to various friends and family who came back to me with various different observations and recommendations to improve the overall user experience of the website.
+
+I also made use of the jinja templating to print out variables to the different html pages from the app route. If the variable in question was not printing out I would then look into how my variable was being defined and would change it until it would eventually print out to the screen. This process allowed me to improve at location variables from mongodb.
+
 
 # Bugs
+
+## Brand Logo
 
 For the brand logo of the site (located in the navbar) I wanted to ensure it had different font-sizes to account for the different screen sizes. When the site is rendered at 500px, ideally I would like the font-size to decrease to 1.5rem px. Unfortunately, whenever I put this style rule in (under the max-width:500px styles) it would ignore the font style rules I would have for the smaller screen sizes. I looked up the issue on various different platforms and asked friends and colleagues to no avail. The result is that when the screen is decreased to 500px, the font size is rendered a lot smaller than I would ideally have it. This smaller font size however, accounts for the much smaller screen resolutions of other potential visitors to the site.
