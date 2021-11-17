@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-<section>
     <h1 class="center-align headings">Manage User's Reviews</h1>
     <h4 class="center-align headings">Record Reviews</h4>
     <!-- Record Reviews -->
+<div class="container">
+
+
     <div class="row">
         {% for review in reviews %}
         <div class="col s12 m6 reviews">
@@ -70,6 +72,5 @@
         </div>
         {% endfor %}
     </div>
-
-</section>
+</div>
 {% endblock %}
