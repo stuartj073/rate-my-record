@@ -405,10 +405,6 @@ input[type=password]:not(.browser-default) {
     border-radius: 10px;
 }
 
-#edit_review label {
-    left:-4.25rem;
-}
-
 #edit_review textarea {
     height:100px;
     width:80%;
