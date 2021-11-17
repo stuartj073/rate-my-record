@@ -19,10 +19,30 @@
         </div>
         {% endif %}
         <div class="col s12">
-            <p><strong>Artist: </strong>{{ review.artist_name }}</p>
+            <h5 class="center-align text-underline">Artist</h5>
+            <p class="center-align">{{ review.artist_name }}</p>
+            <br>
+            <hr>
+            <br>
+            <h5 class="center-align text-underline">Description</h5>
+            <p class="center-align">{{ review.desc }}</p>
+            <br>
+            <hr>
+            <br>
+            <h5 class="center-align text-underline">Label</h5>
+            <p class="center-align">{{ review.label }}</p>
+            <br>
+            <hr>
+            <br>
+            <h5 class="center-align text-underline">Created by</h5>
+            <p class="center-align">{{ review.created_by }}</p>
+            <br>
+            <hr>
+            <br>
+            <!-- <p><strong>Artist: </strong>{{ review.artist_name }}</p>
             <p><strong>Description: </strong>{{ review.desc }}</p>
             <p><strong>Label: </strong>{{ review.label }}</p>
-            <p><strong>Created by: </strong>{{ review.created_by }}</p>
+            <p><strong>Created by: </strong>{{ review.created_by }}</p> -->
             <!-- Show if user is logged on -->
             {% if session.user %}
             <div class="row buttons">

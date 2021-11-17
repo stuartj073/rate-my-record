@@ -2,7 +2,7 @@
 {% block content %}
 <!-- A page that allows a user to look at each review -->
 
-<section class="review-page">
+<div class="container">
     <h1 class="center-align headings">Reviews</h1>
     <div class="row reviews">
         <h2 class="center-align text-underline">{{ store_review.store_name }}</h2>
@@ -18,10 +18,27 @@
         </div>
         {% endif %}
         <div class="col s12">
-            <p><strong>Store name: </strong>{{ store_review.store_name }}</p>
+            <h5 class="center-align text-underline">Store Name</h5>
+            <p class="center-align">{{ store_review.store_name }}</p>
+            <br>
+            <hr>
+            <br>
+            <h5 class="center-align text-underline">Description</h5>
+            <p class="center-align">{{ store_review.store_desc }}</p>
+            <br>
+            <hr>
+            <br>
+            <h5 class="center-align text-underline">Genre</h5>
+            <p class="center-align">{{ store_review.store_genre }}</p>
+            <br>
+            <hr>
+            <br>
+            <h5 class="center-align text-underline">Created by</h5>
+            <p class="center-align">{{ store_review.created_by }}</p>
+            <!-- <p><strong>Store name: </strong>{{ store_review.store_name }}</p>
             <p><strong>Description: </strong>{{ store_review.store_desc }}</p>
             <p><strong>Genre: </strong>{{ store_review.store_genre }}</p>
-            <p><strong>Created by: </strong>{{ store_review.created_by }}</p>
+            <p><strong>Created by: </strong>{{ store_review.created_by }}</p> -->
             <!-- Show if user is logged on -->
             {% if session.user %}
             <div class="row buttons">
@@ -44,6 +61,6 @@
             {% endif %}
         </div>
     </div>
-</section>
+</div>
 
 {% endblock %}
