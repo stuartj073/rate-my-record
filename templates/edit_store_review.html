@@ -2,7 +2,7 @@
 {% block content %}
 
 <!-- Form for editing a store review -->
-<h2 class="center-align headings">Edit Store Review !</h2>
+<h2 class="center-align headings">Edit Store Review</h2>
 <div class="container">
     <div class="row">
         <!-- Form content -->
@@ -36,7 +36,7 @@
                     <label for="genre-store">Genre's</label>
                 </div>
                 <div class="col s12 m10">
-                    <input id="genre-store" name="genre-store" type="text" class="validate" value="{{ store_review.store_genre }}">
+                    <input id="genre-store" name="genre-store" type="text" class="validate" value="{{ store_review.store_genre }}" required>
                 </div>
             </div>
             <div class="row">
@@ -52,7 +52,7 @@
                     <label for="site-url">Website</label>
                 </div>
                 <div class="col s12 m10">
-                    <input id="site-url" name="site-url" type="text" class="validate" value="{{ store_review.site_url }}">
+                    <input id="site-url" name="site-url" type="text" class="validate" value="{{ store_review.site_url }}" required>
                 </div>
             </div>
             <!-- Submit button -->

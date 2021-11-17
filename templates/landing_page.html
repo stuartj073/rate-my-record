@@ -110,11 +110,11 @@
             <!-- If img is provided by user -->
             {% if store_review.img|length %}
             <div class="col s12">
-                <img src="{{ store_review.store_img }}" height="250" width="250" alt="user-store">
+                <img src="static/images/record-g1ebaaace1_640.jpg" height="250" width="250" alt="user-store">
             </div>
             {% else %}
             <div class="col s12">
-                <img src="static/images/record-g1ebaaace1_640.jpg" height="250" width="250" alt="default-store">
+                <img src="{{ store_review.store_img }}" height="250" width="250" alt="default-store">
             </div>
             {% endif %}
             <div class="col s12">
