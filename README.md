@@ -219,6 +219,8 @@ This page is only visible for the admin of the website.
 
 The review content was largely just grabbed from [wikipedia](https://www.wikipedia.org/) pages along with some interviews from the [Guardian](https://www.theguardian.com/international) and [Fact](https://www.factmag.com/). In doing so it allowed me to work on the more fundamental aspects of the project whilst saving time having to write up many fictional reviews.
 
+In the meantime, I have sent the site URL to more friends and family, which I hope will start to share and find music with many others online.
+
 ### Acknowledgements
 I'd like to place on record my sincere thanks to my mentor Cans Succulu. Cans was always on hand for any issue I had with the project and I am very grateful for his efforts and insight into how I could improve the overall functioning and look of the game. 
 
