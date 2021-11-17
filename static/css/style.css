@@ -420,7 +420,6 @@ input[type=password]:not(.browser-default) {
 
 #register label {
     left:0;
-    text-align:center;
     padding-bottom:20px;
 }
 

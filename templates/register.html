@@ -3,62 +3,63 @@
 
 <!-- Register form -->
 <h2 class="center-align headings">Register</h2>
-<div class="row">
-    <!-- Form content -->
-    <form class="col s12 form" id="register" method="POST" action="{{ url_for('register') }}">
-        <div class="row inputs">
-            <div class="input-field col s12 m2">
-                <label for="first_name">First Name</label>
+<div class="container">
+    <div class="row">
+        <!-- Form content -->
+        <form class="col s12 form" id="register" method="POST" action="{{ url_for('register') }}">
+            <div class="row inputs">
+                <div class="input-field col s12 m3">
+                    <label for="first_name">First Name</label>
+                </div>
+                <div class="col s12 m9">
+                    <input id="first_name" name="first_name" type="text" class="validate" required>
+                </div>
             </div>
-            <div class="col s12 m10">
-                <input id="first_name" name="first_name" type="text" class="validate" required>
+            <div class="row inputs">
+                <div class="input-field col s12 m3">
+                    <label for="last_name">Last Name</label>
+                </div>
+                <div class="col s12 m9">
+                    <input id="last_name" type="text" name="last_name" class="validate" required>
+                </div>
             </div>
-        </div>
-        <div class="row inputs">
-            <div class="input-field col s12 m2">
-                <label for="last_name">Last Name</label>
+            <div class="row inputs">
+                <div class="input-field col s12 m3">
+                    <label for="username">Username</label>
+                </div>
+                <div class="col s12 m9">
+                    <input id="username" name="username" type="text" class="validate" required>
+                </div>
             </div>
-            <div class="col s12 m10">
-                <input id="last_name" type="text" name="last_name" class="validate" required>
+            <div class="row inputs">
+                <div class="input-field col s12 m3">
+                    <label for="password">Password</label>
+                </div>
+                <div class="col s12 m9">
+                    <input id="password" name="password" class="validate" required>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12 m2">
-                <label for="username">Username</label>
+            <div class="row inputs">
+                <div class="input-field col s12 m3">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col s12 m9">
+                    <input id="email" name="email" type="text" class="validate" required>
+                </div>
             </div>
-            <div class="col s12 m10">
-                <input id="username" name="username" type="text" class="validate" required>
+            <!-- Register button -->
+            <div class="row">
+                <div class="center-align">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Register
+                        <i class="material-icons right"></i>
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12 m2">
-                <label for="password">Password</label>
+            <div class="row">
+                <p class="center-align">Already registered? <a href="{{ url_for('login') }}">Log in</a></p>
             </div>
-            <div class="col s12 m10">
-                <input id="password" name="password" class="validate" required>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12 m2">
-                <label for="email">Email</label>
-            </div>
-            <div class="col s12 m10">
-                <input id="email" name="email" type="text" class="validate" required>
-            </div>
-        </div>
-        <!-- Register button -->
-        <div class="row">
-            <div class="center-align">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Register
-                    <i class="material-icons right"></i>
-                </button>
-            </div>
-        </div>
-        <div class="row">
-            <p class="center-align">Already registered? <a href="{{ url_for('login') }}">Log in</a></p>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
-
 
 {% endblock %}
