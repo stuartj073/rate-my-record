@@ -246,11 +246,13 @@ label {
     padding-bottom: 20px;
 }
 
+
 .reviews hr {
     margin: 0 auto;
     width:30%;
     border: 0;
     height: 1px;
+    /****************************** TAKEN FROM https://css-tricks.com/examples/hrs/ **/
     background: #333;
     background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
@@ -322,7 +324,7 @@ label {
 
 
 
-/************************************ FORM LINKS **/
+/************************************ FORM  **/
 
 select {
     display: block;
@@ -380,18 +382,53 @@ input[type=password]:not(.browser-default) {
     width:80%;
 }
 
-#record input {
+/************************************ ADD REVIEW/ EDIT  **/
+
+#add_review input {
     height:50px;
     width:80%;
     background-color: white;
     border-radius: 10px;
 }
 
+#add_review textarea {
+    height:100px;
+    width:80%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#edit_review input {
+    height:50px;
+    width:80%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#edit_review label {
+    left:-.75rem;
+}
+
+#edit_review textarea {
+    height:100px;
+    width:80%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/************************************ REGISTER FORM  **/
+
 #register label {
     left:0;
     text-align:center;
     padding-bottom:20px;
+}
 
+#register input {
+    height:50px;
+    width:80%;
+    background-color: white;
+    border-radius: 10px;
 }
 
 #login-form input {
@@ -402,22 +439,10 @@ input[type=password]:not(.browser-default) {
     margin:0 auto;
 }
 
-#register input {
-    height:50px;
-    width:80%;
-    background-color: white;
-    border-radius: 10px;
-}
+/************************************ ADD STORE REVIEW **/
 
 #store input {
     height:50px;
-    width:80%;
-    background-color: white;
-    border-radius: 10px;
-}
-
-#record textarea {
-    height:100px;
     width:80%;
     background-color: white;
     border-radius: 10px;
@@ -550,7 +575,7 @@ ul:not(.browser-default) {
         width:50%;
     }
 
-    #record input {
+    #add_review input {
         height:50px;
         width:80%;
         background-color: white;
@@ -574,7 +599,7 @@ ul:not(.browser-default) {
         border-radius: 10px;
     }
 
-    #record textarea {
+    #add_review textarea {
         height:100px;
         width:80%;
         background-color: white;
