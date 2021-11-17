@@ -194,6 +194,7 @@ def add_store_review():
             "store_desc": request.form.get("store-desc"),
             "store_genre": request.form.get("genre-store"),
             "store_img": request.form.get("image-store"),
+            "site_url": request.form.get("site-url"),
             "created_by": session["user"],
             "wishlist": []
         }
@@ -268,6 +269,7 @@ def edit_store_review(store_review_id):
                 "store_desc": request.form.get("store-desc"),
                 "store_genre": request.form.get("genre-store"),
                 "store_img": request.form.get("image-store"),
+                "site_url": request.form.get("site-url"),
                 "created_by": session["user"]
             }
         }
