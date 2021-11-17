@@ -34,15 +34,15 @@ def landing():
     store_reviews = list(mongo.db.store_reviews.find())
 
     if not session:
-        return render_template("landing_page.html", reviews=reviews, store_reviews=store_reviews)
-    
+        return render_template("landing_page.html", reviews=reviews,
+                               store_reviews=store_reviews)
     user = mongo.db.users.find_one({"username": session["user"]})
     return render_template("landing_page.html", reviews=reviews,
-                        store_reviews=store_reviews, user=user)
+                           store_reviews=store_reviews, user=user)
 
 
-@app.route("/search", methods=["GET", "POST"])
-def search():
+@app.route("/search_bar", methods=["GET", "POST"])
+def search_bar():
     """
     Function for search form
     """
@@ -62,8 +62,8 @@ def about():
     return render_template("about.html")
 
 
-@app.route("/register", methods=["GET", "POST"])
-def register():
+@app.route("/registe_user", methods=["GET", "POST"])
+def register_user():
     """
     Renders page for new users
     to register their username and
