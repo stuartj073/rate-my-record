@@ -215,6 +215,10 @@ This page is only visible for the admin of the website.
 - [Dbdiagram.io](https://dbdiagram.io/home) for the visual representation of my data schema.
 - [W3C](https://validator.w3.org/) to ensure all CSS and HTML code was bug free.
 
+#### Review Content
+
+The review content was largely just grabbed from [wikipedia](https://www.wikipedia.org/) pages along with some interviews from the [Guardian](https://www.theguardian.com/international) and [Fact](https://www.factmag.com/). In doing so it allowed me to work on the more fundamental aspects of the project whilst saving time having to write up many fictional reviews.
+
 ### Acknowledgements
 I'd like to place on record my sincere thanks to my mentor Cans Succulu. Cans was always on hand for any issue I had with the project and I am very grateful for his efforts and insight into how I could improve the overall functioning and look of the game. 
 
