@@ -40,11 +40,6 @@
             <br>
             <h5 class="center-align text-underline">Created by</h5>
             <p class="center-align">{{ store_review.created_by }}</p>
-            <!-- <p><strong>Store name: </strong>{{ store_review.store_name }}</p>
-            <p><strong>Description: </strong>{{ store_review.store_desc }}</p>
-            <p><strong>Genre: </strong>{{ store_review.store_genre }}</p>
-            <p><strong>Created by: </strong>{{ store_review.created_by }}</p> -->
-            <!-- Show if user is logged on -->
             {% if session.user %}
             <div class="row buttons">
                 {% if session.user == store_review.created_by %}

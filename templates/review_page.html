@@ -39,11 +39,6 @@
             <br>
             <hr>
             <br>
-            <!-- <p><strong>Artist: </strong>{{ review.artist_name }}</p>
-            <p><strong>Description: </strong>{{ review.desc }}</p>
-            <p><strong>Label: </strong>{{ review.label }}</p>
-            <p><strong>Created by: </strong>{{ review.created_by }}</p> -->
-            <!-- Show if user is logged on -->
             {% if session.user %}
             <div class="row buttons">
                 {% if session.user == review.created_by %}

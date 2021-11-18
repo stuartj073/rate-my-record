@@ -505,13 +505,6 @@ ul:not(.browser-default) {
     right: 0;
 }
 
-
-/* @media only screen and (min-width: 993px) {
-    .container {
-        width=0;
-    }
-} */
-
 @media only screen and (min-width: 601px) {
     .row .col.m6 {
         width: 49%;
