@@ -10,7 +10,7 @@
             <p class="center-align hide-on-small-only"><i>A place for like-minded music lovers to contribute</i></hp>
                 <!-- Show if first time visitor or not logged in -->
                 {% if not session["user"] %}
-                <h5 class="center-align"><a href="{{ url_for('register') }}">Register </a></h5>
+                <h5 class="center-align"><a href="{{ url_for('register_user') }}">Register </a></h5>
                 <h5 class="center-align"><a href="{{ url_for('login') }}">Log in</a></h5>
                 {% endif %}
         </div>
