@@ -7,7 +7,7 @@
     <div class="row reviews">
         <h2 class="center-align text-underline">{{ store_review.store_name }}</h2>
         <!-- If img is provided by user -->
-        {% if store_review.img|length %}
+        {% if store_review.store_img|length %}
         <div class="col s12">
             <img src="{{ store_review.store_img }}" height="250" width="250" alt="store_img">
         </div>
