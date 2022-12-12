@@ -7,7 +7,7 @@ The idea is quite simple. The website is a review sharing site which allows user
 The purpose of the website is to give user’s the chance to acquire and learn about new music/record stores they would’ve been unfamiliar with. The database is utilised in such a way as to prompt users into discovering new things and potentially providing some knowledge of their own musical taste. 
 Going forward with this project, I would ideally like to allow user’s to interact with one another and to facilitate an online marketplace for the buying and selling of vinyl records. 
 
-Find the link to my site [here](https://rate-my-record.herokuapp.com/).
+Find the link to my site [here](https://dashboard.render.com/web/srv-cebkacirrk0bbtf3n0lg/deploys/dep-cebkaeirrk0bbtf3o0l0).
 
 ## User Stories 
 
